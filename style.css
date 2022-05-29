@@ -5,7 +5,7 @@ body{
     background-color: #292929;
     color: #fff;
 }
-.grid-wrapper{
+.tasks-wrapper{
     display: grid;
     grid-template-columns: .5fr;
     grid-template-rows: 1fr auto 1fr auto;
