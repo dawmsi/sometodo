@@ -12,57 +12,63 @@
 
 <body>
     <div class="app-wrapper">
-        <section class="top-bar">
-            <div class="bar-btn"> <a class="hide">hide</a></div>
-            <div class="bar-btn"> <a class="home">home</a></div>
-            <div class="search-area"></div>
-            <div class="bar-btn"> <a class="add">add</a></div>
-            <div class="bar-btn"> <a class="help">help</a></div>
-            <div class="bar-btn"> <a class="notify">notify</a></div>
-            <div class="bar-btn"> <a class="producity">producity</a></div>
-            <div class="bar-btn"> <a class="profile">profile</a></div>
-        </section>
-        <section class="side-bar-wrapper">
-            <section class="switch">
-                <ul class="switch-list">
-                    <li class="switch-item">Previous</li>
-                    <li class="switch-item">Today</li>
-                    <li class="switch-item">Coming</li>
-                    <li class="switch-item">
-                        Filter
-                        <ul class="filter-list">
-                            <li class="filter-item">mark 1</li>
-                            <li class="filter-item">mark 2</li>
-                            <li class="filter-item">mark 3</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-            <section class="projects-wrapper">
-                <a href="#" class="toggle-show">Projects</a>
-                <ul class="projects-list">
-                    <li class="project-item">project 1</li>
-                    <li class="project-item">project 2</li>
-                    <li class="project-item">project 3</li>
-                </ul>
-            </section>
-            <section class="removed">
-                <a href="">Removed</a>
-            </section>
-        </section>
-        <section class="tasks-wrapper">
-            <h1>ToDoList</h1>
-            <div class="add-todo-wrapper">
-                <div class="input-wrapper">
-                    <input type="text" id="description-task">
-                </div>
-                <div class="btn-wrapper">
-                    <button id="add-task-btn">add</button>
-                </div>
+        <section id="top-bar">
+            <div class="section-wrapper">
+                <div class="bar-btn"> <a class="hide">hide</a></div>
+                <div class="bar-btn"> <a class="home">home</a></div>
+                <div class="search-area"></div>
+                <div class="bar-btn"> <a class="add">add</a></div>
+                <div class="bar-btn"> <a class="help">help</a></div>
+                <div class="bar-btn"> <a class="notify">notify</a></div>
+                <div class="bar-btn"> <a class="producity">producity</a></div>
+                <div class="bar-btn"> <a class="profile">profile</a></div>
             </div>
-            <h2>Tasks:</h2>
-            <div class="todos-wrapper">
+        </section>
+        <section id="side-bar">
+            <div class="section-wrapper">
+                <section class="switch">
+                    <ul class="switch-list">
+                        <li class="switch-item">Previous</li>
+                        <li class="switch-item">Today</li>
+                        <li class="switch-item">Coming</li>
+                        <li class="switch-item">
+                            Filter
+                            <ul class="filter-list">
+                                <li class="filter-item">mark 1</li>
+                                <li class="filter-item">mark 2</li>
+                                <li class="filter-item">mark 3</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section class="projects-wrapper">
+                    <a href="#" class="toggle-show">Projects</a>
+                    <ul class="projects-list">
+                        <li class="project-item">project 1</li>
+                        <li class="project-item">project 2</li>
+                        <li class="project-item">project 3</li>
+                    </ul>
+                </section>
+                <section class="removed">
+                    <a href="">Removed</a>
+                </section>
+            </div>
+        </section>
+        <section id="tasks">
+            <div class="tasks-wrapper">
+                <h1>ToDoList</h1>
+                <div class="add-todo-wrapper">
+                    <div class="input-wrapper">
+                        <input type="text" id="description-task">
+                    </div>
+                    <div class="btn-wrapper">
+                        <button id="add-task-btn">add</button>
+                    </div>
+                </div>
+                <h2>Tasks:</h2>
+                <div class="todos-wrapper">
 
+                </div>
             </div>
         </section>
     </div>
