@@ -1,7 +1,10 @@
 *{
     box-sizing: border-box;
 }
-
+body{
+    background-color: #292929;
+    color: #fff;
+}
 .grid-wrapper{
     display: grid;
     grid-template-columns: .5fr;
@@ -37,10 +40,11 @@
 .todo-item{
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: .75fr .05fr .2fr;
+    grid-template-columns:  .05fr .75fr .2fr;
     justify-content: center;
     justify-items: center;
-    border: 1px solid black;
+    align-items: center;
+    border: 1px solid white;
     border-radius: 3px;
     padding: 5px 0;
 }
@@ -53,6 +57,10 @@
 }
 
 .btn-complete{
+    
+}
+
+.btn-remove{
    padding: 2px 20px;
 }
 .checked{

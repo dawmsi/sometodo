@@ -22,13 +22,14 @@ const updateLocal = () => {
 const createTemplate = (task, index) => {
     return `
     <div class="todo-item ${task.completed ? 'checked' : ''}">
-    <div class="description">${task.description}</div>
-    <div class="checkbox-wrapper">
+        <div class="checkbox-wrapper">
         <input onclick="toggleTask(${index})" type="checkbox" class="btn-complete" ${task.completed ? 'checked' : ''}>
-    </div>
-    <div class="btn-wrapper">
-        <button onclick="removeTask(${index})" class="btn-complete">remove</button>
-    </div>
+        </div>
+        <div class="description">${task.description}</div>
+
+        <div class="btn-wrapper">
+            <button onclick="removeTask(${index})" class="btn-remove">remove</button>
+        </div>
     </div>
     `
 }
