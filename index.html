@@ -20,10 +20,10 @@
         </section>
         <section id="top-right">
             <div class="bar-btn"> <a id="add"><i class="fa-solid fa-circle-plus"></i></a></div>
-            <div class="bar-btn"> <a id="help"><i class="fa-regular fa-circle-question"></i></a></div>
-            <div class="bar-btn"> <a id="notify"><i class="fa-regular fa-bell"></i></a></div>
+            <div class="bar-btn"> <a id="help"><i class="fa-solid fa-circle-question"></i></a></div>
+            <div class="bar-btn"> <a id="notify"><i class="fa-solid fa-bell"></i></a></div>
             <div class="bar-btn"> <a id="producity"><i class="fa-solid fa-circle-half-stroke"></i></a></div>
-            <div class="bar-btn"> <a id="profile"><i class="fa-regular fa-user"></i></a></div>
+            <div class="bar-btn"> <a id="profile"><i class="fa-solid fa-user"></i></a></div>
         </section>
     </header>
 
@@ -67,14 +67,14 @@
 
             <div class="line-area">
                 <div class="line"></div>
-                <a class="add-link" id="addBtn">Add task
+                <a class="add-link">Add task
                 </a>
                 <div class="line"></div>
             </div>
 
             <div id="adding">
                 <div class="container">
-                    <form id="formMainAdd" action="">
+                    <form id="formMainAdd" action="addBtn">
                         <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
                         <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea>
                         </div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="additional">
                                 <button><i class="fa-solid fa-tag"></i></button>
-                                <button><i class="fa-regular fa-flag"></i></button>
+                                <button><i class="fa-solid fa-flag"></i></button>
                                 <button><i class="fa-solid fa-calendar-times"></i></button>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
 
     <div id="pop-adding" class="hiding">
         <div class="container">
-            <form action="" id="popForm">
+            <form action="" id="popForm" onsubmit="return false;">
                 <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
                 <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea></div>
                 <div class="btns-line">
@@ -116,7 +116,7 @@
                     </div>
                     <div class="btns-main">
                         <button id="add-task-btn">Add</button>
-                        <button id="cancelpop" onclick="togglePop()">Cancel</button>
+                        <button id="cancelpop">Cancel</button>
                     </div>
                 </div>
             </form>

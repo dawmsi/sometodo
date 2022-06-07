@@ -1,4 +1,4 @@
-const addLink = document.querySelector('#addBtn')
+const addLink = document.querySelector('.line-area')
 
 addLink.addEventListener('click', showAdder)
 
@@ -12,5 +12,6 @@ function cancel(){
     .parentElement
     .parentElement
     .style.display = "none";
-    document.querySelector('#formMainAdd').reset()
+    document.querySelector('.add-link').style.color = "#db4c3f";
+    document.querySelector('#formMainAdd').reset();
 }

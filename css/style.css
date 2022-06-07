@@ -64,6 +64,8 @@ header {
   padding-right: 28px;
 }
 
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
 aside {
   z-index: 30;
   position: fixed;
@@ -93,6 +95,7 @@ main {
   color: #8b8b8bb9;
   padding-top: 21px;
   width: 100%;
+  cursor: pointer;
 }
 .line {
   border-top: 1px solid #db4c3fec;
@@ -104,7 +107,6 @@ main {
   left: calc(50% - 1%);
   margin-top: -8px;
   padding: 0 10px;
-  cursor: pointer;
 }
 .line-area:hover .line {
   visibility: visible;
@@ -160,11 +162,16 @@ main {
   padding: 2px 8px;
   font-size: 14px;
 }
+
 .plannig button:hover {
   background-color: #5a5a5a5d;
 }
-.additional button:hover {
-  text-shadow: 0 0 2px #cc3022a8;
+
+header .fa-regular:hover,
+header .fa-solid:hover,
+.additional button:hover,
+.plannig button:hover {
+  text-shadow: 0 0 2px #cc3022;
   color: #db4c3f;
 }
 .btns-main {
