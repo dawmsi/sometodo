@@ -1,9 +1,9 @@
-const addBtn = document.querySelector('#addBtn')
+const addLink = document.querySelector('#addBtn')
 
-addBtn.addEventListener('click', showAdder)
+addLink.addEventListener('click', showAdder)
 
 function showAdder(){
-    
+    document.querySelector('#adding').style.display = 'block'
 }
 
 
@@ -11,5 +11,6 @@ function cancel(){
     document.querySelector('#cancel')
     .parentElement
     .parentElement
-    .style.visibility = 'hidden'
+    .style.display = "none";
+    document.querySelector('#formMainAdd').reset()
 }

@@ -72,22 +72,24 @@
                 <div class="line"></div>
             </div>
 
-            <div class="adding">
+            <div id="adding">
                 <div class="container">
-                    <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
-                    <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea></div>
-                    <div class="btns-line">
-                        <div class="plannig">
-                            <button><i class="fa-regular fa-calendar"></i>Today</button>
-                            <button><i class="fa-solid fa-inbox"></i>In</button>
+                    <form id="formMainAdd" action="">
+                        <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
+                        <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea>
                         </div>
-                        <div class="additional">
-                            <button><i class="fa-solid fa-tag"></i></button>
-                            <button><i class="fa-regular fa-flag"></i></button>
-                            <button><i class="fa-solid fa-calendar-times"></i></button>
+                        <div class="btns-line">
+                            <div class="plannig">
+                                <button><i class="fa-regular fa-calendar"></i>Today</button>
+                                <button><i class="fa-solid fa-inbox"></i>In</button>
+                            </div>
+                            <div class="additional">
+                                <button><i class="fa-solid fa-tag"></i></button>
+                                <button><i class="fa-regular fa-flag"></i></button>
+                                <button><i class="fa-solid fa-calendar-times"></i></button>
+                            </div>
                         </div>
-                    </div>
-
+                    </form>
                 </div>
                 <div class="btns-main">
                     <button id="cancel" onclick="cancel()">Cancel</button>
@@ -121,6 +123,7 @@
         </div>
     </div>
     </div>
+    <script src="js/mainAdder.js"></script>
     <script src="js/pop.js"></script>
     <script src="app.js"></script>
 </body>
