@@ -26,7 +26,6 @@ const createTemplate = (task, index) => {
         <input onclick="toggleTask(${index})" type="checkbox" class="btn-complete" ${task.completed ? 'checked' : ''}>
         </div>
         <div class="nameTask">${task.nameTask}</div>
-
         <div class="btn-wrapper">
             <button onclick="removeTask(${index})" class="btn-remove">remove</button>
         </div>

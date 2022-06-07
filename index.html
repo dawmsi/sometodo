@@ -58,14 +58,19 @@
 
     <main id="main">
         <div id="content-wrapper">
-            <h1>ToDoList</h1>
+            <div class="task-label">
+                <h2>ToDoList</h2>
+            </div>
+
+            <div class="todos-wrapper">
+            </div>
+
             <div class="line-area">
                 <div class="line"></div>
                 <a class="add-link" id="addBtn">Add task
                 </a>
                 <div class="line"></div>
             </div>
-
 
             <div class="adding">
                 <div class="container">
@@ -85,43 +90,38 @@
 
                 </div>
                 <div class="btns-main">
-                    <button>Cancel</button>
+                    <button id="cancel" onclick="cancel()">Cancel</button>
                     <button id="add-task-btn">Add</button>
                 </div>
-            </div>
-
-
-            <h2>Tasks:</h2>
-            <div class="todos-wrapper">
-
             </div>
         </div>
     </main>
 
-    <a href="">
-        <div id="pop-adding" class="hiding">
-    </a>
-    <div class="container">
-        <div class="name-of-task"><input type="text"></div>
-        <div class="description-of-task"><input type="text"></div>
-        <div class="btns-line">
-            <div class="plannig">
-                <button><i class="fa-regular fa-calendar"></i> Today</button>
-                <button><i class="fa-solid fa-inbox"></i> In</button>
-            </div>
-            <div class="additional">
-                <button><i class="fa-solid fa-tag"></i></button>
-                <button><i class="fa-regular fa-flag"></i></button>
-                <button><i class="fa-solid fa-calendar-times"></i></button>
-            </div>
-        </div>
-        <div class="btns-main">
-            <button>Cancel</button>
-            <button>Add</button>
+    <div id="pop-adding" class="hiding">
+        <div class="container">
+            <form action="" id="popForm">
+                <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
+                <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea></div>
+                <div class="btns-line">
+                    <div class="plannig">
+                        <button><i class="fa-regular fa-calendar"></i>Today</button>
+                        <button><i class="fa-solid fa-inbox"></i>In</button>
+                    </div>
+                    <div class="additional">
+                        <button><i class="fa-solid fa-tag"></i></button>
+                        <button><i class="fa-regular fa-flag"></i></button>
+                        <button><i class="fa-solid fa-calendar-times"></i></button>
+                    </div>
+                    <div class="btns-main">
+                        <button id="add-task-btn">Add</button>
+                        <button id="cancelpop" onclick="togglePop()">Cancel</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     </div>
-    <script src="pop.js"></script>
+    <script src="js/pop.js"></script>
     <script src="app.js"></script>
 </body>
 
