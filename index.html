@@ -30,15 +30,15 @@
     <aside id="aside">
         <section class="switch">
             <ul class="switch-list">
-                <li class="switch-item">Previous</li>
-                <li class="switch-item">Today</li>
-                <li class="switch-item">Coming</li>
+                <li class="switch-item"><a href="">Previous</a></li>
+                <li class="switch-item"><a href="">Today</a></li>
+                <li class="switch-item"><a href="">Coming</a></li>
                 <li class="switch-item">
-                    Filter
+                    <a id="filter-task" href="">Filter</a>
                     <ul class="filter-list">
-                        <li class="filter-item">mark 1</li>
-                        <li class="filter-item">mark 2</li>
-                        <li class="filter-item">mark 3</li>
+                        <li class="filter-item"><a href="">mark 1</a></li>
+                        <li class="filter-item"><a href="">mark 2</a></li>
+                        <li class="filter-item"><a href="">mark 3</a></li>
                     </ul>
                 </li>
             </ul>
@@ -46,9 +46,9 @@
         <section class="projects-wrapper">
             <a href="#" class="toggle-show">Projects</a>
             <ul class="projects-list">
-                <li class="project-item">project 1</li>
-                <li class="project-item">project 2</li>
-                <li class="project-item">project 3</li>
+                <li class="project-item"><a href="">project 1</a></li>
+                <li class="project-item"><a href="">project 2</a></li>
+                <li class="project-item"><a href="">project 3</a></li>
             </ul>
         </section>
         <section class="removed">
@@ -59,14 +59,38 @@
     <main id="main">
         <div id="content-wrapper">
             <h1>ToDoList</h1>
-            <div class="add-todo-wrapper">
-                <div class="input-wrapper">
-                    <input type="text" id="description-task">
+            <div class="line-area">
+                <div class="line"></div>
+                <a class="add-link" id="addBtn">Add task
+                </a>
+                <div class="line"></div>
+            </div>
+
+
+            <div class="adding">
+                <div class="container">
+                    <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
+                    <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea></div>
+                    <div class="btns-line">
+                        <div class="plannig">
+                            <button><i class="fa-regular fa-calendar"></i>Today</button>
+                            <button><i class="fa-solid fa-inbox"></i>In</button>
+                        </div>
+                        <div class="additional">
+                            <button><i class="fa-solid fa-tag"></i></button>
+                            <button><i class="fa-regular fa-flag"></i></button>
+                            <button><i class="fa-solid fa-calendar-times"></i></button>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="btn-wrapper">
-                    <button id="add-task-btn">add</button>
+                <div class="btns-main">
+                    <button>Cancel</button>
+                    <button id="add-task-btn">Add</button>
                 </div>
             </div>
+
+
             <h2>Tasks:</h2>
             <div class="todos-wrapper">
 
@@ -74,26 +98,28 @@
         </div>
     </main>
 
-    <div id="pop-adding" class="hiding">
-        <div class="container">
-            <div class="name-of-task"><input type="text"></div>
-            <div class="description-of-task"><input type="text"></div>
-            <div class="btns-line">
-                <div class="plannig">
-                    <button><i class="fa-regular fa-calendar"></i> Today</button>
-                    <button><i class="fa-solid fa-inbox"></i> In</button>
-                </div>
-                <div class="additional">
-                    <button><i class="fa-solid fa-tag"></i></button>
-                    <button><i class="fa-regular fa-flag"></i></button>
-                    <button><i class="fa-solid fa-calendar-times"></i></button>
-                </div>
+    <a href="">
+        <div id="pop-adding" class="hiding">
+    </a>
+    <div class="container">
+        <div class="name-of-task"><input type="text"></div>
+        <div class="description-of-task"><input type="text"></div>
+        <div class="btns-line">
+            <div class="plannig">
+                <button><i class="fa-regular fa-calendar"></i> Today</button>
+                <button><i class="fa-solid fa-inbox"></i> In</button>
             </div>
-            <div class="btns-main">
-                <button>Cancel</button>
-                <button>Add</button>
+            <div class="additional">
+                <button><i class="fa-solid fa-tag"></i></button>
+                <button><i class="fa-regular fa-flag"></i></button>
+                <button><i class="fa-solid fa-calendar-times"></i></button>
             </div>
         </div>
+        <div class="btns-main">
+            <button>Cancel</button>
+            <button>Add</button>
+        </div>
+    </div>
     </div>
     <script src="pop.js"></script>
     <script src="app.js"></script>

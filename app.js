@@ -1,4 +1,4 @@
-const taskInput = document.querySelector('#description-task')
+const taskInput = document.querySelector('#name-task')
 const addBtn = document.querySelector('#add-task-btn')
 const todoWrapper = document.querySelector('.todos-wrapper')
 
@@ -9,8 +9,8 @@ let tasksArr
 let todoItemEls = []
 
 class Task {
-    constructor(description){
-        this.description = description,
+    constructor(nameTask){
+        this.nameTask = nameTask,
         this.copleted = false
     }
 }
@@ -25,7 +25,7 @@ const createTemplate = (task, index) => {
         <div class="checkbox-wrapper">
         <input onclick="toggleTask(${index})" type="checkbox" class="btn-complete" ${task.completed ? 'checked' : ''}>
         </div>
-        <div class="description">${task.description}</div>
+        <div class="nameTask">${task.nameTask}</div>
 
         <div class="btn-wrapper">
             <button onclick="removeTask(${index})" class="btn-remove">remove</button>
