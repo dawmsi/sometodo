@@ -5,73 +5,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/all.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>ToDo</title>
 </head>
 
-<body>
-    <div class="app-wrapper">
-        <section id="top-bar">
-            <div class="section-wrapper">
-                <div class="bar-btn"> <a class="hide">hide</a></div>
-                <div class="bar-btn"> <a class="home">home</a></div>
-                <div class="search-area"></div>
-                <div class="bar-btn"> <a class="add">add</a></div>
-                <div class="bar-btn"> <a class="help">help</a></div>
-                <div class="bar-btn"> <a class="notify">notify</a></div>
-                <div class="bar-btn"> <a class="producity">producity</a></div>
-                <div class="bar-btn"> <a class="profile">profile</a></div>
-            </div>
+<body id="body">
+    <header id="header">
+        <section id="top-left">
+            <div class="bar-btn"> <a id="hide"><i class="fa-regular fa-eye-slash"></i></a></div>
+            <div class="bar-btn"> <a id="home"><i class="fa-solid fa-home"></i></a></div>
+            <div class="search-area"><i class="fa-solid fa-magnifying-glass"></i></div>
         </section>
-        <section id="side-bar">
-            <div class="section-wrapper">
-                <section class="switch">
-                    <ul class="switch-list">
-                        <li class="switch-item">Previous</li>
-                        <li class="switch-item">Today</li>
-                        <li class="switch-item">Coming</li>
-                        <li class="switch-item">
-                            Filter
-                            <ul class="filter-list">
-                                <li class="filter-item">mark 1</li>
-                                <li class="filter-item">mark 2</li>
-                                <li class="filter-item">mark 3</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                <section class="projects-wrapper">
-                    <a href="#" class="toggle-show">Projects</a>
-                    <ul class="projects-list">
-                        <li class="project-item">project 1</li>
-                        <li class="project-item">project 2</li>
-                        <li class="project-item">project 3</li>
-                    </ul>
-                </section>
-                <section class="removed">
-                    <a href="">Removed</a>
-                </section>
-            </div>
+        <section id="top-right">
+            <div class="bar-btn"> <a id="add"><i class="fa-solid fa-circle-plus"></i></a></div>
+            <div class="bar-btn"> <a id="help"><i class="fa-regular fa-circle-question"></i></a></div>
+            <div class="bar-btn"> <a id="notify"><i class="fa-regular fa-bell"></i></a></div>
+            <div class="bar-btn"> <a id="producity"><i class="fa-solid fa-circle-half-stroke"></i></a></div>
+            <div class="bar-btn"> <a id="profile"><i class="fa-regular fa-user"></i></a></div>
         </section>
-        <section id="tasks">
-            <div class="tasks-wrapper">
-                <h1>ToDoList</h1>
-                <div class="add-todo-wrapper">
-                    <div class="input-wrapper">
-                        <input type="text" id="description-task">
-                    </div>
-                    <div class="btn-wrapper">
-                        <button id="add-task-btn">add</button>
-                    </div>
-                </div>
-                <h2>Tasks:</h2>
-                <div class="todos-wrapper">
+    </header>
 
+    <aside id="aside">
+        <section class="switch">
+            <ul class="switch-list">
+                <li class="switch-item">Previous</li>
+                <li class="switch-item">Today</li>
+                <li class="switch-item">Coming</li>
+                <li class="switch-item">
+                    Filter
+                    <ul class="filter-list">
+                        <li class="filter-item">mark 1</li>
+                        <li class="filter-item">mark 2</li>
+                        <li class="filter-item">mark 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="projects-wrapper">
+            <a href="#" class="toggle-show">Projects</a>
+            <ul class="projects-list">
+                <li class="project-item">project 1</li>
+                <li class="project-item">project 2</li>
+                <li class="project-item">project 3</li>
+            </ul>
+        </section>
+        <section class="removed">
+            <a href="">Removed</a>
+        </section>
+    </aside>
+
+    <main id="main">
+        <div id="content-wrapper">
+            <h1>ToDoList</h1>
+            <div class="add-todo-wrapper">
+                <div class="input-wrapper">
+                    <input type="text" id="description-task">
+                </div>
+                <div class="btn-wrapper">
+                    <button id="add-task-btn">add</button>
                 </div>
             </div>
-        </section>
+            <h2>Tasks:</h2>
+            <div class="todos-wrapper">
+
+            </div>
+        </div>
+    </main>
+
+    <div id="pop-adding" class="hiding">
+        <div class="container">
+            <div class="name-of-task"><input type="text"></div>
+            <div class="description-of-task"><input type="text"></div>
+            <div class="btns-line">
+                <div class="plannig">
+                    <button><i class="fa-regular fa-calendar"></i> Today</button>
+                    <button><i class="fa-solid fa-inbox"></i> In</button>
+                </div>
+                <div class="additional">
+                    <button><i class="fa-solid fa-tag"></i></button>
+                    <button><i class="fa-regular fa-flag"></i></button>
+                    <button><i class="fa-solid fa-calendar-times"></i></button>
+                </div>
+            </div>
+            <div class="btns-main">
+                <button>Cancel</button>
+                <button>Add</button>
+            </div>
+        </div>
     </div>
+    <script src="pop.js"></script>
     <script src="app.js"></script>
 </body>
 
