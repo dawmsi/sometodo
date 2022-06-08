@@ -69,11 +69,11 @@ header {
 }
 .bar-btn #add i {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 18px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
   text-align: center;
-  width: 18px;
+  width: 20px;
 }
 
 .bar-btn #help {
