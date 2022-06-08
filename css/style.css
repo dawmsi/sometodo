@@ -151,8 +151,8 @@ main {
   justify-content: space-between;
 }
 
-.btns-line .fa-regular,
-.btns-line .fa-solid {
+.btns-line .fa,
+.btns-line .fa {
   font-size: 16px;
   margin: 1px 2px;
 }
@@ -167,8 +167,8 @@ main {
   background-color: #5a5a5a5d;
 }
 
-header .fa-regular:hover,
-header .fa-solid:hover,
+header .fa:hover,
+header .fa:hover,
 .additional button:hover,
 .plannig button:hover {
   text-shadow: 0 0 2px #cc3022;

@@ -27,7 +27,7 @@ const createTemplate = (task, index) => {
         </div>
         <div class="nameTask">${task.nameTask}</div>
         <div class="btn-wrapper">
-            <button onclick="removeTask(${index})" class="btn-remove">remove</button>
+            <button onclick="removeTask(${index})" class="btn-remove"><i class="fa fa-ellipsis-h"></i></button>
         </div>
     </div>
     `
