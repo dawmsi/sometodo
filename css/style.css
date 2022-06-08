@@ -265,12 +265,9 @@ aside .aside-containder {
   visibility: visible;
 }
 
-.aside-part .include-items .fa:first-child {
-  font-size: 13px;
-}
-
 .aside-part .include-items ul .fa:first-child {
   padding-left: 15px;
+  font-size: 10px;
 }
 
 .aside-part .item {
@@ -307,12 +304,22 @@ aside .aside-containder {
   text-shadow: 0 0 3px #66baf3;
 }
 
-#filters {
+#marks {
   color: #ae5bf3;
+  padding: 0 2px;
 }
 
-#filters:hover {
+#marks:hover {
   text-shadow: 0 0 3px #ae5bf3;
+}
+
+#project {
+  font-size: 18px;
+  color: #cc3022;
+}
+
+#project:hover {
+  text-shadow: 0 0 3px #db4c3f;
 }
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -436,12 +443,13 @@ aside .aside-containder {
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 #pop-adding {
+  z-index: 30;
   position: fixed;
   justify-self: center;
   align-self: center;
 }
 #pop-adding .container {
-  background-color: #1a1a1a;
+  background-color: #252525;
   width: 465px;
   padding: 15px;
 }
