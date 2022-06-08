@@ -64,6 +64,29 @@ header {
   padding-right: 28px;
 }
 
+.bar-btn {
+  font-size: 16px;
+}
+.bar-btn #add i {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  width: 18px;
+}
+
+.bar-btn #help {
+  font-size: 19px;
+}
+
+.bar-btn i:hover,
+.additional button:hover {
+  border-radius: 50%;
+  background-color: #5a5a5a;
+  border: 0;
+}
+
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 aside {
@@ -113,6 +136,7 @@ main {
 }
 .line-area:hover .add-link {
   color: #db4c3f;
+  text-shadow: 0 0 2px #db4c3f;
 }
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -153,22 +177,26 @@ main {
 
 .btns-line .fa,
 .btns-line .fa {
-  font-size: 16px;
+  font-size: 15px;
   margin: 1px 2px;
+}
+
+.plannig .fa:first-child {
+  font-size: 14px;
 }
 
 .plannig button {
   border: 1px solid #444444;
   padding: 2px 8px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .plannig button:hover {
   background-color: #5a5a5a5d;
 }
 
-header .fa:hover,
-header .fa:hover,
+.fa:hover,
+.fa:hover,
 .additional button:hover,
 .plannig button:hover {
   text-shadow: 0 0 2px #cc3022;
