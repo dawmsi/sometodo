@@ -13,49 +13,105 @@
 
 <body id="body">
     <header id="header">
-        <section id="top-left">
-            <div class="bar-btn"> <a id="hide"><i class="fa fa-eye-slash"></i></a></div>
-            <div class="bar-btn"> <a id="home"><i class="fa fa-home"></i></a></div>
-            <div class="search-area"><i class="fa fa-magnifying-glass"></i></div>
-        </section>
-        <section id="top-right">
-            <div class="bar-btn"> <a id="add"><i class="fa"
-                 style="font-family: Arial, Helvetica, sans-serif;">+</i></a>
+        <div id="top-left">
+            <div class="bar-btn"> <a id="hide" onclick="hideshow()">
+                    <i id="eye" class="fa fa-eye-slash"></i></a></div>
+            <div class="bar-btn"> <a id="home">
+                    <i class="fa fa-home"></i></a></div>
+            <div class="search-area">
+                <i class="fa fa-search"></i>
             </div>
-            <div class="bar-btn"> <a id="help"><i class="fa fa-question-circle-o"></i></a></div>
-            <div class="bar-btn"> <a id="notify"><i class="fa fa-bell-o"></i></a></div>
-            <div class="bar-btn"> <a id="producity"><i class="fa fa-circle-o-notch"></i></a></div>
-            <div class="bar-btn"> <a id="profile"><i class="fa fa-user-circle-o"></i></a></div>
-        </section>
+        </div>
+        <div id="top-right">
+            <div class="bar-btn"> <a id="add">
+                    <i class="fa" style="font-family: Arial, Helvetica, sans-serif;">+</i></a>
+            </div>
+            <div class="bar-btn"> <a id="help">
+                    <i class="fa fa-question-circle-o"></i></a></div>
+            <div class="bar-btn"> <a id="notify">
+                    <i class="fa fa-bell-o bell"></i></a></div>
+            <div class="bar-btn"> <a id="producity">
+                    <i class="fa fa-circle-o-notch"></i></a></div>
+            <div class="bar-btn"> <a id="profile">
+                    <i class="fa fa-user-circle-o"></i></a></div>
+        </div>
     </header>
 
     <aside id="aside">
-        <section class="switch">
-            <ul class="switch-list">
-                <li class="switch-item"><a href="">Previous</a></li>
-                <li class="switch-item"><a href="">Today</a></li>
-                <li class="switch-item"><a href="">Coming</a></li>
-                <li class="switch-item">
-                    <a id="filter-task" href="">Filter</a>
-                    <ul class="filter-list">
-                        <li class="filter-item"><a href="">mark 1</a></li>
-                        <li class="filter-item"><a href="">mark 2</a></li>
-                        <li class="filter-item"><a href="">mark 3</a></li>
+        <div class="aside-containder">
+            <section class="aside-part">
+                <ul class="list">
+                    <li class="item">
+                        <i id="previos" class="fa fa-inbox"></i>
+                        <a href="">Previous</a>
+                        <span class="amount">0</span>
+                    </li>
+                    <li class="item">
+                        <i id="today" class="fa fa-calendar-o"></i>
+                        <a href="">Today</a>
+                        <span class="amount">0</span>
+                    </li>
+                    <li class="item">
+                        <i id="coming" class="fa fa-calendar"></i>
+                        <a href="">Coming</a>
+                        <span class="amount">0</span>
+                    </li>
+                    <ul class="include-items">
+                        <li class="item">
+                            <i id="filters" class="fa fa-th-list" aria-hidden="true"></i>
+                            <a id="filter-task" href="">Filters & marks</a>
+                            <i class="fa">+</i>
+                        </li>
+                        <ul class="list">
+                            <li class="item">
+                                <i class="fa fa-circle"></i>
+                                <a href="">mark 1</a>
+                                <i class="fa fa-ellipsis-h"></i>
+                            </li>
+                            <li class="item">
+                                <i class="fa fa-circle"></i>
+                                <a href="">mark 2</a>
+                                <i class="fa fa-ellipsis-h"></i>
+                            </li>
+                            <li class="item">
+                                <i class="fa fa-circle"></i>
+                                <a href="">mark 3</a>
+                                <i class="fa fa-ellipsis-h"></i>
+                            </li>
+                        </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </section>
-        <section class="projects-wrapper">
-            <a href="#" class="toggle-show">Projects</a>
-            <ul class="projects-list">
-                <li class="project-item"><a href="">project 1</a></li>
-                <li class="project-item"><a href="">project 2</a></li>
-                <li class="project-item"><a href="">project 3</a></li>
-            </ul>
-        </section>
-        <section class="removed">
-            <a href="">Removed</a>
-        </section>
+            </section>
+            <section class="aside-part">
+                <ul class="include-items">
+                    <li class="item">
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        <a href="#" class="toggle-show">Projects</a>
+                        <i class="fa">+</i>
+                    </li>
+                    <ul class="list">
+                        <li class="item">
+                            <i class="fa fa-circle"></i>
+                            <a href="">project 1</a>
+                            <i class="fa fa-ellipsis-h"></i>
+                        </li>
+                        <li class="item">
+                            <i class="fa fa-circle"></i>
+                            <a href="">project 2</a>
+                            <i class="fa fa-ellipsis-h"></i>
+                        </li>
+                        <li class="item">
+                            <i class="fa fa-circle"></i>
+                            <a href="">project 3</a>
+                            <i class="fa fa-ellipsis-h"></i>
+                        </li>
+                    </ul>
+                    </li>
+            </section>
+            <section class="aside-part">
+                <a href="">Removed</a>
+            </section>
+        </div>
     </aside>
 
     <main id="main">
@@ -127,6 +183,7 @@
     </div>
     <script src="js/mainAdder.js"></script>
     <script src="js/pop.js"></script>
+    <script src="js/aside.js"></script>
     <script src="app.js"></script>
 </body>
 

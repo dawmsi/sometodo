@@ -23,24 +23,37 @@ html {
 }
 
 body {
+  z-index: 10;
   position: relative;
   background-color: #1f1f1f;
   color: #fff;
   font-family: "Roboto", sans-serif;
-  min-height: 100%;
+  height: 100%;
   display: grid;
-  grid-template: minmax(48px, auto) 1fr minmax(1px, auto) / 288px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-areas:
-    "header header"
+    "nav nav"
     "aside main";
 }
+
 header {
-  z-index: 20;
+  z-index: 30;
   position: fixed;
   display: grid;
-  grid-template-columns: 288px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
   width: 100%;
-  grid-area: header;
+  grid-area: nav;
+  background-color: #1a1a1a;
+}
+
+main {
+  position: relative;
+  max-height: 100%;
+  grid-area: main;
+  width: 100%;
 }
 
 #top-left,
@@ -49,7 +62,6 @@ header {
   gap: 20px;
   grid-template-rows: 48px;
   align-items: center;
-  background-color: #1a1a1a;
 }
 
 #top-left {
@@ -64,20 +76,13 @@ header {
   padding-right: 28px;
 }
 
-.bar-btn {
+.bar-btn a {
   font-size: 16px;
-}
-.bar-btn #add i {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: center;
-  width: 20px;
+  font-family: serif;
 }
 
-.bar-btn #help {
-  font-size: 19px;
+.bar-btn i {
+  line-height: 16px;
 }
 
 .bar-btn i:hover,
@@ -87,26 +92,227 @@ header {
   border: 0;
 }
 
+.bar-btn #profile i {
+  text-align: center;
+}
+
+.bar-btn #producity i:hover {
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
+
+.bar-btn #notify i:hover {
+  background-color: transparent;
+  transform: rotate(36deg);
+  transition: transform 0.5s;
+}
+.bar-btn #notify:hover {
+  transform: rotate(-36deg);
+  transition: transform 1s;
+}
+
+.bell {
+  display: block;
+  animation: ring 4s 0.8s ease-in-out infinite;
+  transform-origin: 50% 4px;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0);
+  }
+  1% {
+    transform: rotate(30deg);
+  }
+  3% {
+    transform: rotate(-28deg);
+  }
+  5% {
+    transform: rotate(34deg);
+  }
+  7% {
+    transform: rotate(-32deg);
+  }
+  9% {
+    transform: rotate(30deg);
+  }
+  11% {
+    transform: rotate(-28deg);
+  }
+  13% {
+    transform: rotate(26deg);
+  }
+  15% {
+    transform: rotate(-24deg);
+  }
+  17% {
+    transform: rotate(22deg);
+  }
+  19% {
+    transform: rotate(-20deg);
+  }
+  21% {
+    transform: rotate(18deg);
+  }
+  23% {
+    transform: rotate(-16deg);
+  }
+  25% {
+    transform: rotate(14deg);
+  }
+  27% {
+    transform: rotate(-12deg);
+  }
+  29% {
+    transform: rotate(10deg);
+  }
+  31% {
+    transform: rotate(-8deg);
+  }
+  33% {
+    transform: rotate(6deg);
+  }
+  35% {
+    transform: rotate(-4deg);
+  }
+  37% {
+    transform: rotate(2deg);
+  }
+  39% {
+    transform: rotate(-1deg);
+  }
+  41% {
+    transform: rotate(1deg);
+  }
+
+  43% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.bar-btn #help i,
+.bar-btn #home i {
+  font-size: 19px;
+}
+
+.bar-btn #add i {
+  font-size: 25px;
+  line-height: 16px;
+  margin-top: 3px;
+  font-weight: 400;
+  text-align: center;
+  width: 17px;
+  padding-top: 1px;
+}
+
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 aside {
-  z-index: 30;
-  position: fixed;
+  z-index: 20;
+  position: relative;
   width: 288px;
-  top: 49px;
+  height: calc(100% - 48px);
+  top: 48px;
   left: 0;
-  height: 100%;
-  max-height: 100%;
+  bottom: 0;
   grid-area: aside;
-  background-color: #252525;
-  min-height: 100%;
+  transition: all 0.5s;
 }
 
-main {
-  position: relative;
-  max-height: 100%;
-  grid-area: main;
+aside .aside-containder {
+  position: fixed;
+  background-color: #252525;
+  height: 100%;
+  width: 288px;
+  padding: 15px;
+}
+
+.hiden {
+  width: 0;
+  left: -288px;
+}
+
+.aside-part ul {
+  margin: 10px 0;
+}
+
+.aside-part .include-items {
+}
+
+.aside-part .item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
+  padding: 5px;
   width: 100%;
+}
+
+.aside-part .item i:first-child:hover {
+  color: inherit;
+  text-shadow: 0 0 6px #fff;
+}
+
+.aside-part .item i:last-child {
+  visibility: hidden;
+}
+.aside-part .item:hover i:last-child {
+  visibility: visible;
+}
+
+.aside-part .include-items .fa:first-child {
+  font-size: 13px;
+}
+
+.aside-part .include-items ul .fa:first-child {
+  padding-left: 15px;
+}
+
+.aside-part .item {
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.aside-containder .item:hover {
+  background-color: #1a1a1a;
+}
+
+#previos {
+  color: #b0e95c;
+}
+#previos:hover {
+  text-shadow: 0 0 3px #b0e95c;
+}
+
+#today {
+  color: #db4234;
+}
+
+#today:hover {
+  text-shadow: 0 0 3px #db4234;
+}
+
+#coming {
+  color: #66baf3;
+}
+
+#coming:hover {
+  text-shadow: 0 0 3px #66baf3;
+}
+
+#filters {
+  color: #ae5bf3;
+}
+
+#filters:hover {
+  text-shadow: 0 0 3px #ae5bf3;
 }
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
@@ -201,6 +407,7 @@ main {
 .plannig button:hover {
   text-shadow: 0 0 2px #cc3022;
   color: #db4c3f;
+  cursor: pointer;
 }
 .btns-main {
   display: grid;
@@ -244,7 +451,9 @@ main {
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 #content-wrapper {
-  position: relative;
+  z-index: 20;
+  position: inherit;
+  top: 48px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto minmax(auto, 1fr);
@@ -254,10 +463,10 @@ main {
 }
 
 .task-label {
+  z-index: 10;
   position: sticky;
   top: 48px;
   padding: 15px 0 10px 0;
-  z-index: 10;
   background-color: #1f1f1f;
   border-bottom: 1px solid #444444;
   width: 100%;
@@ -291,8 +500,14 @@ main {
   padding: 0 5px;
 }
 
-.btn-remove {
-  width: 100%;
+.btn-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.btn-edit,
+.btn-edit-menu {
+  width: 50%;
   height: 100%;
 }
 
