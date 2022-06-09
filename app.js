@@ -19,11 +19,14 @@ const updateLocal = () => {
     localStorage.setItem('tasksKey', JSON.stringify(tasksArr))
 }
 
+let fakeId = Number(0)
+
 const createTemplate = (task, index) => {
     return `
     <div class="todo-item ${task.completed ? 'checked' : ''}">
         <div class="checkbox-wrapper">
-        <input onclick="toggleTask(${index})" type="checkbox" class="btn-complete" ${task.completed ? 'checked' : ''}>
+        <input onclick="toggleTask(${index})" type="checkbox" id="${'checkTask' + (fakeId+=1)}" class="custom-checkbox" ${task.completed ? 'checked' : ''}>
+        <label for="${'checkTask' + fakeId}"></label>
         </div>
         <div class="nameTask">${task.nameTask}</div>
         <div class="btn-wrapper">
