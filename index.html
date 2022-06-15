@@ -23,7 +23,7 @@
             </div>
         </div>
         <div id="top-right">
-            <div class="bar-btn"> <a id="add">
+            <div class="bar-btn"> <a id="add" onclick="togglePop()">
                     <i class="fa" style="font-family: Arial, Helvetica, sans-serif;">+</i></a>
             </div>
             <div class="bar-btn"> <a id="help">
@@ -123,7 +123,7 @@
             <div class="todos-wrapper">
             </div>
 
-            <div class="line-area">
+            <div class="line-area" onclick="showAdder()">
                 <div class="line"></div>
                 <a class="add-link">Add task
                 </a>
@@ -134,7 +134,8 @@
                 <div class="container">
                     <form id="formMainAdd" action="addBtn">
                         <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
-                        <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea>
+                        <div class="description-of-task">
+                            <textarea placeholder="Description" id="description-task" type="text"></textarea>
                         </div>
                         <div class="btns-line">
                             <div class="plannig">
@@ -151,7 +152,7 @@
                 </div>
                 <div class="btns-main">
                     <button id="cancel" onclick="cancel()">Cancel</button>
-                    <button id="add-task-btn">Add</button>
+                    <button id="add-task-btn" onclick="Task.addTask()">Add</button>
                 </div>
             </div>
         </div>
@@ -161,7 +162,8 @@
         <div class="container">
             <form action="" id="popForm" onsubmit="return false;">
                 <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
-                <div class="description-of-task"><textarea placeholder="Description" type="text"></textarea></div>
+                <div class="description-of-task"><textarea placeholder="Description" id="add-window-pop"
+                        type="text"></textarea></div>
                 <div class="btns-line">
                     <div class="plannig">
                         <button><i class="fa fa-calendar-plus-o"></i>Today</button>
@@ -174,16 +176,17 @@
                     </div>
                     <div class="btns-main">
                         <button id="add-task-btn">Add</button>
-                        <button id="cancelpop">Cancel</button>
+                        <button id="cancelpop" onclick="togglePop()">Cancel</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     </div>
-    <script src="js/mainAdder.js"></script>
+    <script src="js/adder.js"></script>
     <script src="js/pop.js"></script>
     <script src="js/aside.js"></script>
+    <script src="js/Task.js"></script>
     <script src="app.js"></script>
 </body>
 

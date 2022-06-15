@@ -1,0 +1,11 @@
+#pop-adding {
+  z-index: 30;
+  position: fixed;
+  justify-self: center;
+  align-self: center;
+  .container {
+    background-color: #252525;
+    width: 465px;
+    padding: 15px;
+  }
+}

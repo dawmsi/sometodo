@@ -1,0 +1,27 @@
+.line-area {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr;
+  color: #8b8b8bb9;
+  padding-top: 21px;
+  width: 100%;
+  cursor: pointer;
+  .line {
+    border-top: 1px solid #db4c3fec;
+    padding: 10px 0;
+    visibility: hidden;
+  }
+  .add-link {
+    line-height: 21px;
+    left: calc(50% - 1%);
+    margin-top: -8px;
+    padding: 0 10px;
+  }
+}
+.line-area:hover .line {
+  visibility: visible;
+}
+.line-area:hover .add-link {
+  color: #db4c3f;
+  text-shadow: 0 0 2px #db4c3f;
+}

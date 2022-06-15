@@ -1,8 +1,3 @@
-document.querySelector('#add')
-.addEventListener('click', togglePop)
-
-document.querySelector('#cancelpop')
-.addEventListener('click', togglePop)
 
 function togglePop(){
     let pop = document.querySelector('#pop-adding')

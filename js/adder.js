@@ -1,6 +1,3 @@
-const addLink = document.querySelector('.line-area')
-
-addLink.addEventListener('click', showAdder)
 
 function showAdder(){
     document.querySelector('#adding').style.display = 'block'
