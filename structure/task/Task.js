@@ -67,20 +67,17 @@ class Task {
             ))
         updateLocal()
         Task.renderList()
-        document.querySelector('#formMainAdd').reset()
     }
 
     static editTask = (item, index) => {
         tasksArr[index] = 
         updateLocal()
-        console.log(tasksArr)
         Task.renderList()
     }
 
     static removeTask = index => {
         tasksArr.splice(index,1)
         updateLocal()
-        console.log(tasksArr)
         Task.renderList()
     }
 }

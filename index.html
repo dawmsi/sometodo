@@ -116,7 +116,7 @@
 
     <main id="main">
         <div id="content-wrapper">
-            <div class="task-label">
+            <div class="partName">
                 <h2>ToDoList</h2>
             </div>
 
@@ -131,8 +131,8 @@
             </div>
 
             <div id="adding">
-                <div class="container">
-                    <form id="formMainAdd" action="addBtn">
+                <form id="formAdd" action="addBtn" onsubmit="return false;">
+                    <div class="container">
                         <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
                         <div class="description-of-task">
                             <textarea placeholder="Description" id="description-task" type="text"></textarea>
@@ -148,19 +148,19 @@
                                 <button><i class="fa fa-clock-o"></i></button>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div class="btns-main">
-                    <button id="cancel" onclick="cancel()">Cancel</button>
-                    <button id="add-task-btn" onclick="Task.addTask()">Add</button>
-                </div>
+                    </div>
+                    <div class="btns-main">
+                        <button id="cancel" onclick="cancel()">Cancel</button>
+                        <button id="add-task-btn" onclick="add()">Add</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
 
     <div id="pop-adding" class="hiding">
         <div class="container">
-            <form action="" id="popForm" onsubmit="return false;">
+            <form action="" id="popForm">
                 <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
                 <div class="description-of-task"><textarea placeholder="Description" id="add-window-pop"
                         type="text"></textarea></div>
@@ -183,10 +183,10 @@
         </div>
     </div>
     </div>
-    <script src="js/adder.js"></script>
-    <script src="js/pop.js"></script>
-    <script src="js/aside.js"></script>
-    <script src="js/Task.js"></script>
+    <script src="structure/adder/adder.js"></script>
+    <script src="structure/pop/pop.js"></script>
+    <script src="structure/aside/aside.js"></script>
+    <script src="structure/task/Task.js"></script>
     <script src="app.js"></script>
 </body>
 

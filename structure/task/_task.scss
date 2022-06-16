@@ -1,0 +1,106 @@
+.todos-wrapper {
+  min-height: 100%;
+  max-height: 100%;
+  width: 100%;
+  display: grid;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  .todo-item {
+    display: grid;
+    grid-template-columns: minmax(15px, auto) 1fr minmax(50px, auto);
+    grid-template-rows: 1fr;
+    height: fit-content;
+    justify-content: start;
+    align-content: center;
+    border-bottom: 1px solid #444444;
+    padding: 5px;
+    .checkbox-wrapper {
+      justify-items: center;
+      align-content: center;
+      .custom-checkbox {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+      .custom-checkbox + label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+      }
+      .custom-checkbox + label::before {
+        content: "";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: 18px;
+        text-align: center;
+        line-height: 15.2px;
+        text-rendering: auto;
+        display: block;
+        width: 16px;
+        height: 16px;
+        justify-self: center;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 2px solid #db4234;
+        border-radius: 50%;
+        margin: 5px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+      }
+      .custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+        content: "\f00c";
+      }
+      .custom-checkbox:checked + label::before {
+        content: "\f00c";
+        border-color: #252525;
+        background-color: #abe94d;
+        color: #303030;
+        top: 0;
+      }
+      .custom-checkbox:checked + label:hover::before {
+        content: "\f00d";
+      }
+      .custom-checkbox:focus:not(:checked) + label::before {
+        border-color: #80bdff;
+      }
+      .custom-checkbox:focus + label::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+    }
+    .detailsTask {
+      display: grid;
+      grid-auto-flow: row;
+      width: inherit;
+      overflow-x: hidden;
+      .nameTask {
+        text-align: left;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        line-height: 30px;
+      }
+      .descriptionTask {
+        width: inherit;
+        font-size: 14px;
+        color: silver;
+      }
+    }
+    .btn-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .btn-edit,
+      .btn-edit-menu {
+        width: 50%;
+        height: 100%;
+      }
+    }
+  }
+  .todo-item:hover {
+  }
+}
+
+.checked .nameTask,
+.checked .descriptionTask,
+.checked .btn-wrapper {
+  opacity: 0.4;
+}

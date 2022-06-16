@@ -7,6 +7,11 @@
     padding: 6px;
     border: 1px solid #444444;
     border-radius: 8px;
+
+    .description-of-task textarea {
+      font-size: 14px;
+    }
+
     .name-of-task input,
     .description-of-task textarea {
       background-color: transparent;
@@ -27,19 +32,6 @@
       grid-template-rows: 1fr;
       grid-template-columns: auto auto;
       justify-content: space-between;
-      .fa,
-      .fa {
-        font-size: 15px;
-        margin: 1px 2px;
-      }
-      .fa:hover,
-      .fa:hover,
-      .additional button:hover,
-      .plannig button:hover {
-        text-shadow: 0 0 2px #cc3022;
-        color: #db4c3f;
-        cursor: pointer;
-      }
 
       .plannig .fa:first-child {
         font-size: 14px;

@@ -4,11 +4,15 @@ function showAdder(){
 }
 
 
+function add(){
+    Task.addTask()
+    document.querySelector('#formAdd').reset()
+}
+
 function cancel(){
     document.querySelector('#cancel')
     .parentElement
     .parentElement
     .style.display = "none";
-    document.querySelector('.add-link').style.color = "#db4c3f";
-    document.querySelector('#formMainAdd').reset();
+    document.querySelector('#formAdd').reser();
 }

@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
-@import "../sass/top";
-@import "../sass/aside";
-@import "../sass/line";
-@import "../sass/adder";
-@import "../sass/task";
-@import "../sass/pop";
+@import "../structure/top/top";
+@import "../structure/aside/aside";
+@import "../structure/line/line";
+@import "../structure/adder/adder";
+@import "../structure/task/task";
+@import "../structure/pop/pop";
 
 * {
   box-sizing: border-box;
@@ -29,6 +29,19 @@ html {
       "nav nav"
       "aside main";
 
+    .fa,
+    .fa {
+      font-size: 15px;
+      margin: 1px 2px;
+    }
+    .fa:hover,
+    .fa:hover,
+    .additional button:hover,
+    .plannig button:hover {
+      text-shadow: 0 0 2px #cc3022;
+      color: #db4c3f;
+      cursor: pointer;
+    }
     button,
     a {
       cursor: pointer;
@@ -81,6 +94,15 @@ html {
         align-items: center;
         max-height: 100%;
         padding: 0 4%;
+        .partName {
+          z-index: 10;
+          position: sticky;
+          top: 48px;
+          padding: 15px 0 10px 0;
+          background-color: #1f1f1f;
+          border-bottom: 1px solid #444444;
+          width: 100%;
+        }
       }
     }
 
