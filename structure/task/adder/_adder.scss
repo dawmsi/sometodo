@@ -13,6 +13,8 @@
     }
 
     .name-of-task input,
+    .description-of-task textarea,
+    .name-of-task input:active,
     .description-of-task textarea {
       background-color: transparent;
       outline: none;
@@ -54,21 +56,21 @@
     justify-content: end;
     gap: 10px;
     margin: 13px 0 2px 0;
-    button {
-      padding: 3px 9px;
-      font-size: 16px;
-    }
 
     button:hover {
       background-color: #5a5a5a5d;
     }
 
     #add-task-btn {
-      background-color: #db4234;
-    }
-    #add-task-btn:hover {
-      background-color: #eb2a26a1;
-      box-shadow: 0 0 2px #db4234;
+      button {
+        background-color: #db4234;
+        padding: 3px 9px;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #eb2a26a1;
+        box-shadow: 0 0 2px #db4234;
+      }
     }
   }
 }

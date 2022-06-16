@@ -333,6 +333,8 @@ aside .aside-containder .aside-part .item #project:hover {
   font-size: 14px;
 }
 #adding .container .name-of-task input,
+#adding .container .description-of-task textarea,
+#adding .container .name-of-task input:active,
 #adding .container .description-of-task textarea {
   background-color: transparent;
   outline: none;
