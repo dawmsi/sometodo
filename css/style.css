@@ -378,17 +378,15 @@ aside .aside-containder .aside-part .item #project:hover {
   gap: 10px;
   margin: 13px 0 2px 0;
 }
-#adding .btns-main button {
-  padding: 3px 9px;
-  font-size: 16px;
-}
 #adding .btns-main button:hover {
   background-color: rgba(90, 90, 90, 0.3647058824);
 }
-#adding .btns-main #add-task-btn {
+#adding .btns-main #add-task-btn button {
   background-color: #db4234;
+  padding: 3px 9px;
+  font-size: 16px;
 }
-#adding .btns-main #add-task-btn:hover {
+#adding .btns-main #add-task-btn button:hover {
   background-color: rgba(235, 42, 38, 0.631372549);
   box-shadow: 0 0 2px #db4234;
 }
