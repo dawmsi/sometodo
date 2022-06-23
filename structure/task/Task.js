@@ -15,62 +15,65 @@ class Task extends Adder {
             </div>
             <div class="btn-wrapper">
                 <button onclick="Adder.showAdder(${index})" class="btn-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                <button onclick="Task.removeTask(${index})" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i></button>
+                <button onclick="Task.removeTask(${index})" class="btn-del"><i class="fa fa-trash"></i></button>
+                <button onclick="renderNewPop(PopIncome)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i></button>
             </div>
         </div>
-        `;
-    };
+        `
+    }
 
     static filterTasks = () => {
         let activeTasks =
-            tasksArr.length && tasksArr.filter((item) => !item.completed);
+            tasksArr.length && tasksArr.filter((item) => !item.completed)
         let completedTasks =
-            tasksArr.length && tasksArr.filter((item) => item.completed);
-        tasksArr = [...activeTasks, ...completedTasks];
-    };
+            tasksArr.length && tasksArr.filter((item) => item.completed)
+        tasksArr = [...activeTasks, ...completedTasks]
+    }
 
     static renderList = () => {
-        Task.parent.innerHTML = "";
+        Task.parent.innerHTML = ""
         if (tasksArr.length > 0) {
-            Task.filterTasks();
+            Task.filterTasks()
             tasksArr.forEach((item, index) => {
-                Task.parent.innerHTML += Task.createTask(item, index);
-            });
-            todoItemEls = document.querySelectorAll(".todo-item");
+                Task.parent.innerHTML += Task.createTask(item, index)
+            })
+            todoItemEls = document.querySelectorAll(".todo-item")
         }
-    };
+    }
 
     static toggleTask = (index) => {
-        tasksArr[index].completed = !tasksArr[index].completed;
+        tasksArr[index].completed = !tasksArr[index].completed
         if (tasksArr[index].completed) {
-            todoItemEls[index].classList.add("checked");
+            todoItemEls[index].classList.add("checked")
         } else {
-            todoItemEls[index].classList.remove("checked");
+            todoItemEls[index].classList.remove("checked")
         }
-        updateLocal();
-        Task.renderList();
-    };
+        updateLocal()
+        Task.renderList()
+    }
 
     static addTask = () => {
-        tasksArr.push(new Task(Task.taskInput.value, Task.descriptionInput.value));
-        updateLocal();
-        Task.renderList();
-    };
+        tasksArr.push(
+            new Task(Task.taskInput.value, Task.descriptionInput.value)
+        )
+        updateLocal()
+        Task.renderList()
+    }
 
     static editTask = (indexTask) => {
         tasksArr[indexTask] = new Task(
             Task.taskInput.value,
             Task.descriptionInput.value
-        );
-        updateLocal();
-        Task.renderList();
-    };
+        )
+        updateLocal()
+        Task.renderList()
+    }
 
     static removeTask = (index) => {
-        console.log(index);
+        console.log(index)
 
-        tasksArr.splice(index, 1);
-        updateLocal();
-        Task.renderList();
-    };
+        tasksArr.splice(index, 1)
+        updateLocal()
+        Task.renderList()
+    }
 }

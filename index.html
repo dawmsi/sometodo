@@ -23,7 +23,7 @@
             </div>
         </div>
         <div id="top-right">
-            <div class="bar-btn"> <a id="add" onclick="togglePop()">
+            <div class="bar-btn"> <a id="add" onclick="">
                     <i class="fa" style="font-family: Arial, Helvetica, sans-serif;">+</i></a>
             </div>
             <div class="bar-btn"> <a id="help">
@@ -159,6 +159,13 @@
     </main>
 
 
+    <div id="pop-area" class="hiding" onclick="togglePop()">
+        <div class="container" onclick="event.stopPropagation()">
+
+        </div>
+    </div>
+
+    <script src="structure/task/editor/editor.js"></script>
     <script src="structure/pop/pop.js"></script>
     <script src="structure/adder/adder.js"></script>
     <script src="structure/aside/aside.js"></script>

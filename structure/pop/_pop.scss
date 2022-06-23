@@ -1,11 +1,15 @@
-#pop-adding {
-  z-index: 30;
-  position: fixed;
-  justify-self: center;
-  align-self: center;
-  .container {
-    background-color: #252525;
-    width: 465px;
-    padding: 15px;
-  }
+#pop-area {
+    z-index: 30;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    .container {
+        position: relative;
+    }
 }

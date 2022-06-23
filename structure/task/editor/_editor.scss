@@ -1,0 +1,21 @@
+.edit-menu {
+    display: grid;
+    grid-auto-flow: row;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #252525;
+    .edit-selector a {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        align-items: center;
+        padding: 4px 8px;
+        gap: 10px;
+    }
+    .edit-selector:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .fa {
+        font-size: 22px;
+    }
+}
