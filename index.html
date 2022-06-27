@@ -42,19 +42,19 @@
             <section class="aside-part">
                 <ul class="list">
                     <li class="item">
-                        <i id="previos" class="fa fa-inbox"></i>
+                        <i id="previous" class="fa fa-inbox"></i>
                         <a href="">Previous</a>
-                        <span class="amount">0</span>
+                        <span id="previousCount" class="amount">0</span>
                     </li>
                     <li class="item">
                         <i id="today" class="fa fa-calendar-o"></i>
                         <a href="">Today</a>
-                        <span class="amount">0</span>
+                        <span id="todayCount" class="amount">0</span>
                     </li>
                     <li class="item">
                         <i id="coming" class="fa fa-calendar"></i>
                         <a href="">Coming</a>
-                        <span class="amount">0</span>
+                        <span id="comingCount" class="amount">0</span>
                     </li>
                     <ul class="include-items">
                         <li class="item">
@@ -165,6 +165,8 @@
         </div>
     </div>
 
+
+    <script src="/structure/aside/countersOfTasks/counters.js"></script>
     <script src="structure/task/editor/editor.js"></script>
     <script src="structure/pop/pop.js"></script>
     <script src="structure/adder/adder.js"></script>

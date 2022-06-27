@@ -1,90 +1,90 @@
 .hiden {
-  width: 0;
-  left: -288px;
+    width: 0;
+    left: -288px;
 }
 
 aside {
-  .aside-containder {
-    position: fixed;
-    background-color: #252525;
-    height: 100%;
-    width: 288px;
-    padding: 15px;
+    .aside-containder {
+        position: fixed;
+        background-color: #252525;
+        height: 100%;
+        width: 288px;
+        padding: 15px;
 
-    .aside-part {
-      .include-items ul .fa:first-child {
-        padding-left: 15px;
-        font-size: 10px;
-      }
+        .aside-part {
+            .include-items ul .fa:first-child {
+                padding-left: 15px;
+                font-size: 10px;
+            }
 
-      .item:hover {
-        background-color: #1a1a1a;
-      }
+            .item:hover {
+                background-color: #1a1a1a;
+            }
 
-      .include-items .list i:last-child {
-        visibility: hidden;
-      }
+            .include-items .list i:last-child {
+                visibility: hidden;
+            }
 
-      .item:hover i:last-child {
-        visibility: visible;
-      }
+            .item:hover i:last-child {
+                visibility: visible;
+            }
 
-      .item {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        gap: 8px;
-        justify-content: space-between;
-        align-items: center;
-        margin: 2px;
-        padding: 4px 8px;
-        border: 0;
-        border-radius: 4px;
-        width: 100%;
-        i:first-child:hover {
-          color: inherit;
-          text-shadow: 0 0 6px #fff;
+            .item {
+                display: grid;
+                grid-template-columns: auto 1fr auto;
+                gap: 8px;
+                justify-content: space-between;
+                align-items: center;
+                margin: 2px;
+                padding: 4px 8px;
+                border: 0;
+                border-radius: 4px;
+                width: 100%;
+                i:first-child:hover {
+                    color: inherit;
+                    text-shadow: 0 0 6px #fff;
+                }
+                #previous {
+                    color: #b0e95c;
+                }
+                #previous:hover {
+                    text-shadow: 0 0 3px #b0e95c;
+                }
+
+                #today {
+                    color: #db4234;
+                }
+
+                #today:hover {
+                    text-shadow: 0 0 3px #db4234;
+                }
+
+                #coming {
+                    color: #66baf3;
+                }
+
+                #coming:hover {
+                    text-shadow: 0 0 3px #66baf3;
+                }
+
+                #marks {
+                    color: #ae5bf3;
+                    padding: 0 2px;
+                }
+
+                #marks:hover {
+                    text-shadow: 0 0 3px #ae5bf3;
+                }
+
+                #project {
+                    font-size: 18px;
+                    color: #cc3022;
+                }
+
+                #project:hover {
+                    text-shadow: 0 0 3px #db4c3f;
+                }
+            }
         }
-        #previos {
-          color: #b0e95c;
-        }
-        #previos:hover {
-          text-shadow: 0 0 3px #b0e95c;
-        }
-
-        #today {
-          color: #db4234;
-        }
-
-        #today:hover {
-          text-shadow: 0 0 3px #db4234;
-        }
-
-        #coming {
-          color: #66baf3;
-        }
-
-        #coming:hover {
-          text-shadow: 0 0 3px #66baf3;
-        }
-
-        #marks {
-          color: #ae5bf3;
-          padding: 0 2px;
-        }
-
-        #marks:hover {
-          text-shadow: 0 0 3px #ae5bf3;
-        }
-
-        #project {
-          font-size: 18px;
-          color: #cc3022;
-        }
-
-        #project:hover {
-          text-shadow: 0 0 3px #db4c3f;
-        }
-      }
     }
-  }
 }

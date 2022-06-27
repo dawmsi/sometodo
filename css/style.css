@@ -255,10 +255,10 @@ aside .aside-containder .aside-part .item i:first-child:hover {
   color: inherit;
   text-shadow: 0 0 6px #fff;
 }
-aside .aside-containder .aside-part .item #previos {
+aside .aside-containder .aside-part .item #previous {
   color: #b0e95c;
 }
-aside .aside-containder .aside-part .item #previos:hover {
+aside .aside-containder .aside-part .item #previous:hover {
   text-shadow: 0 0 3px #b0e95c;
 }
 aside .aside-containder .aside-part .item #today {
@@ -501,6 +501,10 @@ aside .aside-containder .aside-part .item #project:hover {
 .checked .descriptionTask,
 .checked .btn-wrapper {
   opacity: 0.4;
+}
+
+.hide {
+  display: none;
 }
 
 #pop-area {

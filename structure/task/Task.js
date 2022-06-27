@@ -10,7 +10,7 @@ class Task extends Adder {
             </div>
             <div class="detailsTask">
             <div class="nameTask"><p>${task.nameTask}</p></div>
-            <div class="descriptionTask ${task.descriptionTask ? "hidden" : ""
+            <div class="descriptionTask ${task.descriptionTask ? "" : "hide"
             }"><p>${task.descriptionTask}</p></div>
             </div>
             <div class="btn-wrapper">
@@ -42,12 +42,24 @@ class Task extends Adder {
     }
 
     static toggleTask = (index) => {
-        tasksArr[index].completed = !tasksArr[index].completed
-        if (tasksArr[index].completed) {
-            todoItemEls[index].classList.add("checked")
-        } else {
-            todoItemEls[index].classList.remove("checked")
+        if (index !== undefined) {
+            tasksArr[index].completed = !tasksArr[index].completed
+            if (tasksArr[index].completed) {
+                todoItemEls[index].classList.add("checked")
+                previousTasks.unshift(tasksArr[index])
+            } else {
+                todoItemEls[index].classList.remove("checked")
+                previousTasks.splice(previousTasks.indexOf(tasksArr[index]), 1)
+            }
+        } else if (previousTasks.length <= tasksArr.length) {
+            tasksArr.filter(item => {
+                item.completed
+                    ? previousTasks.unshift(item)
+                    : previousTasks = []
+            })
         }
+        previousCount.innerText = previousTasks.length
+        todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
         updateLocal()
         Task.renderList()
     }
@@ -58,6 +70,7 @@ class Task extends Adder {
         )
         updateLocal()
         Task.renderList()
+        Task.toggleTask()
     }
 
     static editTask = (indexTask) => {
@@ -70,9 +83,8 @@ class Task extends Adder {
     }
 
     static removeTask = (index) => {
-        console.log(index)
-
         tasksArr.splice(index, 1)
+        Task.toggleTask()
         updateLocal()
         Task.renderList()
     }
