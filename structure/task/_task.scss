@@ -86,13 +86,6 @@
             }
         }
         .btn-wrapper {
-            display: grid;
-            grid-auto-flow: column;
-            .btn-edit,
-            .btn-edit-menu {
-                width: 50%;
-                height: 100%;
-            }
             .btn-edit-menu {
                 position: relative;
             }

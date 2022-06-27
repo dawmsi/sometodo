@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
-@import "../structure/aside/priority&marks/marks";
+@import "../structure/aside/priority_marks/marks";
 @import "../structure/top/top";
 @import "../structure/aside/aside";
 @import "../structure/adder/line/line";
@@ -52,7 +52,7 @@ html {
         .fa,
         .fa {
             font-size: 15px;
-            margin: 1px 2px;
+            margin: 0 3px;
         }
         .fa:hover,
         .fa:hover,
@@ -62,6 +62,14 @@ html {
             color: #db4c3f;
             cursor: pointer;
         }
+
+        .btn-wrapper {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+        }
         button,
         a {
             cursor: pointer;
@@ -70,8 +78,11 @@ html {
         button {
             background-color: transparent;
             border: none;
-            padding: 3px;
             border-radius: 4px;
+            margin: auto;
+        }
+        button i {
+            align-self: center;
         }
 
         header {

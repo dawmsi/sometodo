@@ -253,7 +253,7 @@ aside .aside-containder .aside-part .item {
   gap: 8px;
   justify-content: space-between;
   align-items: center;
-  margin: 2px;
+  margin: 3px 0;
   padding: 4px 8px;
   border: 0;
   border-radius: 4px;
@@ -318,7 +318,7 @@ aside .aside-containder .aside-part .include-list .list .fa:first-child {
   font-size: 10px;
 }
 aside .aside-containder .aside-part .include-list .list .item .btn-wrapper {
-  visibility: hidden;
+  visibility: visible;
 }
 aside .aside-containder .aside-part .include-list .list .item .btn-wrapper i {
   font-size: 13px;
@@ -501,15 +501,6 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   font-size: 14px;
   color: silver;
 }
-.todos-wrapper .todo-item .btn-wrapper {
-  display: grid;
-  grid-auto-flow: column;
-}
-.todos-wrapper .todo-item .btn-wrapper .btn-edit,
-.todos-wrapper .todo-item .btn-wrapper .btn-edit-menu {
-  width: 50%;
-  height: 100%;
-}
 .todos-wrapper .todo-item .btn-wrapper .btn-edit-menu {
   position: relative;
 }
@@ -608,7 +599,7 @@ html body textarea::placeholder {
 html body .fa,
 html body .fa {
   font-size: 15px;
-  margin: 1px 2px;
+  margin: 0 3px;
 }
 html body .fa:hover,
 html body .fa:hover,
@@ -618,6 +609,13 @@ html body .plannig button:hover {
   color: #db4c3f;
   cursor: pointer;
 }
+html body .btn-wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
 html body button,
 html body a {
   cursor: pointer;
@@ -626,8 +624,11 @@ html body a {
 html body button {
   background-color: transparent;
   border: none;
-  padding: 3px;
   border-radius: 4px;
+  margin: auto;
+}
+html body button i {
+  align-self: center;
 }
 html body header {
   z-index: 30;

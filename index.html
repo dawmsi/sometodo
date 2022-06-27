@@ -62,15 +62,15 @@
                     <li class="item">
                         <i id="marks" class="fa fa-bookmark-o" aria-hidden="true"></i>
                         <a id="filter-task" href="">Priority & marks</a>
-                        <button onclick="renderNewPop(inputMarkPop)"><i class="fa plus">+</i></button>
+                        <button onclick="adderMark ()"><i class="fa plus">+</i></button>
                     </li>
                     <ul class="list">
                         <li class="item">
                             <i class="fa fa-tag"></i>
                             <a href="">mark 1</a>
                             <div class="btn-wrapper">
-                                <i class="fa fa-edit"></i>
-                                <i class="fa fa-trash"></i>
+                                <button><i class="fa fa-edit"></i></button>
+                                <button><i class="fa fa-trash"></i></button>
                             </div>
                         </li>
                     </ul>
@@ -163,7 +163,9 @@
         </div>
     </div>
 
+    <script src="structure/aside/priority_marks/Mark.js"></script>
     <script src="structure/aside/priority_marks/marks.js"></script>
+    <script src="structure/aside/priority_marks/add_mark.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
     <script src="structure/task/editor/editor.js"></script>
     <script src="structure/pop/pop.js"></script>

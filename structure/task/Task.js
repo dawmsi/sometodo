@@ -59,7 +59,10 @@ class Task extends Adder {
             })
         }
         previousCount.innerText = previousTasks.length
-        todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
+        console.log()
+        tasksArr.length
+            ? todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
+            : todayCount.innerText = ""
         updateLocal()
         Task.renderList()
     }
@@ -68,6 +71,7 @@ class Task extends Adder {
         tasksArr.push(
             new Task(Task.taskInput.value, Task.descriptionInput.value)
         )
+
         updateLocal()
         Task.renderList()
         Task.toggleTask()
