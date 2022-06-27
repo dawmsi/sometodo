@@ -12,23 +12,11 @@ aside {
         padding: 15px;
 
         .aside-part {
-            .include-items ul .fa:first-child {
-                padding-left: 15px;
-                font-size: 10px;
+            .list {
+                .item:hover {
+                    background-color: #1a1a1a;
+                }
             }
-
-            .item:hover {
-                background-color: #1a1a1a;
-            }
-
-            .include-items .list i:last-child {
-                visibility: hidden;
-            }
-
-            .item:hover i:last-child {
-                visibility: visible;
-            }
-
             .item {
                 display: grid;
                 grid-template-columns: auto 1fr auto;
@@ -40,10 +28,6 @@ aside {
                 border: 0;
                 border-radius: 4px;
                 width: 100%;
-                i:first-child:hover {
-                    color: inherit;
-                    text-shadow: 0 0 6px #fff;
-                }
                 #previous {
                     color: #b0e95c;
                 }
@@ -83,6 +67,38 @@ aside {
 
                 #project:hover {
                     text-shadow: 0 0 3px #db4c3f;
+                }
+                .plus {
+                    visibility: hidden;
+                    font-size: 18px;
+                }
+                .amount {
+                    font-size: 14px;
+                    padding: 0 3px;
+                }
+            }
+            .include-list:hover .plus {
+                visibility: visible;
+            }
+            .include-list {
+                .item > i:first-child:hover {
+                    color: white;
+                    text-shadow: 0 0 6px white;
+                }
+                .list {
+                    padding-left: 13px;
+                    .fa:first-child {
+                        font-size: 10px;
+                    }
+                    .item .btn-wrapper {
+                        visibility: hidden;
+                        i {
+                            font-size: 13px;
+                        }
+                    }
+                    .item:hover .btn-wrapper {
+                        visibility: visible;
+                    }
                 }
             }
         }

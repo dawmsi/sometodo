@@ -226,18 +226,8 @@ aside .aside-containder {
   width: 288px;
   padding: 15px;
 }
-aside .aside-containder .aside-part .include-items ul .fa:first-child {
-  padding-left: 15px;
-  font-size: 10px;
-}
-aside .aside-containder .aside-part .item:hover {
+aside .aside-containder .aside-part .list .item:hover {
   background-color: #1a1a1a;
-}
-aside .aside-containder .aside-part .include-items .list i:last-child {
-  visibility: hidden;
-}
-aside .aside-containder .aside-part .item:hover i:last-child {
-  visibility: visible;
 }
 aside .aside-containder .aside-part .item {
   display: grid;
@@ -250,10 +240,6 @@ aside .aside-containder .aside-part .item {
   border: 0;
   border-radius: 4px;
   width: 100%;
-}
-aside .aside-containder .aside-part .item i:first-child:hover {
-  color: inherit;
-  text-shadow: 0 0 6px #fff;
 }
 aside .aside-containder .aside-part .item #previous {
   color: #b0e95c;
@@ -286,6 +272,36 @@ aside .aside-containder .aside-part .item #project {
 }
 aside .aside-containder .aside-part .item #project:hover {
   text-shadow: 0 0 3px #db4c3f;
+}
+aside .aside-containder .aside-part .item .plus {
+  visibility: hidden;
+  font-size: 18px;
+}
+aside .aside-containder .aside-part .item .amount {
+  font-size: 14px;
+  padding: 0 3px;
+}
+aside .aside-containder .aside-part .include-list:hover .plus {
+  visibility: visible;
+}
+aside .aside-containder .aside-part .include-list .item > i:first-child:hover {
+  color: white;
+  text-shadow: 0 0 6px white;
+}
+aside .aside-containder .aside-part .include-list .list {
+  padding-left: 13px;
+}
+aside .aside-containder .aside-part .include-list .list .fa:first-child {
+  font-size: 10px;
+}
+aside .aside-containder .aside-part .include-list .list .item .btn-wrapper {
+  visibility: hidden;
+}
+aside .aside-containder .aside-part .include-list .list .item .btn-wrapper i {
+  font-size: 13px;
+}
+aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper {
+  visibility: visible;
 }
 
 .line-area {
@@ -471,7 +487,7 @@ aside .aside-containder .aside-part .item #project:hover {
   display: grid;
   grid-auto-flow: row;
   width: inherit;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .todos-wrapper .todo-item .detailsTask .nameTask {
   text-align: left;
