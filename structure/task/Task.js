@@ -58,18 +58,23 @@ class Task extends Adder {
                     : previousTasks = []
             })
         }
-        previousCount.innerText = previousTasks.length
-        console.log()
+
+        previousTasks.length
+            ? previousCount.innerText = previousTasks.length
+            : ''
+
         tasksArr.length
             ? todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
-            : todayCount.innerText = ""
+            : todayCount.innerText = ''
         updateLocal()
         Task.renderList()
     }
 
     static addTask = () => {
         tasksArr.push(
-            new Task(Task.taskInput.value, Task.descriptionInput.value)
+            new Task(
+                Task.taskInput.value,
+                Task.descriptionInput.value)
         )
 
         updateLocal()

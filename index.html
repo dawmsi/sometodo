@@ -59,20 +59,26 @@
             </section>
             <section class="aside-part">
                 <ul class="include-list">
-                    <li class="item">
+                    <li class="item mark">
                         <i id="marks" class="fa fa-bookmark-o" aria-hidden="true"></i>
                         <a id="filter-task" href="">Priority & marks</a>
-                        <button onclick="adderMark ()"><i class="fa plus">+</i></button>
+                        <button onclick=""><i class="fa plus">+</i></button>
                     </li>
-                    <ul class="list">
-                        <li class="item">
-                            <i class="fa fa-tag"></i>
-                            <a href="">mark 1</a>
-                            <div class="btn-wrapper">
-                                <button><i class="fa fa-edit"></i></button>
-                                <button><i class="fa fa-trash"></i></button>
-                            </div>
-                        </li>
+                    <div class="markEditor">
+                        <select id="priority">
+                            <option value="yellow">yellow</option>
+                            <option value="orange">orange</option>
+                            <option value="red"><i class="fa fa-flag"></i>red</option>
+                            <option selected hidden disabled>priority</option>
+                        </select>
+                        <input id="inputName" placeholder="Write name of mark" type="text">
+                        <div class="btn-wrapper"><button onclick="Mark.adderMark()">
+                                <i class="fa fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <ul class="list" id="placeAdder">
+
                     </ul>
                 </ul>
                 <ul class="include-list">
@@ -164,8 +170,6 @@
     </div>
 
     <script src="structure/aside/priority_marks/Mark.js"></script>
-    <script src="structure/aside/priority_marks/marks.js"></script>
-    <script src="structure/aside/priority_marks/add_mark.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
     <script src="structure/task/editor/editor.js"></script>
     <script src="structure/pop/pop.js"></script>

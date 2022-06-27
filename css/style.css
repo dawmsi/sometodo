@@ -8,13 +8,17 @@
   align-items: center;
   border: 1px solid #444;
   border-radius: 3px;
-  width: 280px;
-  height: auto;
 }
 .markEditor select {
   background: #444;
   border: none;
   color: white;
+}
+.markEditor i.fa {
+  font-size: 13px;
+}
+.markEditor i.fa:hover {
+  color: orange;
 }
 
 header #top-left,
@@ -315,10 +319,10 @@ aside .aside-containder .aside-part .include-list .list {
   padding-left: 13px;
 }
 aside .aside-containder .aside-part .include-list .list .fa:first-child {
-  font-size: 10px;
+  font-size: 13px;
 }
 aside .aside-containder .aside-part .include-list .list .item .btn-wrapper {
-  visibility: visible;
+  visibility: hidden;
 }
 aside .aside-containder .aside-part .include-list .list .item .btn-wrapper i {
   font-size: 13px;
@@ -467,6 +471,7 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
 }
 .todos-wrapper .todo-item .checkbox-wrapper .custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
   content: "\f00c";
+  cursor: pointer;
 }
 .todos-wrapper .todo-item .checkbox-wrapper .custom-checkbox:checked + label::before {
   content: "\f00c";

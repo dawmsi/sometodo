@@ -50,6 +50,7 @@
             .custom-checkbox:not(:disabled):not(:checked)
                 + label:hover::before {
                 content: "\f00c";
+                cursor: pointer;
             }
             .custom-checkbox:checked + label::before {
                 content: "\f00c";
