@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
+@import "../structure/aside/priority&marks/marks";
 @import "../structure/top/top";
 @import "../structure/aside/aside";
 @import "../structure/adder/line/line";
@@ -29,6 +30,24 @@ html {
         grid-template-areas:
             "nav nav"
             "aside main";
+
+        input,
+        textarea,
+        input:active,
+        textarea {
+            background-color: transparent;
+            outline: none;
+            border: 0;
+            color: #fff;
+            margin: 2px 0;
+            width: 100%;
+            resize: none;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #5a5a5a;
+        }
 
         .fa,
         .fa {

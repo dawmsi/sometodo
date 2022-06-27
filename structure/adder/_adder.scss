@@ -1,76 +1,59 @@
 #adding {
-  width: 100%;
-  display: none;
-  padding: 5px 0 10px 0;
-  .container {
     width: 100%;
-    padding: 6px;
-    border: 1px solid #444444;
-    border-radius: 8px;
-
-    .description-of-task textarea {
-      font-size: 14px;
-    }
-
-    .name-of-task input,
-    .description-of-task textarea,
-    .name-of-task input:active,
-    .description-of-task textarea {
-      background-color: transparent;
-      outline: none;
-      border: 0;
-      color: #fff;
-      margin: 2px 0;
-      width: 100%;
-      resize: none;
-    }
-
-    .name-of-task input::placeholder,
-    .description-of-task textarea::placeholder {
-      color: #5a5a5a;
-    }
-    .btns-line {
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: auto auto;
-      justify-content: space-between;
-
-      .plannig .fa:first-child {
-        font-size: 14px;
-      }
-
-      .plannig button {
+    display: none;
+    padding: 5px 0 10px 0;
+    .container {
+        width: 100%;
+        padding: 6px;
         border: 1px solid #444444;
-        padding: 2px 8px;
-        font-size: 15px;
-      }
+        border-radius: 8px;
 
-      .plannig button:hover {
-        background-color: #5a5a5a5d;
-      }
-    }
-  }
-  .btns-main {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: end;
-    gap: 10px;
-    margin: 13px 0 2px 0;
+        .description-of-task textarea {
+            font-size: 14px;
+        }
 
-    button:hover {
-      background-color: #5a5a5a5d;
-    }
+        .btns-line {
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: auto auto;
+            justify-content: space-between;
 
-    #add-task-btn {
-      button {
-        background-color: #db4234;
-        padding: 3px 9px;
-        font-size: 16px;
-      }
-      button:hover {
-        background-color: #eb2a26a1;
-        box-shadow: 0 0 2px #db4234;
-      }
+            .plannig .fa:first-child {
+                font-size: 14px;
+            }
+
+            .plannig button {
+                border: 1px solid #444444;
+                padding: 2px 8px;
+                font-size: 15px;
+            }
+
+            .plannig button:hover {
+                background-color: #5a5a5a5d;
+            }
+        }
     }
-  }
+    .btns-main {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: end;
+        gap: 10px;
+        margin: 13px 0 2px 0;
+
+        button:hover {
+            background-color: #5a5a5a5d;
+        }
+
+        #add-task-btn {
+            button {
+                background-color: #db4234;
+                padding: 3px 9px;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #eb2a26a1;
+                box-shadow: 0 0 2px #db4234;
+            }
+        }
+    }
 }

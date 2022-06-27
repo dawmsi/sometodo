@@ -71,6 +71,11 @@ aside {
                 .plus {
                     visibility: hidden;
                     font-size: 18px;
+                    line-height: 10px;
+                    background-color: #5a5a5a5d;
+                    padding: 1px;
+                    border-radius: 50%;
+                    border: 1px solid #5a5a5a5d;
                 }
                 .amount {
                     font-size: 14px;
