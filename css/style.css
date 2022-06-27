@@ -10,9 +10,16 @@
   border-radius: 3px;
 }
 .markEditor select {
-  background: #444;
+  font-family: "FontAwesome", "Second Font name";
+  background-color: transparent;
   border: none;
   color: white;
+}
+.markEditor option {
+  background-color: #444;
+  font-family: "FontAwesome", "Second Font name";
+  text-align: center;
+  line-height: 17px;
 }
 .markEditor i.fa {
   font-size: 13px;

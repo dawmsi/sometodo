@@ -9,9 +9,16 @@
     border-radius: 3px;
 
     select {
-        background: #444;
+        font-family: "FontAwesome", "Second Font name";
+        background-color: transparent;
         border: none;
         color: white;
+    }
+    option {
+        background-color: #444;
+        font-family: "FontAwesome", "Second Font name";
+        text-align: center;
+        line-height: 17px;
     }
     i.fa {
         font-size: 13px;
