@@ -17,9 +17,11 @@
 }
 .markEditor option {
   background-color: #444;
-  font-family: "FontAwesome", "Second Font name";
   text-align: center;
   line-height: 17px;
+}
+.markEditor option:hover {
+  background-color: black;
 }
 .markEditor i.fa {
   font-size: 13px;

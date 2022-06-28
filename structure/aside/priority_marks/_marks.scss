@@ -14,11 +14,14 @@
         border: none;
         color: white;
     }
+
     option {
         background-color: #444;
-        font-family: "FontAwesome", "Second Font name";
         text-align: center;
         line-height: 17px;
+    }
+    option:hover {
+        background-color: black;
     }
     i.fa {
         font-size: 13px;

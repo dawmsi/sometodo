@@ -41,8 +41,19 @@ class Task extends Adder {
         }
     }
 
+    static restoreStorege = (index) => {
+        if (previousTasks.length <= tasksArr.length) {
+            tasksArr.filter(item => {
+                if (item.completed) {
+                    previousTasks.unshift(item)
+                }
+                else previousTasks = []
+            })
+        }
+    }
+
     static toggleTask = (index) => {
-        if (index !== undefined) {
+        if (index) {
             tasksArr[index].completed = !tasksArr[index].completed
             if (tasksArr[index].completed) {
                 todoItemEls[index].classList.add("checked")
@@ -51,23 +62,33 @@ class Task extends Adder {
                 todoItemEls[index].classList.remove("checked")
                 previousTasks.splice(previousTasks.indexOf(tasksArr[index]), 1)
             }
-        } else if (previousTasks.length <= tasksArr.length) {
-            tasksArr.filter(item => {
-                item.completed
-                    ? previousTasks.unshift(item)
-                    : previousTasks = []
-            })
+        } else {
+            if (index == 0) {
+                tasksArr[index].completed = !tasksArr[index].completed
+                if (tasksArr[index].completed) {
+                    todoItemEls[index].classList.add("checked")
+                    previousTasks.unshift(tasksArr[index])
+                } else {
+                    todoItemEls[index].classList.remove("checked")
+                    previousTasks.splice(previousTasks.indexOf(tasksArr[index]), 1)
+                }
+            }
         }
 
+        Task.countPluser()
+        updateLocal()
+        Task.renderList()
+    }
+
+    static countPluser() {
         previousTasks.length
             ? previousCount.innerText = previousTasks.length
-            : ''
+            : previousCount.innerText = ''
 
         tasksArr.length
             ? todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
             : todayCount.innerText = ''
-        updateLocal()
-        Task.renderList()
+
     }
 
     static addTask = () => {
@@ -79,7 +100,7 @@ class Task extends Adder {
 
         updateLocal()
         Task.renderList()
-        Task.toggleTask()
+        Task.countPluser()
     }
 
     static editTask = (indexTask) => {
