@@ -20,26 +20,17 @@
         color: inherit;
         border: none;
         padding: 3px;
-        line-height: inherit;
         margin: 0;
+        text-align: center;
         outline: none;
-    }
-    select::after {
-        content: "";
-        width: 0.8em;
-        height: 0.5em;
-        background-color: var(--select-arrow);
-        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     }
 
     option {
-        background-color: #444;
+        background-color: #434343;
         text-align: center;
         line-height: 17px;
     }
-    option:hover {
-        background-color: black;
-    }
+
     i.fa {
         font-size: 13px;
     }

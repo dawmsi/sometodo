@@ -56,5 +56,8 @@ class Mark {
     }
     static resetIt() {
         inputName.value = ''
+        Mark.btnAdd.classList.toggle('cencelBtn')
+        Mark.markEditor.classList.toggle('addingMark')
+        prioSelect.selectedIndex = 0
     }
 }

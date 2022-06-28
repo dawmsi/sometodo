@@ -23,25 +23,14 @@
   color: inherit;
   border: none;
   padding: 3px;
-  line-height: inherit;
   margin: 0;
+  text-align: center;
   outline: none;
 }
-.defaultEditor select::after {
-  content: "";
-  width: 0.8em;
-  height: 0.5em;
-  background-color: var(--select-arrow);
-  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-          clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-}
 .defaultEditor option {
-  background-color: #444;
+  background-color: #434343;
   text-align: center;
   line-height: 17px;
-}
-.defaultEditor option:hover {
-  background-color: black;
 }
 .defaultEditor i.fa {
   font-size: 13px;
