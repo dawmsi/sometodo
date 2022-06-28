@@ -1,12 +1,15 @@
-.markEditor {
+.defaultEditor {
     display: grid;
     grid-auto-flow: column;
     padding: 3px;
     gap: 5px;
     justify-content: center;
     align-items: center;
-    border: 1px solid #444;
-    border-radius: 3px;
+    padding: 3px 11px;
+    height: 0;
+    visibility: hidden;
+    transition: transform 200ms;
+    transform: rotateX(180deg);
 
     select {
         font-family: "FontAwesome", "Second Font name";
@@ -29,4 +32,17 @@
     i.fa:hover {
         color: orange;
     }
+}
+.addingMark {
+    height: auto;
+    visibility: visible;
+    transform: none;
+}
+
+.defaultBtn {
+    transition: transform 200ms;
+}
+
+.cencelBtn {
+    transform: rotate(45deg);
 }

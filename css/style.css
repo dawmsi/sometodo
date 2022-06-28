@@ -1,33 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
-.markEditor {
+.defaultEditor {
   display: grid;
   grid-auto-flow: column;
   padding: 3px;
   gap: 5px;
   justify-content: center;
   align-items: center;
-  border: 1px solid #444;
-  border-radius: 3px;
+  padding: 3px 11px;
+  height: 0;
+  visibility: hidden;
+  transition: transform 200ms;
+  transform: rotateX(180deg);
 }
-.markEditor select {
+.defaultEditor select {
   font-family: "FontAwesome", "Second Font name";
   background-color: transparent;
   border: none;
   color: white;
 }
-.markEditor option {
+.defaultEditor option {
   background-color: #444;
   text-align: center;
   line-height: 17px;
 }
-.markEditor option:hover {
+.defaultEditor option:hover {
   background-color: black;
 }
-.markEditor i.fa {
+.defaultEditor i.fa {
   font-size: 13px;
 }
-.markEditor i.fa:hover {
+.defaultEditor i.fa:hover {
   color: orange;
+}
+
+.addingMark {
+  height: auto;
+  visibility: visible;
+  transform: none;
+}
+
+.defaultBtn {
+  transition: transform 200ms;
+}
+
+.cencelBtn {
+  transform: rotate(45deg);
 }
 
 header #top-left,

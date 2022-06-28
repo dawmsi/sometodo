@@ -1,5 +1,6 @@
 class Mark {
-
+    static btnAdd = document.querySelector('#btnAddMark')
+    static markEditor = document.querySelector('#markEditor')
     static inputName = document.querySelector("#inputName")
     static parentWindow = document.querySelector("#placeAdder")
     static prioSelect = document.querySelector('#priority').options
@@ -22,6 +23,12 @@ class Mark {
         `
     }
 
+    static showEditor = () => {
+        Mark.btnAdd.classList.toggle('cencelBtn')
+        Mark.markEditor.style.display = 'grid'
+        Mark.markEditor.classList.toggle('addingMark')
+    }
+
     static renderMark = () => {
         Mark.parentWindow.innerHTML = ''
         if (marksArr.length > 0)
@@ -40,6 +47,8 @@ class Mark {
         Mark.renderMark()
         Mark.resetIt()
     }
+
+
     static removeMark = (index) => {
         marksArr.splice(index, 1)
         updateLocal()

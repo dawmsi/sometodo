@@ -8,13 +8,13 @@ function togglePop() {
         : (parent.style.visibility = "visible")
 }
 
-function renderNewPop(PopIncome) {
+let renderNewPop = new Function(`par`, `
     togglePop()
     if (!parent.childNodes[1]) {
-        const editor = document.createElement(PopIncome[0])
-        editor.classList.add(PopIncome[1])
-        editor.innerHTML = PopIncome[2]
-        parent.prepend(editor)
+        let temp = document.createElement(par[0])
+        temp.classList.add(par[1])
+        temp.innerHTML = par[2]
+        parent.prepend(temp)
     }
-}
+`)
 
