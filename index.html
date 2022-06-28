@@ -73,7 +73,7 @@
                             <option value="yellow" style="color:yellow">&#xf02b;</option>
                             <option value="orange" style="color:orange">&#xf02b;</option>
                             <option value="red" style="color:red">&#xf02b;</option>
-                            <option value="none" selected hidden disabled>&#xf02b;</option>
+                            <option value="none" style=" color:red" selected hidden disabled>&#xf02b;</option>
                         </select>
                         <input id="inputName" placeholder="Write name of mark" type="text">
                         <div class="btn-wrapper"><button onclick="Mark.adderMark()">
@@ -86,30 +86,27 @@
                     <li class="item">
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
                         <a href="#" class="toggle-show">Projects</a>
-                        <button onclick="renderNewPop(popMenu)">
+                        <button>
                             <i class="fa plus">+</i>
                         </button>
                     </li>
                     <ul class="list">
                         <li class="item">
                             <i class="fa fa-circle"></i>
-                            <a href="#">project 1</a>
+                            <a href="#">test 1</a>
                             <div class="btn-wrapper">
-                                <i class="fa fa-ellipsis-h"></i>
+                                <button onclick="" id="test1">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </button>
                             </div>
                         </li>
                         <li class="item">
                             <i class="fa fa-circle"></i>
-                            <a href="#">project 2</a>
+                            <a href="#">test 2</a>
                             <div class="btn-wrapper">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <i class="fa fa-circle"></i>
-                            <a href="#">project 3</a>
-                            <div class="btn-wrapper">
-                                <i class="fa fa-ellipsis-h"></i>
+                                <button onclick="" id="test2">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </button>
                             </div>
                         </li>
                     </ul>
@@ -174,7 +171,7 @@
 
     <script src="structure/aside/priority_marks/Mark.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
-    <script src="structure/task/editor/editor.js"></script>
+    <script src="structure/pop/elements/editor/editor.js"></script>
     <script src="structure/pop/pop.js"></script>
     <script src="structure/adder/adder.js"></script>
     <script src="structure/aside/aside.js"></script>

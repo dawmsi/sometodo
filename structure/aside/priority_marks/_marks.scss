@@ -10,12 +10,26 @@
     visibility: hidden;
     transition: transform 200ms;
     transform: rotateX(180deg);
+    color: #fff;
 
     select {
         font-family: "FontAwesome", "Second Font name";
+        appearance: none;
         background-color: transparent;
         border: none;
-        color: white;
+        color: inherit;
+        border: none;
+        padding: 3px;
+        line-height: inherit;
+        margin: 0;
+        outline: none;
+    }
+    select::after {
+        content: "";
+        width: 0.8em;
+        height: 0.5em;
+        background-color: var(--select-arrow);
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     }
 
     option {
