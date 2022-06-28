@@ -41,17 +41,6 @@ class Task extends Adder {
         }
     }
 
-    static restoreStorege = (index) => {
-        if (previousTasks.length <= tasksArr.length) {
-            tasksArr.filter(item => {
-                if (item.completed) {
-                    previousTasks.unshift(item)
-                }
-                else previousTasks = []
-            })
-        }
-    }
-
     static toggleTask = (index) => {
         if (index) {
             tasksArr[index].completed = !tasksArr[index].completed
@@ -75,20 +64,9 @@ class Task extends Adder {
             }
         }
 
-        Task.countPluser()
+        countPluser()
         updateLocal()
         Task.renderList()
-    }
-
-    static countPluser() {
-        previousTasks.length
-            ? previousCount.innerText = previousTasks.length
-            : previousCount.innerText = ''
-
-        tasksArr.length
-            ? todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
-            : todayCount.innerText = ''
-
     }
 
     static addTask = () => {
@@ -100,7 +78,7 @@ class Task extends Adder {
 
         updateLocal()
         Task.renderList()
-        Task.countPluser()
+        countPluser()
     }
 
     static editTask = (indexTask) => {

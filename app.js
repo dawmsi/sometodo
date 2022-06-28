@@ -17,5 +17,5 @@ const updateLocal = () => {
 
 
 Task.renderList()
-Task.countPluser()
+countPluser()
 Mark.renderMark()
