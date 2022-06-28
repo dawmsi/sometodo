@@ -58,6 +58,7 @@ class Mark {
         inputName.value = ''
         Mark.btnAdd.classList.toggle('cencelBtn')
         Mark.markEditor.classList.toggle('addingMark')
-        prioSelect.selectedIndex = 0
+        Mark.prioSelect.selectedIndex = 3
+        console.log(Mark.prioSelect.selectedIndex)
     }
 }
