@@ -62,7 +62,7 @@
                     <li class="item mark">
                         <i id="marks" class="fa fa-bookmark-o" aria-hidden="true"></i>
                         <a id="filter-task" href="#">Priority & marks</a>
-                        <button class="defaultBtn" id="btnAddMark" onclick="Mark.showEditor()">
+                        <button class="defaultBtn" id="btnShowEditor" onclick="Mark.showEditor()">
                             <i class="fa plus">+</i></button>
                     </li>
                     <ul class="list" id="placeAdder">
@@ -76,8 +76,8 @@
                             <option value="none" selected hidden disabled>&#xf02b;</option>
                         </select>
                         <input id="inputName" placeholder="Write name of mark" type="text">
-                        <div class="btn-wrapper"><button onclick="Mark.adderMark()">
-                                <i class="fa fa-check"></i>
+                        <div class="btn-wrapper">
+                            <button id="btnEditAdd">
                             </button>
                         </div>
                     </div>
@@ -162,7 +162,7 @@
     </main>
 
 
-    <div id="pop-area" class="hiding" onclick="togglePop()">
+    <div id="pop-area" class="hiding" onclick="Pop.togglePop()">
         <div class="container" onclick="event.stopPropagation()">
 
         </div>
@@ -171,10 +171,10 @@
     <script src="structure/aside/priority_marks/Mark.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
     <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
-    <script src="structure/pop/pop.js"></script>
     <script src="structure/adder/adder.js"></script>
-    <script src="structure/aside/aside.js"></script>
     <script src="structure/task/Task.js"></script>
+    <script src="structure/pop/Pop.js"></script>
+    <script src="structure/aside/aside.js"></script>
     <script src="app.js"></script>
 </body>
 

@@ -16,7 +16,7 @@ class Task extends Adder {
             <div class="btn-wrapper">
                 <button onclick="Adder.showAdder(${index})" class="btn-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                 <button onclick="Task.removeTask(${index})" class="btn-del"><i class="fa fa-trash"></i></button>
-                <button onclick="renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i></button>
+                <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i></button>
             </div>
         </div>
         `
