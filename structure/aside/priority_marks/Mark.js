@@ -35,9 +35,6 @@ class Mark {
         `
     }
 
-
-
-
     static showEditor = (index) => {
         Mark.resetIt()
         if (index || index === 0) {
@@ -95,5 +92,4 @@ class Mark {
         updateLocal()
         Mark.renderMark()
     }
-
 }

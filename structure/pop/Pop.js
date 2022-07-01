@@ -13,5 +13,4 @@ class Pop {
         Pop.togglePop()
         parent.innerHTML = content
     }
-
 }
