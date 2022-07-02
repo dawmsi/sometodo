@@ -2,16 +2,19 @@
 .defaultEditor {
   display: grid;
   grid-auto-flow: column;
-  padding: 3px;
   gap: 5px;
   justify-content: center;
   align-items: center;
-  padding: 3px 11px;
   height: 0;
   visibility: hidden;
   transition: transform 200ms;
   transform: rotateX(180deg);
   color: #fff;
+  background-color: rgba(90, 90, 90, 0.3647058824);
+  border-radius: 4px;
+}
+.defaultEditor input {
+  padding: 2px 2spx;
 }
 .defaultEditor select {
   font-family: "FontAwesome", "Second Font name";
@@ -19,13 +22,12 @@
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  border: none;
   color: inherit;
-  border: none;
-  padding: 3px;
+  padding: 1px 3px;
   margin: 0;
   text-align: center;
   outline: none;
+  border: none;
 }
 .defaultEditor option {
   background-color: #202020;
@@ -37,12 +39,15 @@
 }
 .defaultEditor i.fa:hover {
   color: orange;
+  text-shadow: none;
 }
 
-.addingMark {
+.addingEl {
   height: auto;
   visibility: visible;
   transform: none;
+  padding: 0 6px;
+  margin: 0 3px 0 13px;
 }
 
 .defaultBtn {
@@ -343,12 +348,21 @@ aside .aside-containder .aside-part .item .amount {
 aside .aside-containder .aside-part .include-list:hover .plus {
   visibility: visible;
 }
-aside .aside-containder .aside-part .include-list .item > i:first-child:hover {
+aside .aside-containder .aside-part .include-list {
+  margin: 8px 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+aside .aside-containder .aside-part .include-list .list .item > button i:first-child:hover {
   color: white;
   text-shadow: 0 0 6px white;
 }
+aside .aside-containder .aside-part .include-list .list .item:hover > button i:first-child::before {
+  content: "\f044";
+}
 aside .aside-containder .aside-part .include-list .list {
-  padding-left: 13px;
+  padding: 0 2px 0 13px;
 }
 aside .aside-containder .aside-part .include-list .list .fa:first-child {
   font-size: 13px;

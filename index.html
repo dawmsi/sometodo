@@ -61,7 +61,7 @@
                 <ul class="include-list">
                     <li class="item mark">
                         <i id="marks" class="fa fa-bookmark-o" aria-hidden="true"></i>
-                        <a id="filter-task" href="#">Priority & marks</a>
+                        <a id="filter-task" href="#">Marks</a>
                         <button class="defaultBtn" id="btnShowEditor" onclick="Mark.showEditor()">
                             <i class="fa plus">+</i></button>
                     </li>
@@ -69,11 +69,11 @@
 
                     </ul>
                     <div id="markEditor" class="defaultEditor">
-                        <select id="priority">
-                            <option value="#ff4929" style="color:#ff4929">p1</option>
-                            <option value="#ffb52b" style="color:#ffb52b">p2</option>
-                            <option value="#fcfa79" style="color:#fcfa79">p3</option>
-                            <option value="none" selected hidden disabled>&#xf02b;</option>
+                        <select id="colorM">
+                            <option value="#ff4929" style="color:#ff4929">&#xf02b;</option>
+                            <option value="#ffb52b" style="color:#ffb52b">&#xf02b;</option>
+                            <option value="#fcfa79" style="color:#fcfa79">&#xf02b;</option>
+                            <option value="none" style="color:#fff" selected>&#xf02b;</option>
                         </select>
                         <input id="inputName" placeholder="Write name of mark" type="text">
                         <div class="btn-wrapper">
@@ -86,13 +86,13 @@
                     <li class="item">
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
                         <a href="#" class="toggle-show">Projects</a>
-                        <button>
+                        <button class="defaultBtn" id="btnShowEditProj" onclick="Project.showEditor()">
                             <i class="fa plus">+</i>
                         </button>
                     </li>
-                    <ul class="list">
+                    <ul class="list" id="placeProjects">
                         <li class="item">
-                            <i class="fa fa-circle"></i>
+                            <button onclick=""><i class="fa fa-circle"></i></button>
                             <a href="#">test 1</a>
                             <div class="btn-wrapper">
                                 <button onclick="" id="test1">
@@ -100,16 +100,20 @@
                                 </button>
                             </div>
                         </li>
-                        <li class="item">
-                            <i class="fa fa-circle"></i>
-                            <a href="#">test 2</a>
-                            <div class="btn-wrapper">
-                                <button onclick="" id="test2">
-                                    <i class="fa fa-ellipsis-h"></i>
-                                </button>
-                            </div>
-                        </li>
                     </ul>
+                    <div id="editorProject" class="defaultEditor">
+                        <select id="colorP">
+                            <option value="#ff4929" style="color:#ff4929">p1</option>
+                            <option value="#ffb52b" style="color:#ffb52b">p2</option>
+                            <option value="#fcfa79" style="color:#fcfa79">p3</option>
+                            <option value="none" selected hidden disabled>&#xf02b;</option>
+                        </select>
+                        <input id="inputPjoj" placeholder="Write name of mark" type="text">
+                        <div class="btn-wrapper">
+                            <button id="btnEditAddProj">
+                            </button>
+                        </div>
+                    </div>
                 </ul>
             </section>
             <section class="aside-part">
@@ -176,6 +180,7 @@
     <script src="structure/pop/Pop.js"></script>
     <script src="structure/aside/aside.js"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>

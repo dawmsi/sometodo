@@ -1,28 +1,29 @@
 .defaultEditor {
     display: grid;
     grid-auto-flow: column;
-    padding: 3px;
     gap: 5px;
     justify-content: center;
     align-items: center;
-    padding: 3px 11px;
     height: 0;
     visibility: hidden;
     transition: transform 200ms;
     transform: rotateX(180deg);
     color: #fff;
-
+    background-color: #5a5a5a5d;
+    border-radius: 4px;
+    input {
+        padding: 2px 2spx;
+    }
     select {
         font-family: "FontAwesome", "Second Font name";
         appearance: none;
         background-color: transparent;
-        border: none;
         color: inherit;
-        border: none;
-        padding: 3px;
+        padding: 1px 3px;
         margin: 0;
         text-align: center;
         outline: none;
+        border: none;
     }
 
     option {
@@ -36,12 +37,15 @@
     }
     i.fa:hover {
         color: orange;
+        text-shadow: none;
     }
 }
-.addingMark {
+.addingEl {
     height: auto;
     visibility: visible;
     transform: none;
+    padding: 0 6px;
+    margin: 0 3px 0 13px;
 }
 
 .defaultBtn {

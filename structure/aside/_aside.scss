@@ -86,12 +86,17 @@ aside {
                 visibility: visible;
             }
             .include-list {
-                .item > i:first-child:hover {
+                margin: 8px 0;
+                height: fit-content;
+                .list .item > button i:first-child:hover {
                     color: white;
                     text-shadow: 0 0 6px white;
                 }
+                .list .item:hover > button i:first-child::before {
+                    content: "\f044";
+                }
                 .list {
-                    padding-left: 13px;
+                    padding: 0 2px 0 13px;
                     .fa:first-child {
                         font-size: 13px;
                     }

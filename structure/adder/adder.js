@@ -1,10 +1,13 @@
 class Adder {
-  static indexTask;
+  static parent = document.querySelector(".todos-wrapper")
+
+  static adder = document.querySelector("#adding");
+  static addBtn = document.querySelector("#add-task-btn")
+
   static taskInput = document.querySelector("#name-task")
   static descriptionInput = document.querySelector("#description-task")
-  static addBtn = document.querySelector("#add-task-btn")
-  static adder = document.querySelector("#adding");
-  static parent = document.querySelector(".todos-wrapper")
+
+  static indexTask
 
   constructor(nameTask, descriptionTask = null) {
     this.nameTask = nameTask

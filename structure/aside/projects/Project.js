@@ -1,20 +1,21 @@
-class Mark {
+class Project {
 
     static inputArray
 
     static takeArray() { this.inputArray = marksArr }
 
-    static parentWindow = document.querySelector("#placeAdder")
+    static parentWindow = document.querySelector("#placeProjects")
 
-    static Editor = document.querySelector('#markEditor')
-    static btnShowEditor = document.querySelector('#btnShowEditor')
-    static btnEditAdd = document.querySelector('#btnEditAdd')
+    static Editor = document.querySelector('#editorProject')
+    static btnShowEditor = document.querySelector('#btnShowEditProj')
+    static btnEditAdd = document.querySelector('#btnEditAddProj')
 
-    static inputName = document.querySelector("#inputName")
-    static inputColor = document.querySelector('#colorM')
+    static inputName = document.querySelector("#inputPjoj")
 
-    constructor(someColor, someName) {
-        this.someColor = someColor
+    static prioSelect = document.querySelector('#colorP')
+
+    constructor(priority, someName) {
+        this.priority = priority
         this.someName = someName
     }
 
@@ -26,18 +27,17 @@ class Mark {
 
     static toggleEls() {
         this.btnShowEditor.classList.toggle('cencelBtn')
-        this.Editor.classList.toggle('addingEl')
+        this.Editor.classList.toggle('addingMark')
     }
 
-    static createEl = (mark, index) => {
+    static createMark = (mark, index) => {
         return `
         <li class="item" id="item${index}">
-        <button onclick="Mark.showEditor(${mark, index})">
         <i class="fa fa-tag" style="color:${mark.someColor}"></i>
-        </button>
         <a href="">${mark.someName}</a>
         <div class="btn-wrapper">
-        <button onclick="Mark.removeEl(${index})"><i class="fa fa-trash"></i></button>
+        <button onclick="Mark.showEditor(${mark, index})"><i class="fa fa-edit"></i></button>
+        <button onclick="Mark.removeMark(${index})"><i class="fa fa-trash"></i></button>
         </div>
         </li>
         `
@@ -53,59 +53,59 @@ class Mark {
                 .selectedIndex].value = this.inputArray[index].someColor
             this.inputColor.style = `color:${this.inputArray[index].someColor}`
             this.btnEditAdd.innerHTML = `
-            <button onclick="Mark.editEl(${index})">
-            <i class="fa fa-pencil"></i>
+            <button onclick="Mark.editMark(${index})">
+            <i class="fa fa-floppy-o"></i>
             </button>
             `
             document.querySelector(`#item${index}`).classList.toggle
         }
         else {
             this.btnEditAdd.innerHTML = `
-            <button onclick="Mark.addEl()">
+            <button onclick="Mark.addMark()">
             <i class="fa fa-check"></i>
             </button>
             `
         }
     }
 
-    static renderEl = () => {
+    static renderMark = () => {
         this.takeArray()
         Mark.parentWindow.innerHTML = ''
         if (this.inputArray.length > 0)
             this.inputArray.forEach((mark, index) => {
-                Mark.parentWindow.innerHTML += Mark.createEl(mark, index)
+                Mark.parentWindow.innerHTML += Mark.createMark(mark, index)
             })
         marksEls = document.querySelectorAll(".mark")
     }
 
-    static addEl = () => {
+    static addMark = () => {
         this.takeArray()
         this.inputArray.push(new Mark(
             this.inputColor.options[Mark.inputColor.options.selectedIndex].value,
             this.inputName.value
         ))
         updateLocal()
-        this.renderEl()
+        this.renderMark()
         this.resetIt()
         this.toggleEls()
     }
 
-    static editEl = (index) => {
+    static editMark = (index) => {
         this.takeArray()
         this.inputArray[index] = new Mark(
             this.inputColor.options[Mark.inputColor.options.selectedIndex].value,
             this.inputName.value
         )
         updateLocal()
-        this.renderEl()
+        this.renderMark()
         this.resetIt()
         this.toggleEls()
     }
 
-    static removeEl = (index) => {
+    static removeMark = (index) => {
         this.takeArray()
         this.inputArray.splice(index, 1)
         updateLocal()
-        this.renderEl()
+        this.renderMark()
     }
 }
