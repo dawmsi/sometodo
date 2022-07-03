@@ -1,65 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
-.defaultEditor {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  height: 0;
-  visibility: hidden;
-  transition: transform 200ms;
-  transform: rotateX(180deg);
-  color: #fff;
-  background-color: rgba(90, 90, 90, 0.3647058824);
-  border-radius: 4px;
-}
-.defaultEditor input {
-  padding: 2px 2spx;
-}
-.defaultEditor select {
-  font-family: "FontAwesome", "Second Font name";
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  color: inherit;
-  padding: 1px 2px;
-  margin: 0 2px;
-  text-align: center;
-  outline: none;
-  border: none;
-  font-size: 13px;
-}
-.defaultEditor option {
-  background-color: #202020;
-  text-align: center;
-  line-height: 12px;
-  font-size: 13px;
-}
-.defaultEditor i.fa {
-  font-size: 13px;
-}
-.defaultEditor i.fa:hover {
-  color: orange;
-  text-shadow: none;
-}
-
-.addingEl {
-  height: auto;
-  visibility: visible;
-  transform: none;
-  padding: 0 6px;
-  margin: 0 3px 0 13px;
-}
-
-.defaultBtn {
-  transition: transform 200ms;
-}
-
-.cencelBtn {
-  transform: rotate(45deg);
-}
-
 header #top-left,
 header #top-right {
   display: grid;
@@ -379,85 +318,65 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   visibility: visible;
 }
 
-.line-area {
+.defaultEditor {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: 1fr;
-  color: rgba(139, 139, 139, 0.7254901961);
-  padding-top: 21px;
-  width: 100%;
-  cursor: pointer;
-}
-.line-area .line {
-  border-top: 1px solid rgba(219, 76, 63, 0.9254901961);
-  padding: 10px 0;
+  grid-auto-flow: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 0;
   visibility: hidden;
+  transition: transform 200ms;
+  transform: rotateX(180deg);
+  color: #fff;
+  background-color: rgba(90, 90, 90, 0.3647058824);
+  border-radius: 4px;
 }
-.line-area .add-link {
-  line-height: 21px;
-  left: 49%;
-  margin-top: -8px;
-  padding: 0 10px;
+.defaultEditor input {
+  padding: 2px 2spx;
+}
+.defaultEditor select {
+  font-family: "FontAwesome", "Second Font name";
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 1px 2px;
+  margin: 0 2px;
+  text-align: center;
+  outline: none;
+  border: none;
+  font-size: 13px;
+}
+.defaultEditor option {
+  background-color: #202020;
+  text-align: center;
+  line-height: 12px;
+  font-size: 13px;
+}
+.defaultEditor i.fa {
+  font-size: 13px;
+}
+.defaultEditor i.fa:hover {
+  color: orange;
+  text-shadow: none;
 }
 
-.line-area:hover .line {
+.addingEl {
+  height: auto;
   visibility: visible;
+  transform: none;
+  padding: 0 6px;
+  margin: 0 3px 0 13px;
 }
 
-.line-area:hover .add-link {
-  color: #db4c3f;
-  text-shadow: 0 0 2px #db4c3f;
+.defaultBtn {
+  transition: transform 200ms;
 }
 
-#adding {
-  width: 100%;
-  display: none;
-  padding: 5px 0 10px 0;
-}
-#adding .container {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #444444;
-  border-radius: 8px;
-}
-#adding .container .description-of-task textarea {
-  font-size: 14px;
-}
-#adding .container .btns-line {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: auto auto;
-  justify-content: space-between;
-}
-#adding .container .btns-line .plannig .fa:first-child {
-  font-size: 14px;
-}
-#adding .container .btns-line .plannig button {
-  border: 1px solid #444444;
-  padding: 2px 8px;
-  font-size: 15px;
-}
-#adding .container .btns-line .plannig button:hover {
-  background-color: rgba(90, 90, 90, 0.3647058824);
-}
-#adding .btns-main {
-  display: grid;
-  grid-template-columns: auto auto;
-  justify-content: end;
-  gap: 10px;
-  margin: 13px 0 2px 0;
-}
-#adding .btns-main button:hover {
-  background-color: rgba(90, 90, 90, 0.3647058824);
-}
-#adding .btns-main #add-task-btn button {
-  background-color: #db4234;
-  padding: 3px 9px;
-  font-size: 16px;
-}
-#adding .btns-main #add-task-btn button:hover {
-  background-color: rgba(235, 42, 38, 0.631372549);
-  box-shadow: 0 0 2px #db4234;
+.cencelBtn {
+  transform: rotate(45deg);
 }
 
 .todos-wrapper {
@@ -565,6 +484,87 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
 
 .hide {
   display: none;
+}
+
+#adding {
+  width: 100%;
+  display: none;
+  padding: 5px 0 10px 0;
+}
+#adding .container {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #444444;
+  border-radius: 8px;
+}
+#adding .container .description-of-task textarea {
+  font-size: 14px;
+}
+#adding .container .btns-line {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+#adding .container .btns-line .plannig .fa:first-child {
+  font-size: 14px;
+}
+#adding .container .btns-line .plannig button {
+  border: 1px solid #444444;
+  padding: 2px 8px;
+  font-size: 15px;
+}
+#adding .container .btns-line .plannig button:hover {
+  background-color: rgba(90, 90, 90, 0.3647058824);
+}
+#adding .btns-main {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: end;
+  gap: 10px;
+  margin: 13px 0 2px 0;
+}
+#adding .btns-main button:hover {
+  background-color: rgba(90, 90, 90, 0.3647058824);
+}
+#adding .btns-main #add-task-btn button {
+  background-color: #db4234;
+  padding: 3px 9px;
+  font-size: 16px;
+}
+#adding .btns-main #add-task-btn button:hover {
+  background-color: rgba(235, 42, 38, 0.631372549);
+  box-shadow: 0 0 2px #db4234;
+}
+
+.line-area {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr;
+  color: rgba(139, 139, 139, 0.7254901961);
+  padding-top: 21px;
+  width: 100%;
+  cursor: pointer;
+}
+.line-area .line {
+  border-top: 1px solid rgba(219, 76, 63, 0.9254901961);
+  padding: 10px 0;
+  visibility: hidden;
+}
+.line-area .add-link {
+  line-height: 21px;
+  left: 49%;
+  margin-top: -8px;
+  padding: 0 10px;
+}
+
+.line-area:hover .line {
+  visibility: visible;
+}
+
+.line-area:hover .add-link {
+  color: #db4c3f;
+  text-shadow: 0 0 2px #db4c3f;
 }
 
 #pop-area {
