@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
 
-@import "../structure/aside/priority_marks/marks";
+@import "../structure/aside/marks/marks";
 @import "../structure/top/top";
 @import "../structure/aside/aside";
 @import "../structure/adder/line/line";
@@ -113,7 +113,7 @@ html {
 
         main {
             position: relative;
-            max-height: 100%;
+            height: 100%;
             grid-area: main;
             width: 100%;
             #content-wrapper {

@@ -1,7 +1,7 @@
 class Project {
     static inputArray
     static takeArray() { this.inputArray = projectsArr }
-    
+
     static parentWindow = document.querySelector("#placeProjects")
     static Editor = document.querySelector('#editorProject')
     static btnShowEditor = document.querySelector('#btnShowEditProj')

@@ -59,21 +59,21 @@
             </section>
             <section class="aside-part">
                 <ul class="include-list">
-                    <li class="item mark">
+                    <li class="item">
                         <i id="marks" class="fa fa-bookmark-o" aria-hidden="true"></i>
                         <a id="filter-task" href="#">Marks</a>
                         <button class="defaultBtn" id="btnShowEditor" onclick="Mark.showEditor()">
                             <i class="fa plus">+</i></button>
                     </li>
-                    <ul class="list" id="placeAdder">
+                    <ul class="list" id="placeMarks">
 
                     </ul>
                     <div id="markEditor" class="defaultEditor">
                         <select id="colorM">
+                            <option value="#fff" style="color:#fff" selected>&#xf02b;</option>
                             <option value="#ff4929" style="color:#ff4929">&#xf02b;</option>
                             <option value="#ffb52b" style="color:#ffb52b">&#xf02b;</option>
                             <option value="#fcfa79" style="color:#fcfa79">&#xf02b;</option>
-                            <option value="none" style="color:#fff" selected>&#xf02b;</option>
                         </select>
                         <input id="inputName" placeholder="Write name of mark" type="text">
                         <div class="btn-wrapper">
@@ -91,24 +91,20 @@
                         </button>
                     </li>
                     <ul class="list" id="placeProjects">
-                        <li class="item">
-                            <button onclick=""><i class="fa fa-circle"></i></button>
-                            <a href="#">test 1</a>
-                            <div class="btn-wrapper">
-                                <button onclick="" id="test1">
-                                    <i class="fa fa-ellipsis-h"></i>
-                                </button>
-                            </div>
-                        </li>
+
                     </ul>
                     <div id="editorProject" class="defaultEditor">
                         <select id="colorP">
-                            <option value="#ff4929" style="color:#ff4929">p1</option>
-                            <option value="#ffb52b" style="color:#ffb52b">p2</option>
-                            <option value="#fcfa79" style="color:#fcfa79">p3</option>
-                            <option value="none" selected hidden disabled>&#xf02b;</option>
+                            <option value="none" style="color:#fff" selected>&#xf111;</option>
+                            <option value="#ff4929" style="color:#ff4929">&#xf111;</option>
+                            <option value="#ffb52b" style="color:#ffb52b">&#xf111;</option>
+                            <option value="#fcfa79" style="color:#fcfa79">&#xf111;</option>
+                            <option value="#29ff89" style="color:#29ff89">&#xf111;</option>
+                            <option value="#2b6eff" style="color:#2b6eff">&#xf111;</option>
+                            <option value="#c879fc" style="color:#c879fc">&#xf111;</option>
+
                         </select>
-                        <input id="inputPjoj" placeholder="Write name of mark" type="text">
+                        <input id="inputPjoj" placeholder="Write name of project" type="text">
                         <div class="btn-wrapper">
                             <button id="btnEditAddProj">
                             </button>
@@ -172,7 +168,10 @@
         </div>
     </div>
 
-    <script src="structure/aside/priority_marks/Mark.js"></script>
+
+
+    <script src="structure/aside/marks/Mark.js"></script>
+    <script src="structure/aside/projects/Project.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
     <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
     <script src="structure/adder/adder.js"></script>
