@@ -86,7 +86,13 @@
                     <li class="item">
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
                         <a href="#" class="toggle-show">Projects</a>
-                        <button class="defaultBtn" id="btnShowEditProj" onclick="Project.showEditor()">
+                        <button class="defaultBtn" id="btnShowEditProj" onclick="Editor.showEditor(
+                            Project.idsDom.inputColor,
+                            Project.idsDom.inputName,
+                            Project.idsDom.btnShowEditor,
+                            Project.idsDom.btnSubmit,
+                            Project.idsDom.wrapperEditor,
+                        )">
                             <i class="fa plus">+</i>
                         </button>
                     </li>
@@ -104,7 +110,7 @@
                             <option value="#c879fc" style="color:#c879fc">&#xf111;</option>
 
                         </select>
-                        <input id="inputPjoj" placeholder="Write name of project" type="text">
+                        <input id="inputProj" placeholder="Write name of project" type="text">
                         <div class="btn-wrapper">
                             <button id="btnEditAddProj">
                             </button>
@@ -168,8 +174,12 @@
         </div>
     </div>
 
-    <script src="structure/aside/marks/Mark.js"></script>
+
+    <script src="modules/Controller.js"></script>
+    <script src="modules/Editor.js"></script>
+    <script src="modules/Taker.js"></script>
     <script src="structure/aside/projects/Project.js"></script>
+    <script src="structure/aside/marks/Mark.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
     <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
     <script src="structure/main/adder/Adder.js"></script>

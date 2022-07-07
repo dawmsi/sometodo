@@ -22,4 +22,4 @@ const updateLocal = () => {
 Task.renderList()
 countPluser()
 Mark.renderEl()
-Project.renderEl()
+Project.renderEls(projectsArr, Project.idsDom.renderPlace, Project.idsDom.simpleSelector)

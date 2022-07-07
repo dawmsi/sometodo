@@ -21,7 +21,7 @@ class Mark {
 
     static toggleEls() {
         this.btnShowEditor.classList.toggle('cencelBtn')
-        this.Editor.classList.toggle('addingEl')
+        this.Editor.classList.toggle('showEditor')
     }
 
     static createEl = (item, index) => {

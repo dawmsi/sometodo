@@ -214,6 +214,67 @@ header .bar-btn #home i {
     transform: rotate(0);
   }
 }
+.defaultEditor {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 0;
+  visibility: hidden;
+  transition: transform 200ms;
+  transform: rotateX(180deg);
+  color: #fff;
+  background-color: rgba(90, 90, 90, 0.3647058824);
+  border-radius: 4px;
+}
+.defaultEditor input {
+  padding: 2px 2spx;
+}
+.defaultEditor select {
+  font-family: "FontAwesome", "Second Font name";
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  color: inherit;
+  padding: 1px 2px;
+  margin: 0 2px;
+  text-align: center;
+  outline: none;
+  border: none;
+  font-size: 13px;
+}
+.defaultEditor option {
+  background-color: #202020;
+  text-align: center;
+  line-height: 12px;
+  font-size: 13px;
+}
+.defaultEditor i.fa {
+  font-size: 13px;
+}
+.defaultEditor i.fa:hover {
+  color: orange;
+  text-shadow: none;
+}
+
+.showEditor {
+  height: auto;
+  visibility: visible;
+  transform: none;
+  padding: 0 6px;
+  margin: 0 3px 0 13px;
+}
+
+.defaultBtn {
+  transition: transform 200ms;
+}
+
+.cencelBtn {
+  transform: rotate(45deg);
+}
+
 .hiden {
   width: 0;
   left: -288px;
@@ -316,67 +377,6 @@ aside .aside-containder .aside-part .include-list .list .item .btn-wrapper i {
 }
 aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper {
   visibility: visible;
-}
-
-.defaultEditor {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  height: 0;
-  visibility: hidden;
-  transition: transform 200ms;
-  transform: rotateX(180deg);
-  color: #fff;
-  background-color: rgba(90, 90, 90, 0.3647058824);
-  border-radius: 4px;
-}
-.defaultEditor input {
-  padding: 2px 2spx;
-}
-.defaultEditor select {
-  font-family: "FontAwesome", "Second Font name";
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background-color: transparent;
-  color: inherit;
-  padding: 1px 2px;
-  margin: 0 2px;
-  text-align: center;
-  outline: none;
-  border: none;
-  font-size: 13px;
-}
-.defaultEditor option {
-  background-color: #202020;
-  text-align: center;
-  line-height: 12px;
-  font-size: 13px;
-}
-.defaultEditor i.fa {
-  font-size: 13px;
-}
-.defaultEditor i.fa:hover {
-  color: orange;
-  text-shadow: none;
-}
-
-.addingEl {
-  height: auto;
-  visibility: visible;
-  transform: none;
-  padding: 0 6px;
-  margin: 0 3px 0 13px;
-}
-
-.defaultBtn {
-  transition: transform 200ms;
-}
-
-.cencelBtn {
-  transform: rotate(45deg);
 }
 
 .todos-wrapper {
