@@ -5,7 +5,7 @@ class Editor {
         btnShowEditor,
         wrapperEditor
     ) {
-        // inputColor.options.selectedIndex = 0
+        inputColor.options.selectedIndex = 0
         inputColor.style = `color: none`
         inputName.value = ''
         btnShowEditor.classList.toggle('cencelBtn')
@@ -29,6 +29,7 @@ class Editor {
         if (index || index === 0) {
             Taker.touchArray(projectsArr)
             inputName.value = Taker.someArray[index].someName
+            inputColor.value = Taker.someArray[index].someColor
             inputColor.style = `color:${Taker.someArray[index].someColor}`
             btnSubmit.innerHTML = `
             <button onclick="${Project.name}.editEl(${index})">
