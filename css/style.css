@@ -623,8 +623,8 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   text-shadow: 0 0 6px #db4234;
 }
 .accepterWrapper .btnDeny:hover {
-  text-shadow: 0 0 6px #abe94d;
-  color: #abe94d;
+  text-shadow: 0 0 6px #99ff00;
+  color: #8ac72e;
 }
 
 .edit-menu {
