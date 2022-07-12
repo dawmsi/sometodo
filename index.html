@@ -63,7 +63,14 @@
                     <li class="item">
                         <i id="marks" class="fa fa-bookmark-o" aria-hidden="true"></i>
                         <a id="filter-task" href="#">Marks</a>
-                        <button class="defaultBtn" id="btnShowEditor" onclick="Mark.showEditor()">
+                        <button class="defaultBtn" id="btnShowEditor" onclick="Editor.showEditor(
+                            Mark.idsDom.inputColor,
+                            Mark.idsDom.inputName,
+                            Mark.idsDom.btnShowEditor,
+                            Mark.idsDom.btnSubmit,
+                            Mark.idsDom.wrapperEditor,
+                            Mark.name,
+                        )">
                             <i class="fa plus">+</i></button>
                     </li>
                     <ul class="list" id="placeMarks">
@@ -76,9 +83,10 @@
                             <option value="#ffb52b" style="color:#ffb52b">&#xf02b;</option>
                             <option value="#fcfa79" style="color:#fcfa79">&#xf02b;</option>
                         </select>
-                        <input id="inputName" placeholder="Write name of mark" type="text">
+                        <input id="inputMark" placeholder="Write name of mark" type="text">
                         <div class="btn-wrapper">
                             <button id="btnEditAdd">
+                                >
                             </button>
                         </div>
                     </div>

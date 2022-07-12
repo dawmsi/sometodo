@@ -3,7 +3,7 @@ let marksArr
 let projectsArr
 
 let todoItemEls = []
-let marksEls = []
+let marksDOMEls = []
 let projectsDOMEls = []
 
 !localStorage.tasksKey ? tasksArr = [] : tasksArr = JSON.parse(localStorage.getItem('tasksKey'))
@@ -21,5 +21,5 @@ const updateLocal = () => {
 
 Task.renderList()
 countPluser()
-Mark.renderEl()
+Mark.render(marksArr, Mark.idsDom.renderPlace, Mark.idsDom.simpleSelector)
 Project.render(projectsArr, Project.idsDom.renderPlace, Project.idsDom.simpleSelector)

@@ -1,16 +1,16 @@
-class Project {
+class Mark {
     static idsDom = Taker.fromHtml(
-        '#colorP',
-        '#inputProj',
-        '#btnShowEditProj',
-        '#btnEditAddProj',
-        '#editorProject',
-        '#placeProjects',
-        'item-proj',
+        '#colorM',
+        '#inputMark',
+        '#btnShowEditor',
+        '#btnEditAdd',
+        '#markEditor',
+        '#placeMarks',
+        'item-mark',
     )
 
     static create = (item, simpleSelector, index) => {
-        return `
+    return `
         <li class="item ${simpleSelector}">
         <button onclick="Editor.showEditor(
             ${this.name}.idsDom.inputColor,
@@ -27,46 +27,46 @@ class Project {
         </button>
         <a id="name${index}" href="#">${item.someName}</a>
         <div class="btn-wrapper">
-            <button onclick="Project.remove(${index})"><i class="fa fa-ellipsis-h"></i></button>
+            <button onclick="Mark.remove(${index})"><i class="fa fa-ellipsis-h"></i></button>
         </div>
         </li>
         `
-    }
+}
 
     static render() {
-        Controller.renderEls(
-            this,
-            projectsArr,
-            this.idsDom.renderPlace,
-            this.idsDom.simpleSelector,
-        )
-        projectsDOMEls = document.querySelectorAll('.item-proj')
-    }
+    Controller.renderEls(
+        this,
+        marksArr,
+        this.idsDom.renderPlace,
+        this.idsDom.simpleSelector,
+    )
+    marksDOMEls = document.querySelectorAll('.item-proj')
+}
 
     static add() {
-        Controller.addEl(this, projectsArr)
-        this.render()
-        Editor.resetEditor(
-            this.idsDom.inputColor,
-            this.idsDom.inputName,
-            this.idsDom.btnShowEditor,
-            this.idsDom.wrapperEditor
-        )
-    }
+    Controller.addEl(this, marksArr)
+    this.render()
+    Editor.resetEditor(
+        this.idsDom.inputColor,
+        this.idsDom.inputName,
+        this.idsDom.btnShowEditor,
+        this.idsDom.wrapperEditor
+    )
+}
 
     static edit(index) {
-        Controller.editEl(this, projectsArr, index)
-        this.render()
-        Editor.resetEditor(
-            this.idsDom.inputColor,
-            this.idsDom.inputName,
-            this.idsDom.btnShowEditor,
-            this.idsDom.wrapperEditor
-        )
-    }
+    Controller.editEl(this, marksArr, index)
+    this.render()
+    Editor.resetEditor(
+        this.idsDom.inputColor,
+        this.idsDom.inputName,
+        this.idsDom.btnShowEditor,
+        this.idsDom.wrapperEditor
+    )
+}
 
     static remove(index) {
-        Controller.removeEl(this, projectsArr, index)
-        this.render()
-    }
+    Controller.removeEl(this, marksArr, index)
+    this.render()
+}
 }
