@@ -1,7 +1,4 @@
 class Project {
-
-    static outputArray = []
-
     static idsDom = Taker.fromHtml(
         '#colorP',
         '#inputProj',
