@@ -129,7 +129,13 @@
                 </ul>
             </section>
             <section class="aside-part">
-                <a href="#">Removed</a>
+                <ul>
+                    <li class="item">
+                        <button onclick="Pop.renderNewPop(Pop.popAccepter, clearLocal)">
+                            <i class="fa fa-database" aria-hidden="true"></i>
+                        </button> remove all
+                    </li>
+                </ul>
             </section>
         </div>
     </aside>
@@ -180,7 +186,6 @@
 
     <div id="pop-area" class="hiding" onclick="Pop.togglePop()">
         <div class="container" onclick="event.stopPropagation()">
-
         </div>
     </div>
 

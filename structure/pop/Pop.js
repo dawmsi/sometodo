@@ -9,8 +9,17 @@ class Pop {
             : (parent.style.visibility = "visible")
     }
 
-    static renderNewPop(content) {
+    static renderNewPop(content, someFunction) {
         Pop.togglePop()
-        parent.innerHTML = content
+        parent.innerHTML = content(someFunction)
     }
+
+    static popAccepter = (someFunction) => `
+    <div class="accepterWrapper">
+    <h2>Do you really wanna do this?</h2>
+    <div class="btnWrapper">
+    <button class="btnAccept" onclick="${someFunction.name}()">YES</button>
+    <button class="btnDeny" onclick="Pop.togglePop()">NO</button></div>
+    </div>`
+
 }

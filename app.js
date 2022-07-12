@@ -12,12 +12,18 @@ let projectsDOMEls = []
 !localStorage.projectKey ? projectsArr = [] : projectsArr = JSON.parse(localStorage.getItem('projectKey'))
 
 
-const updateLocal = () => {
+function updateLocal() {
     localStorage.setItem('tasksKey', JSON.stringify(tasksArr))
     localStorage.setItem('tasksPrev', JSON.stringify(previousTasks))
     localStorage.setItem('marksKey', JSON.stringify(marksArr))
     localStorage.setItem('projectKey', JSON.stringify(projectsArr))
 }
+
+function clearLocal() {
+    localStorage.clear()
+    location.reload()
+}
+
 
 Task.renderList()
 countPluser()

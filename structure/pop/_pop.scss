@@ -8,9 +8,39 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    background-color: rgba(167, 167, 167, 0.541);
     .container {
         position: relative;
-        background-color: #1a1a1a;
+    }
+}
+
+.accepterWrapper {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 15px;
+    text-align: center;
+    color: #1a1a1a;
+    text-shadow: 0 0 2px #1a1a1a;
+    background-color: rgba(192, 192, 192, 0.952);
+    padding: 10px;
+    border-radius: 6px;
+    .btnAccept,
+    .btnDeny {
+        background-color: transparent;
+        color: #1a1a1a;
+        background-color: #dadadaa6;
+        text-shadow: 0 0 2px #1a1a1a;
+        border-radius: 5px;
+        padding: 10px;
         box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+    }
+    .btnAccept:hover {
+        color: #db4234;
+        text-shadow: 0 0 6px #db4234;
+    }
+
+    .btnDeny:hover {
+        text-shadow: 0 0 6px #abe94d;
+        color: #abe94d;
     }
 }
