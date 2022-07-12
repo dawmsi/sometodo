@@ -10,7 +10,7 @@ class Mark {
     )
 
     static create = (item, simpleSelector, index) => {
-    return `
+        return `
         <li class="item ${simpleSelector}">
         <button onclick="Editor.showEditor(
             ${this.name}.idsDom.inputColor,
@@ -22,7 +22,7 @@ class Mark {
             ${index},
             this)">
         <i id="${item.someColor[0]}" 
-        class="fa fa-circle" 
+        class="fa fa-bookmark-o" 
         style="color:${item.someColor[1]}"></i>
         </button>
         <a id="name${index}" href="#">${item.someName}</a>
@@ -31,42 +31,42 @@ class Mark {
         </div>
         </li>
         `
-}
+    }
 
     static render() {
-    Controller.renderEls(
-        this,
-        marksArr,
-        this.idsDom.renderPlace,
-        this.idsDom.simpleSelector,
-    )
-    marksDOMEls = document.querySelectorAll('.item-proj')
-}
+        Controller.renderEls(
+            this,
+            marksArr,
+            this.idsDom.renderPlace,
+            this.idsDom.simpleSelector,
+        )
+        marksDOMEls = document.querySelectorAll('.item-proj')
+    }
 
     static add() {
-    Controller.addEl(this, marksArr)
-    this.render()
-    Editor.resetEditor(
-        this.idsDom.inputColor,
-        this.idsDom.inputName,
-        this.idsDom.btnShowEditor,
-        this.idsDom.wrapperEditor
-    )
-}
+        Controller.addEl(this, marksArr)
+        this.render()
+        Editor.resetEditor(
+            this.idsDom.inputColor,
+            this.idsDom.inputName,
+            this.idsDom.btnShowEditor,
+            this.idsDom.wrapperEditor
+        )
+    }
 
     static edit(index) {
-    Controller.editEl(this, marksArr, index)
-    this.render()
-    Editor.resetEditor(
-        this.idsDom.inputColor,
-        this.idsDom.inputName,
-        this.idsDom.btnShowEditor,
-        this.idsDom.wrapperEditor
-    )
-}
+        Controller.editEl(this, marksArr, index)
+        this.render()
+        Editor.resetEditor(
+            this.idsDom.inputColor,
+            this.idsDom.inputName,
+            this.idsDom.btnShowEditor,
+            this.idsDom.wrapperEditor
+        )
+    }
 
     static remove(index) {
-    Controller.removeEl(this, marksArr, index)
-    this.render()
-}
+        Controller.removeEl(this, marksArr, index)
+        this.render()
+    }
 }

@@ -22,7 +22,7 @@ class Project {
             ${index},
             this)">
         <i id="${item.someColor[0]}" 
-        class="fa fa-circle" 
+        class="fa fa-circle-thin" 
         style="color:${item.someColor[1]}"></i>
         </button>
         <a id="name${index}" href="#">${item.someName}</a>

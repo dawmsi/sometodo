@@ -82,6 +82,7 @@ aside {
                     padding: 0 3px;
                 }
             }
+
             .include-list:hover .plus {
                 visibility: visible;
             }
@@ -94,11 +95,14 @@ aside {
                 }
                 .list .item:hover > button i:first-child::before {
                     content: "\f044";
+                    font-size: 13px;
                 }
                 .list {
                     padding: 0 2px 0 13px;
                     .fa:first-child {
                         font-size: 13px;
+                        width: 13px;
+                        padding: 0 3px;
                     }
                     .item .btn-wrapper {
                         visibility: hidden;

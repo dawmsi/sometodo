@@ -238,21 +238,22 @@ header .bar-btn #home i {
           appearance: none;
   background-color: transparent;
   color: inherit;
-  padding: 1px 2px;
-  margin: 0 2px;
+  padding: 1px 3px;
+  margin: 0 2.8px;
   text-align: center;
+  line-height: 13px;
   outline: none;
   border: none;
   font-size: 13px;
 }
 .defaultEditor option {
   background-color: #202020;
-  text-align: center;
-  line-height: 12px;
-  font-size: 13px;
+  line-height: 13px;
 }
 .defaultEditor i.fa {
   font-size: 13px;
+  text-align: center;
+  width: 13px;
 }
 .defaultEditor i.fa:hover {
   color: orange;
@@ -263,7 +264,7 @@ header .bar-btn #home i {
   height: auto;
   visibility: visible;
   transform: none;
-  padding: 0 6px;
+  padding: 0 8px;
   margin: 0 3px 0 13px;
 }
 
@@ -362,12 +363,15 @@ aside .aside-containder .aside-part .include-list .list .item > button i:first-c
 }
 aside .aside-containder .aside-part .include-list .list .item:hover > button i:first-child::before {
   content: "\f044";
+  font-size: 13px;
 }
 aside .aside-containder .aside-part .include-list .list {
   padding: 0 2px 0 13px;
 }
 aside .aside-containder .aside-part .include-list .list .fa:first-child {
   font-size: 13px;
+  width: 13px;
+  padding: 0 3px;
 }
 aside .aside-containder .aside-part .include-list .list .item .btn-wrapper {
   visibility: hidden;
@@ -377,6 +381,10 @@ aside .aside-containder .aside-part .include-list .list .item .btn-wrapper i {
 }
 aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper {
   visibility: visible;
+}
+
+.item-proj .fa-circle::before {
+  font-size: 11px;
 }
 
 .todos-wrapper {

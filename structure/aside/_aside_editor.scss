@@ -19,23 +19,23 @@
         appearance: none;
         background-color: transparent;
         color: inherit;
-        padding: 1px 2px;
-        margin: 0 2px;
+        padding: 1px 3px;
+        margin: 0 2.8px;
         text-align: center;
+        line-height: 13px;
         outline: none;
         border: none;
         font-size: 13px;
     }
-
     option {
         background-color: #202020;
-        text-align: center;
-        line-height: 12px;
-        font-size: 13px;
+        line-height: 13px;
     }
 
     i.fa {
         font-size: 13px;
+        text-align: center;
+        width: 13px;
     }
     i.fa:hover {
         color: orange;
@@ -46,7 +46,7 @@
     height: auto;
     visibility: visible;
     transform: none;
-    padding: 0 6px;
+    padding: 0 8px;
     margin: 0 3px 0 13px;
 }
 
