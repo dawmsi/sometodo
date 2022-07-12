@@ -597,10 +597,15 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   gap: 15px;
   text-align: center;
   color: #1a1a1a;
-  text-shadow: 0 0 2px #1a1a1a;
+  text-shadow: 0 0 3px #1a1a1a;
   background-color: rgba(192, 192, 192, 0.952);
-  padding: 10px;
+  padding: 15px;
   border-radius: 6px;
+  box-shadow: 0 6px 30px rgba(206, 206, 206, 0.19), 0 2px 12px rgba(206, 206, 206, 0.23);
+}
+.accepterWrapper .accepterQuestion {
+  font-size: 30px;
+  font-weight: 200;
 }
 .accepterWrapper .btnAccept,
 .accepterWrapper .btnDeny {
@@ -610,7 +615,8 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   text-shadow: 0 0 2px #1a1a1a;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  font-weight: 400;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.19), 0 2px 6px rgba(0, 0, 0, 0.23);
 }
 .accepterWrapper .btnAccept:hover {
   color: #db4234;

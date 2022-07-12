@@ -16,7 +16,7 @@ class Pop {
 
     static popAccepter = (someFunction) => `
     <div class="accepterWrapper">
-    <h2>Do you really wanna do this?</h2>
+    <p class="accepterQuestion">Do you really wanna do this?</p>
     <div class="btnWrapper">
     <button class="btnAccept" onclick="${someFunction.name}()">YES</button>
     <button class="btnDeny" onclick="Pop.togglePop()">NO</button></div>
