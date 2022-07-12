@@ -1,4 +1,7 @@
 class Project {
+
+    static outputArray = []
+
     static idsDom = Taker.fromHtml(
         '#colorP',
         '#inputProj',
@@ -9,43 +12,64 @@ class Project {
         'item-proj',
     )
 
-    static createEl = (item, simpleSelector, index) => {
+    static create = (item, simpleSelector, index) => {
         return `
-        <li class="item ${simpleSelector}" id="item${index}">
+        <li class="item ${simpleSelector}">
         <button onclick="Editor.showEditor(
             ${this.name}.idsDom.inputColor,
             ${this.name}.idsDom.inputName,
             ${this.name}.idsDom.btnShowEditor,
             ${this.name}.idsDom.btnSubmit,
             ${this.name}.idsDom.wrapperEditor,
-            ${index})">
-        <i class="fa fa-circle" style="color:${item.someColor}"></i>
+            ${this.name},
+            ${index},
+            this)">
+        <i id="${item.someColor[0]}" 
+        class="fa fa-circle" 
+        style="color:${item.someColor[1]}"></i>
         </button>
-        <a href="">${item.someName}</a>
+        <a id="name${index}" href="#">${item.someName}</a>
         <div class="btn-wrapper">
-            <button onclick="Project.removeEl(${index})"><i class="fa fa-ellipsis-h"></i></button>
+            <button onclick="Project.remove(${index})"><i class="fa fa-ellipsis-h"></i></button>
         </div>
         </li>
-        `}
+        `
+    }
 
-    static renderEls = () => {
-        Taker.touchArray(projectsArr)
+    static render() {
         Controller.renderEls(
             this,
-            Taker.someArray,
+            projectsArr,
             this.idsDom.renderPlace,
-            this.idsDom.simpleSelector)
+            this.idsDom.simpleSelector,
+        )
+        projectsDOMEls = document.querySelectorAll('.item-proj')
     }
 
-    static addEl = () => {
-        Controller.addEl(this, Taker.someArray)
+    static add() {
+        Controller.addEl(this, projectsArr)
+        this.render()
+        Editor.resetEditor(
+            this.idsDom.inputColor,
+            this.idsDom.inputName,
+            this.idsDom.btnShowEditor,
+            this.idsDom.wrapperEditor
+        )
     }
 
-    static editEl = (index) => {
-        Controller.editEl(this, Taker.someArray, index)
+    static edit(index) {
+        Controller.editEl(this, projectsArr, index)
+        this.render()
+        Editor.resetEditor(
+            this.idsDom.inputColor,
+            this.idsDom.inputName,
+            this.idsDom.btnShowEditor,
+            this.idsDom.wrapperEditor
+        )
     }
 
-    static removeEl = (index) => {
-        Controller.removeEl(this, Taker.someArray, index)
+    static remove(index) {
+        Controller.removeEl(this, projectsArr, index)
+        this.render()
     }
 }

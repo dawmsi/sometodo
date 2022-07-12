@@ -1,7 +1,4 @@
 class Taker {
-    static someArray
-    static touchArray = (someArray) => { this.someArray = someArray }
-
     static fromHtml = (
         inputColor,
         inputName,

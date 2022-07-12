@@ -18,7 +18,9 @@ class Editor {
         btnShowEditor,
         btnSubmit,
         wrapperEditor,
+        newParent,
         index,
+        item
     ) => {
         this.resetEditor(
             inputColor,
@@ -27,19 +29,21 @@ class Editor {
             wrapperEditor
         )
         if (index || index === 0) {
-            Taker.touchArray(projectsArr)
-            inputName.value = Taker.someArray[index].someName
-            inputColor.value = Taker.someArray[index].someColor
-            inputColor.style = `color:${Taker.someArray[index].someColor}`
+            inputName.value = item.parentElement.childNodes[3].text
+            inputColor.options.selectedIndex = item.childNodes[1].id
+            inputColor.style.color = item.childNodes[1].style.color
+            inputColor.addEventListener("change", () => {
+                inputColor.style.color = inputColor.options[inputColor.options.selectedIndex].style.color
+            })
             btnSubmit.innerHTML = `
-            <button onclick="${Project.name}.editEl(${index})">
+            <button onclick="${newParent.name}.edit(${index})">
                 <i class="fa fa-pencil"></i>
                 </button>
             `
         }
         else {
             btnSubmit.innerHTML = `
-            <button onclick="Project.addEl()">
+            <button onclick="${newParent}.add()">
                 <i class="fa fa-check"></i>
                 </button>
             `
