@@ -77,18 +77,20 @@
 
                     </ul>
                     <div id="markEditor" class="defaultEditor">
-                        <select part="listbox" id="colorM">
-                            <option part="option" value="#fff" style="color:#fff" selected>&#xf097;</option>
-                            <option value="#ff4929" style="color:#ff4929">&#xf097;</option>
-                            <option value="#ffb52b" style="color:#ffb52b">&#xf097;</option>
-                            <option value="#fcfa79" style="color:#fcfa79">&#xf097;</option>
-                        </select>
-                        <input id="inputMark" placeholder="Write name of mark" type="text">
-                        <div class="btn-wrapper">
-                            <button id="btnEditAdd">
-                                >
-                            </button>
-                        </div>
+                        <form class="formEdit" action="" onsubmit="return false;">
+                            <select id="colorM">
+                                <option value="#fff" style="color:#fff" selected>&#xf097;</option>
+                                <option value="#ff4929" style="color:#ff4929">&#xf097;</option>
+                                <option value="#ffb52b" style="color:#ffb52b">&#xf097;</option>
+                                <option value="#fcfa79" style="color:#fcfa79">&#xf097;</option>
+                            </select>
+                            <input id="inputMark" placeholder="Write name of mark" type="text">
+                            <div class="btn-wrapper">
+                                <button id="btnEditAdd">
+
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </ul>
                 <ul class="include-list">
@@ -110,21 +112,22 @@
 
                     </ul>
                     <div id="editorProject" class="defaultEditor">
-                        <select id="colorP">
-                            <option value="#fff" style="color:#fff" selected>&#xf1db;</option>
-                            <option value="#ff4929" style="color:#ff4929">&#xf1db;</option>
-                            <option value="#ffb52b" style="color:#ffb52b">&#xf1db;</option>
-                            <option value="#fcfa79" style="color:#fcfa79">&#xf1db;</option>
-                            <option value="#29ff89" style="color:#29ff89">&#xf1db;</option>
-                            <option value="#2b6eff" style="color:#2b6eff">&#xf1db;</option>
-                            <option value="#c879fc" style="color:#c879fc">&#xf1db;</option>
-
-                        </select>
-                        <input id="inputProj" placeholder="Write name of project" type="text">
-                        <div class="btn-wrapper">
-                            <button id="btnEditAddProj">
-                            </button>
-                        </div>
+                        <form class="formEdit" action="" onsubmit="return false;">
+                            <select id="colorP">
+                                <option value="#fff" style="color:#fff" selected>&#xf1db;</option>
+                                <option value="#ff4929" style="color:#ff4929">&#xf1db;</option>
+                                <option value="#ffb52b" style="color:#ffb52b">&#xf1db;</option>
+                                <option value="#fcfa79" style="color:#fcfa79">&#xf1db;</option>
+                                <option value="#29ff89" style="color:#29ff89">&#xf1db;</option>
+                                <option value="#2b6eff" style="color:#2b6eff">&#xf1db;</option>
+                                <option value="#c879fc" style="color:#c879fc">&#xf1db;</option>
+                            </select>
+                            <input id="inputProj" placeholder="Write name of project" type="text">
+                            <div class="btn-wrapper">
+                                <button id="btnEditAddProj">
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </ul>
             </section>
@@ -149,14 +152,17 @@
             <div class="todos-wrapper">
             </div>
 
-            <div class="line-area" onclick="Adder.showAdder()">
+            <div class="line-area" onclick="Editor.showTaskEditor(
+                Task.idsDom.wrapperEditor,
+                Task.idsDom.btnSubmit,
+            )">
                 <div class="line"></div>
                 <a class="add-link">Add task
                 </a>
                 <div class="line"></div>
             </div>
 
-            <div id="adding">
+            <div id="adding" class="defaultEditor">
                 <form id="formAdd" action="addBtn" onsubmit="return false;">
                     <div class="container">
                         <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
@@ -169,13 +175,21 @@
                                 <button><i class="fa fa-inbox"></i>In</button>
                             </div>
                             <div class="additional">
-                                <button><i class="fa fa-tag"></i></button>
+                                <button class="btnMarkInTask"
+                                    onclick="Taker.fromArrToPlace(marksDOMEls, '#marksInTask')">
+                                    <i class="fa fa-bookmark"></i>
+                                    <select id="marksInTask" class="selectMark">
+                                        <option value="" hidden selected>
+
+                                        </option>
+                                    </select>
+                                </button>
                                 <button><i class="fa fa-clock-o"></i></button>
                             </div>
                         </div>
                     </div>
                     <div class="btns-main">
-                        <button id="cancel" onclick="Adder.abolition()">Cancel</button>
+                        <button id="cancel" onclick="Editor.resetEditor(Task.idsDom.wrapperEditor)">Cancel</button>
                         <div id="add-task-btn"></div>
                     </div>
                 </form>
@@ -193,14 +207,23 @@
     <script src="modules/Controller.js"></script>
     <script src="modules/Editor.js"></script>
     <script src="modules/Taker.js"></script>
+
+
+
+    <!-- <script src="structure/main/adder/Adder.js"></script> -->
+    <!-- <script src="structure/main/task/Task.js"></script> -->
+
+    <script src="/structure/main/task/task_Controller.js"></script>
+    <script src="/structure/main/task/Task.js"></script>
+
+
     <script src="structure/aside/projects/Project.js"></script>
     <script src="structure/aside/marks/Mark.js"></script>
     <script src="structure/aside/counters/counters.js"></script>
-    <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
-    <script src="structure/main/adder/Adder.js"></script>
-    <script src="structure/main/task/Task.js"></script>
-    <script src="structure/pop/Pop.js"></script>
     <script src="structure/aside/Aside.js"></script>
+
+    <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
+    <script src="structure/pop/Pop.js"></script>
     <script src="app.js"></script>
 
 </body>

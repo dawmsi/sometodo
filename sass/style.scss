@@ -124,18 +124,11 @@ html {
                 z-index: 20;
                 position: inherit;
                 top: 48px;
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto minmax(auto, 1fr);
-                justify-items: start;
-                align-items: center;
-                max-height: 100%;
-                padding: 0 4%;
                 .partName {
                     z-index: 10;
                     position: sticky;
                     top: 48px;
-                    padding: 15px 0 10px 0;
+                    padding: 15px;
                     background-color: #1f1f1f;
                     border-bottom: 1px solid #444444;
                     width: 100%;

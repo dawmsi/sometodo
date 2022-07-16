@@ -215,11 +215,6 @@ header .bar-btn #home i {
   }
 }
 .defaultEditor {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
   height: 0;
   visibility: hidden;
   transition: transform 200ms;
@@ -227,6 +222,13 @@ header .bar-btn #home i {
   color: #fff;
   background-color: rgba(90, 90, 90, 0.3647058824);
   border-radius: 4px;
+}
+.defaultEditor .formEdit {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
 }
 .defaultEditor input {
   padding: 2px 2spx;
@@ -247,15 +249,16 @@ header .bar-btn #home i {
   font-size: 13px;
 }
 .defaultEditor option {
+  font-family: "FontAwesome", "Second Font name";
   background-color: #202020;
   line-height: 13px;
 }
-.defaultEditor i.fa {
+.defaultEditor option i.fa {
   font-size: 13px;
   text-align: center;
   width: 13px;
 }
-.defaultEditor i.fa:hover {
+.defaultEditor option i.fa:hover {
   color: orange;
   text-shadow: none;
 }
@@ -388,12 +391,7 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
 }
 
 .todos-wrapper {
-  min-height: 100%;
-  max-height: 100%;
   width: 100%;
-  display: grid;
-  border: 1px solid transparent;
-  border-radius: 4px;
 }
 .todos-wrapper .todo-item {
   display: grid;
@@ -402,10 +400,10 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  justify-content: start;
+  justify-content: space-evenly;
+  gap: 4px;
   align-content: center;
   border-bottom: 1px solid #444444;
-  padding: 5px;
 }
 .todos-wrapper .todo-item .checkbox-wrapper {
   justify-items: center;
@@ -484,6 +482,7 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
 .todos-wrapper .todo-item .btn-wrapper .btn-edit-menu {
   position: relative;
 }
+
 .checked .nameTask,
 .checked .descriptionTask,
 .checked .btn-wrapper {
@@ -494,10 +493,43 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   display: none;
 }
 
+.btnMarkInTask {
+  position: relative;
+}
+
+.selectMark {
+  font-family: "FontAwesome", "Second Font name";
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  background-color: transparent;
+  padding: 1px 3px;
+  margin: 0 2.8px;
+  line-height: 12px;
+  position: absolute;
+  outline: none;
+  border: none;
+  top: 2px;
+  right: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: inherit;
+}
+.selectMark option {
+  background-color: #252525;
+  color: #fff;
+}
+.selectMark p {
+  color: #fff;
+}
+
 #adding {
   width: 100%;
-  display: none;
-  padding: 5px 0 10px 0;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
 }
 #adding .container {
   width: 100%;
@@ -758,20 +790,13 @@ html body main #content-wrapper {
   z-index: 20;
   position: inherit;
   top: 48px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto minmax(auto, 1fr);
-  justify-items: start;
-  align-items: center;
-  max-height: 100%;
-  padding: 0 4%;
 }
 html body main #content-wrapper .partName {
   z-index: 10;
   position: -webkit-sticky;
   position: sticky;
   top: 48px;
-  padding: 15px 0 10px 0;
+  padding: 15px;
   background-color: #1f1f1f;
   border-bottom: 1px solid #444444;
   width: 100%;

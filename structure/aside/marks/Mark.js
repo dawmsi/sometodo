@@ -33,40 +33,36 @@ class Mark {
         `
     }
 
-    static render() {
+    static render(inputArray, simpleSelector) {
         Controller.renderEls(
             this,
-            marksArr,
+            inputArray,
             this.idsDom.renderPlace,
             this.idsDom.simpleSelector,
         )
-        marksDOMEls = document.querySelectorAll('.item-proj')
+        marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
     }
 
     static add() {
         Controller.addEl(this, marksArr)
-        this.render()
+        this.render(marksArr)
         Editor.resetEditor(
-            this.idsDom.inputColor,
-            this.idsDom.inputName,
+            this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
-            this.idsDom.wrapperEditor
         )
     }
 
     static edit(index) {
         Controller.editEl(this, marksArr, index)
-        this.render()
+        this.render(marksArr)
         Editor.resetEditor(
-            this.idsDom.inputColor,
-            this.idsDom.inputName,
+            this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
-            this.idsDom.wrapperEditor
         )
     }
 
     static remove(index) {
         Controller.removeEl(this, marksArr, index)
-        this.render()
+        this.render(marksArr)
     }
 }

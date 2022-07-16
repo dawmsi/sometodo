@@ -24,8 +24,10 @@ function clearLocal() {
     location.reload()
 }
 
+Mark.render(marksArr, Mark.idsDom.simpleSelector)
+Project.render(projectsArr)
 
-Task.renderList()
+Task.render(tasksArr)
 countPluser()
-Mark.render(marksArr, Mark.idsDom.renderPlace, Mark.idsDom.simpleSelector)
-Project.render(projectsArr, Project.idsDom.renderPlace, Project.idsDom.simpleSelector)
+
+

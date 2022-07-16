@@ -1,15 +1,13 @@
 class Editor {
     static resetEditor(
-        inputColor,
-        inputName,
+        wrapperEditor,
         btnShowEditor,
-        wrapperEditor
     ) {
-        inputColor.options.selectedIndex = 0
-        inputColor.style = `color: none`
-        inputName.value = ''
-        btnShowEditor.classList.toggle('cencelBtn')
         wrapperEditor.classList.toggle('showEditor')
+        wrapperEditor.getElementsByTagName('form')[0].reset()
+        if (btnShowEditor) {
+            btnShowEditor.classList.toggle('cencelBtn')
+        }
     }
 
     static showEditor = (
@@ -23,15 +21,13 @@ class Editor {
         item
     ) => {
         this.resetEditor(
-            inputColor,
-            inputName,
-            btnShowEditor,
-            wrapperEditor
+            wrapperEditor,
+            btnShowEditor
         )
         if (index || index === 0) {
-            inputName.value = item.parentElement.childNodes[3].text
-            inputColor.options.selectedIndex = item.childNodes[1].id
-            inputColor.style.color = item.childNodes[1].style.color
+            inputName.value = item.parentNode.getElementsByTagName('a')[0].text
+            inputColor.options.selectedIndex = item.getElementsByTagName('i')[0].id
+            inputColor.style.color = item.getElementsByTagName('i')[0].style.color
             inputColor.addEventListener("change", () => {
                 inputColor.style.color = inputColor.options[inputColor.options.selectedIndex].style.color
             })
@@ -47,6 +43,31 @@ class Editor {
                 <i class="fa fa-check"></i>
                 </button>
             `
+        }
+    }
+
+    static showTaskEditor(
+        wrapperEditor,
+        btnSubmit,
+        inputName,
+        description = '',
+        index,
+        item
+    ) {
+        this.resetEditor(wrapperEditor)
+        if (index || index === 0) {
+            console.log(item.parentNode.parentNode)
+            inputName.value = item.parentElement.parentElement.childNodes[3].childNodes[1].childNodes[0].childNodes[0].textContent
+            if (description) {
+                description.value = item.parentElement.parentElement.childNodes[3].childNodes[3].childNodes[0].textContent
+            }
+            btnSubmit.innerHTML = `
+                <button onclick="Task.edit(${index})">Save</button>
+                `
+        } else {
+            btnSubmit.innerHTML = `
+                <button onclick="Task.add(tasksArr)">Add</button>
+                `
         }
     }
 }

@@ -1,19 +1,14 @@
 .todos-wrapper {
-    min-height: 100%;
-    max-height: 100%;
     width: 100%;
-    display: grid;
-    border: 1px solid transparent;
-    border-radius: 4px;
     .todo-item {
         display: grid;
         grid-template-columns: minmax(15px, auto) 1fr minmax(50px, auto);
         grid-template-rows: 1fr;
         height: fit-content;
-        justify-content: start;
+        justify-content: space-evenly;
+        gap: 4px;
         align-content: center;
         border-bottom: 1px solid #444444;
-        padding: 5px;
         .checkbox-wrapper {
             justify-items: center;
             align-content: center;
@@ -92,8 +87,6 @@
             }
         }
     }
-    .todo-item:hover {
-    }
 }
 
 .checked .nameTask,
@@ -104,4 +97,32 @@
 
 .hide {
     display: none;
+}
+
+.btnMarkInTask {
+    position: relative;
+}
+
+.selectMark {
+    font-family: "FontAwesome", "Second Font name";
+    appearance: none;
+    display: block;
+    background-color: transparent;
+    padding: 1px 3px;
+    margin: 0 2.8px;
+    line-height: 12px;
+    position: absolute;
+    outline: none;
+    border: none;
+    top: 2px;
+    right: 0;
+    height: fit-content;
+    color: inherit;
+    option {
+        background-color: #252525;
+        color: #fff;
+    }
+    p {
+        color: #fff;
+    }
 }

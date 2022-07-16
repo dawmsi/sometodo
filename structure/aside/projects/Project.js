@@ -47,10 +47,8 @@ class Project {
         Controller.addEl(this, projectsArr)
         this.render()
         Editor.resetEditor(
-            this.idsDom.inputColor,
-            this.idsDom.inputName,
+            this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
-            this.idsDom.wrapperEditor
         )
     }
 
@@ -58,10 +56,8 @@ class Project {
         Controller.editEl(this, projectsArr, index)
         this.render()
         Editor.resetEditor(
-            this.idsDom.inputColor,
-            this.idsDom.inputName,
+            this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
-            this.idsDom.wrapperEditor
         )
     }
 

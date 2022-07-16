@@ -1,22 +1,45 @@
-class Task extends Adder {
-    static createTask = (task, index) => {
+class Task {
+    static idsDom = Taker.fromHtml(
+        '#marksInTask',
+        '#name-task',
+        '.add-link',
+        '#add-task-btn',
+        '#adding',
+        '.todos-wrapper',
+        'todo-item',
+        '#description-task'
+    )
+
+    static create = (item, simpleSelector, index) => {
         return `
-        <div class="todo-item ${task.completed ? "checked" : ""}">
+        <div class="${simpleSelector} ${item.completed ? "checked" : ""}">
             <div class="checkbox-wrapper">
             <input onclick="Task.toggleTask(${index})" type="checkbox" 
             id="${index}" 
-            class="custom-checkbox" ${task.completed ? "checked" : ""}>
+            class="custom-checkbox" ${item.completed ? "checked" : ""}>
             <label for="${index}"></label>
             </div>
             <div class="detailsTask">
-            <div class="nameTask"><p>${task.nameTask}</p></div>
-            <div class="descriptionTask ${task.descriptionTask ? "" : "hide"
-            }"><p>${task.descriptionTask}</p></div>
+            <div class="nameTask"><p>${item.someName}</p></div>
+            <div class="descriptionTask ${item.someDescription ? "" : "hide"
+            }"><p>${item.someDescription}</p></div>
             </div>
             <div class="btn-wrapper">
-                <button onclick="Adder.showAdder(${index})" class="btn-edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                <button onclick="Task.removeTask(${index})" class="btn-del"><i class="fa fa-trash"></i></button>
-                <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i></button>
+                <button onclick="Editor.showTaskEditor(
+                    ${this.name}.idsDom.wrapperEditor,
+                    ${this.name}.idsDom.btnSubmit,
+                    ${this.name}.idsDom.inputName,
+                    ${this.name}.idsDom.description,
+                    ${index},
+                    this
+                    )" class="btn-edit">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </button>
+                <button onclick="Task.remove(${index})" class="btn-del">
+                <i class="fa fa-trash"></i>
+                </button>
+                <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i>
+                </button>
             </div>
         </div>
         `
@@ -28,17 +51,6 @@ class Task extends Adder {
         let completedTasks =
             tasksArr.length && tasksArr.filter((item) => item.completed)
         tasksArr = [...activeTasks, ...completedTasks]
-    }
-
-    static renderList = () => {
-        Task.parent.innerHTML = ""
-        if (tasksArr.length > 0) {
-            Task.filterTasks()
-            tasksArr.forEach((item, index) => {
-                Task.parent.innerHTML += Task.createTask(item, index)
-            })
-            todoItemEls = document.querySelectorAll(".todo-item")
-        }
     }
 
     static toggleTask = (index) => {
@@ -66,34 +78,36 @@ class Task extends Adder {
 
         countPluser()
         updateLocal()
-        Task.renderList()
+        this.render(tasksArr, 'todo-item')
     }
 
-    static addTask = () => {
-        tasksArr.push(
-            new Task(
-                Task.taskInput.value,
-                Task.descriptionInput.value)
+    static render(inputArray, simpleSelector) {
+        task_Controller.renderEls(
+            this,
+            inputArray,
+            this.idsDom.renderPlace,
+            this.idsDom.simpleSelector,
         )
+        todoItemEls = document.querySelectorAll(`.${simpleSelector}`)
+    }
 
-        updateLocal()
-        Task.renderList()
+    static add(inputArray) {
+        task_Controller.addEl(this, inputArray)
+        this.render(inputArray, 'todo-item')
         countPluser()
+        Editor.resetEditor(Task.idsDom.wrapperEditor)
     }
 
-    static editTask = (indexTask) => {
-        tasksArr[indexTask] = new Task(
-            Task.taskInput.value,
-            Task.descriptionInput.value
-        )
-        updateLocal()
-        Task.renderList()
+    static edit(index) {
+        task_Controller.editEl(this, tasksArr, index)
+        this.render(tasksArr, 'todo-item')
+        countPluser()
+        Editor.resetEditor(Task.idsDom.wrapperEditor)
     }
 
-    static removeTask = (index) => {
-        tasksArr.splice(index, 1)
-        Task.toggleTask()
-        updateLocal()
-        Task.renderList()
+    static remove(index) {
+        task_Controller.removeEl(tasksArr, index)
+        this.render(tasksArr, 'todo-item')
+        countPluser()
     }
 }

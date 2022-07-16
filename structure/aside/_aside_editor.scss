@@ -1,9 +1,4 @@
 .defaultEditor {
-    display: grid;
-    grid-auto-flow: column;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
     height: 0;
     visibility: hidden;
     transition: transform 200ms;
@@ -11,6 +6,13 @@
     color: #fff;
     background-color: #5a5a5a5d;
     border-radius: 4px;
+    .formEdit {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+    }
     input {
         padding: 2px 2spx;
     }
@@ -28,20 +30,21 @@
         font-size: 13px;
     }
     option {
+        font-family: "FontAwesome", "Second Font name";
         background-color: #202020;
         line-height: 13px;
-    }
-
-    i.fa {
-        font-size: 13px;
-        text-align: center;
-        width: 13px;
-    }
-    i.fa:hover {
-        color: orange;
-        text-shadow: none;
+        i.fa {
+            font-size: 13px;
+            text-align: center;
+            width: 13px;
+        }
+        i.fa:hover {
+            color: orange;
+            text-shadow: none;
+        }
     }
 }
+
 .showEditor {
     height: auto;
     visibility: visible;
