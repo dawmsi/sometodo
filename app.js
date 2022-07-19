@@ -25,9 +25,9 @@ function clearLocal() {
 }
 
 Mark.render(marksArr, Mark.idsDom.simpleSelector)
-Project.render(projectsArr)
+Project.render(projectsArr, Project.idsDom.simpleSelector)
 
-Task.render(tasksArr)
+Task.render(tasksArr, Task.idsDom.simpleSelector)
 countPluser()
 
 

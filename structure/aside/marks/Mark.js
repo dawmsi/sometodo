@@ -1,4 +1,6 @@
-class Mark {
+class Mark extends Using {
+    static nameArray = 'marksArr'
+
     static idsDom = Taker.fromHtml(
         '#colorM',
         '#inputMark',
@@ -25,7 +27,7 @@ class Mark {
         </div>
         <a id="name${index}" href="#">${item.someName}</a>
         <div class="btn-wrapper">
-            <button onclick="Mark.remove(${index})"><i class="fa fa-trash"></i></button>
+            <button onclick="${this.name}.remove(marksArr, ${index})"><i class="fa fa-trash"></i></button>
         </div>
         </li>
         `
@@ -39,28 +41,5 @@ class Mark {
             this.idsDom.simpleSelector,
         )
         marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
-    }
-
-    static add() {
-        Controller.addEl(this, marksArr)
-        this.render(marksArr)
-        Editor.resetEditor(
-            this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor,
-        )
-    }
-
-    static edit(index) {
-        Controller.editEl(this, marksArr, index)
-        this.render(marksArr)
-        Editor.resetEditor(
-            this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor,
-        )
-    }
-
-    static remove(index) {
-        Controller.removeEl(this, marksArr, index)
-        this.render(marksArr)
     }
 }

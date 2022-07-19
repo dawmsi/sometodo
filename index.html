@@ -65,7 +65,7 @@
                         <a id="filter-task" href="#">Marks</a>
                         <button class="defaultBtn" id="btnShowEditor" onclick="Editor.showEditor(
                             Mark.idsDom,
-                            Mark.name,
+                            Mark,
                         )">
                             <i class="fa plus">+</i></button>
                     </li>
@@ -95,7 +95,7 @@
                         <a href="#" class="toggle-show">Projects</a>
                         <button class="defaultBtn" id="btnShowEditProj" onclick="Editor.showEditor(
                             Project.idsDom,
-                            Project.name,
+                            Project,
                         )">
                             <i class="fa plus">+</i>
                         </button>
@@ -146,7 +146,7 @@
 
             <div class="line-area" onclick="Editor.showEditor(
                 Task.idsDom,
-                Task.name,
+                Task,
             )">
                 <div class="line"></div>
                 <a class="add-link">Add task
@@ -197,21 +197,17 @@
     </div>
 
 
+    <script src="modules/Using.js"></script>
     <script src="modules/Controller.js"></script>
     <script src="modules/Editor.js"></script>
     <script src="modules/Taker.js"></script>
 
-
-
-    <!-- <script src="structure/main/adder/Adder.js"></script> -->
-    <!-- <script src="structure/main/task/Task.js"></script> -->
-
-    <script src="/structure/main/task/task_Controller.js"></script>
-    <script src="/structure/main/task/Task.js"></script>
-
+    <script src="structure/main/task/task_Controller.js"></script>
+    <script src="structure/main/task/Task.js"></script>
 
     <script src="structure/aside/projects/Project.js"></script>
     <script src="structure/aside/marks/Mark.js"></script>
+
     <script src="structure/aside/counters/counters.js"></script>
     <script src="structure/aside/Aside.js"></script>
 

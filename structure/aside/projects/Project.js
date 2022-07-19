@@ -1,4 +1,6 @@
-class Project {
+class Project extends Using {
+    static nameArray = 'projectsArr'
+
     static idsDom = Taker.fromHtml(
         '#colorP',
         '#inputProj',
@@ -25,42 +27,19 @@ class Project {
         </div>
         <a id="name${index}" href="#">${item.someName}</a>
         <div class="btn-wrapper">
-            <button onclick="Project.remove(${index})"><i class="fa fa-ellipsis-h"></i></button>
+            <button onclick="${this.name}.remove(projectsArr, ${index})"><i class="fa fa-ellipsis-h"></i></button>
         </div>
         </li>
         `
     }
 
-    static render() {
+    static render(inputArray, simpleSelector) {
         Controller.renderEls(
             this,
-            projectsArr,
+            inputArray,
             this.idsDom.renderPlace,
             this.idsDom.simpleSelector,
         )
-        projectsDOMEls = document.querySelectorAll('.item-proj')
-    }
-
-    static add() {
-        Controller.addEl(this, projectsArr)
-        this.render()
-        Editor.resetEditor(
-            this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor,
-        )
-    }
-
-    static edit(index) {
-        Controller.editEl(this, projectsArr, index)
-        this.render()
-        Editor.resetEditor(
-            this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor,
-        )
-    }
-
-    static remove(index) {
-        Controller.removeEl(this, projectsArr, index)
-        this.render()
+        projectsDOMEls = document.querySelectorAll(`.${simpleSelector}`)
     }
 }

@@ -1,4 +1,6 @@
 class Task {
+    static nameArray = 'tasksArr'
+
     static idsDom = Taker.fromHtml(
         '#marksInTask',
         '#name-task',
@@ -29,11 +31,11 @@ class Task {
                     ${this.name}.idsDom,
                     ${this.name},
                     this,
-                    ${index},
+                    ${index}
                     )" class="btn-edit">
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </button>
-                <button onclick="Task.remove(${index})" class="btn-del">
+                <button onclick="Task.remove(tasksArr, ${index})" class="btn-del">
                 <i class="fa fa-trash"></i>
                 </button>
                 <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i>
@@ -43,13 +45,13 @@ class Task {
         `
     }
 
-    static filterTasks = () => {
-        let activeTasks =
-            tasksArr.length && tasksArr.filter((item) => !item.completed)
-        let completedTasks =
-            tasksArr.length && tasksArr.filter((item) => item.completed)
-        tasksArr = [...activeTasks, ...completedTasks]
-    }
+    // static filterTasks = () => {
+    //     let activeTasks =
+    //         tasksArr.length && tasksArr.filter((item) => !item.completed)
+    //     let completedTasks =
+    //         tasksArr.length && tasksArr.filter((item) => item.completed)
+    //     tasksArr = [...activeTasks, ...completedTasks]
+    // }
 
     static toggleTask = (index) => {
         if (index) {
@@ -76,7 +78,7 @@ class Task {
 
         countPluser()
         updateLocal()
-        this.render(tasksArr, 'todo-item')
+        this.render(tasksArr, this.idsDom.simpleSelector)
     }
 
     static render(inputArray, simpleSelector) {
@@ -91,21 +93,23 @@ class Task {
 
     static add(inputArray) {
         task_Controller.addEl(this, inputArray)
-        this.render(inputArray, 'todo-item')
+        this.render(inputArray, this.idsDom.simpleSelector)
         countPluser()
-        Editor.resetEditor(Task.idsDom.wrapperEditor)
+        Editor.resetEditor(this.idsDom.wrapperEditor,
+            this.idsDom.btnShowEditor)
     }
 
-    static edit(index) {
-        task_Controller.editEl(this, tasksArr, index)
-        this.render(tasksArr, 'todo-item')
+    static edit(inputArray, index) {
+        task_Controller.editEl(this, inputArray, index)
+        this.render(inputArray, this.idsDom.simpleSelector)
         countPluser()
-        Editor.resetEditor(Task.idsDom.wrapperEditor)
+        Editor.resetEditor(this.idsDom.wrapperEditor,
+            this.idsDom.btnShowEditor)
     }
 
-    static remove(index) {
-        task_Controller.removeEl(tasksArr, index)
-        this.render(tasksArr, 'todo-item')
+    static remove(inputArray, index) {
+        task_Controller.removeEl(this, inputArray, index)
+        this.render(inputArray, this.idsDom.simpleSelector)
         countPluser()
     }
 }

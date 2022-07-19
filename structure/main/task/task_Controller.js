@@ -14,10 +14,9 @@ class task_Controller {
     ) => {
         renderPlace.innerHTML = ''
         if (elementsArray.length > 0)
-            Task.filterTasks()
-        elementsArray.forEach((item, index) => {
-            renderPlace.innerHTML += newParent.create(item, simpleSelector, index)
-        })
+            elementsArray.forEach((item, index) => {
+                renderPlace.innerHTML += newParent.create(item, simpleSelector, index)
+            })
     }
 
     static addEl = (newParent, elementsArray) => {
