@@ -64,11 +64,7 @@
                         <i id="marks" class="fa fa-bookmark" aria-hidden="true"></i>
                         <a id="filter-task" href="#">Marks</a>
                         <button class="defaultBtn" id="btnShowEditor" onclick="Editor.showEditor(
-                            Mark.idsDom.inputColor,
-                            Mark.idsDom.inputName,
-                            Mark.idsDom.btnShowEditor,
-                            Mark.idsDom.btnSubmit,
-                            Mark.idsDom.wrapperEditor,
+                            Mark.idsDom,
                             Mark.name,
                         )">
                             <i class="fa plus">+</i></button>
@@ -98,11 +94,7 @@
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
                         <a href="#" class="toggle-show">Projects</a>
                         <button class="defaultBtn" id="btnShowEditProj" onclick="Editor.showEditor(
-                            Project.idsDom.inputColor,
-                            Project.idsDom.inputName,
-                            Project.idsDom.btnShowEditor,
-                            Project.idsDom.btnSubmit,
-                            Project.idsDom.wrapperEditor,
+                            Project.idsDom,
                             Project.name,
                         )">
                             <i class="fa plus">+</i>
@@ -152,9 +144,9 @@
             <div class="todos-wrapper">
             </div>
 
-            <div class="line-area" onclick="Editor.showTaskEditor(
-                Task.idsDom.wrapperEditor,
-                Task.idsDom.btnSubmit,
+            <div class="line-area" onclick="Editor.showEditor(
+                Task.idsDom,
+                Task.name,
             )">
                 <div class="line"></div>
                 <a class="add-link">Add task
@@ -189,8 +181,9 @@
                         </div>
                     </div>
                     <div class="btns-main">
-                        <button id="cancel" onclick="Editor.resetEditor(Task.idsDom.wrapperEditor)">Cancel</button>
-                        <div id="add-task-btn"></div>
+                        <button id="cancel"
+                            onclick="Editor.resetEditor(Task.idsDom.wrapperEditor, Task.idsDom.btnShowEditor)">Cancel</button>
+                        <button id="add-task-btn">Done</button>
                     </div>
                 </form>
             </div>

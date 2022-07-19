@@ -12,22 +12,20 @@ class Mark {
     static create = (item, simpleSelector, index) => {
         return `
         <li class="item ${simpleSelector}">
+        <div class="btn-wrapper">
         <button onclick="Editor.showEditor(
-            ${this.name}.idsDom.inputColor,
-            ${this.name}.idsDom.inputName,
-            ${this.name}.idsDom.btnShowEditor,
-            ${this.name}.idsDom.btnSubmit,
-            ${this.name}.idsDom.wrapperEditor,
+            ${this.name}.idsDom,
             ${this.name},
-            ${index},
-            this)">
+            this,
+            ${index},)">
         <i id="${item.someColor[0]}" 
         class="fa fa-bookmark-o" 
         style="color:${item.someColor[1]}"></i>
         </button>
+        </div>
         <a id="name${index}" href="#">${item.someName}</a>
         <div class="btn-wrapper">
-            <button onclick="Mark.remove(${index})"><i class="fa fa-ellipsis-h"></i></button>
+            <button onclick="Mark.remove(${index})"><i class="fa fa-trash"></i></button>
         </div>
         </li>
         `

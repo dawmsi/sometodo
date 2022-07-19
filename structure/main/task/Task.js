@@ -20,18 +20,16 @@ class Task {
             <label for="${index}"></label>
             </div>
             <div class="detailsTask">
-            <div class="nameTask"><p>${item.someName}</p></div>
+            <div class="nameTask"><a>${item.someName}</a></div>
             <div class="descriptionTask ${item.someDescription ? "" : "hide"
             }"><p>${item.someDescription}</p></div>
             </div>
             <div class="btn-wrapper">
-                <button onclick="Editor.showTaskEditor(
-                    ${this.name}.idsDom.wrapperEditor,
-                    ${this.name}.idsDom.btnSubmit,
-                    ${this.name}.idsDom.inputName,
-                    ${this.name}.idsDom.description,
+                <button onclick="Editor.showEditor(
+                    ${this.name}.idsDom,
+                    ${this.name},
+                    this,
                     ${index},
-                    this
                     )" class="btn-edit">
                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </button>

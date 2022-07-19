@@ -93,7 +93,7 @@ aside {
                     color: white;
                     text-shadow: 0 0 6px white;
                 }
-                .list .item:hover > button i:first-child::before {
+                .list .item:hover > .btn-wrapper:first-child i::before {
                     content: "\f044";
                     font-size: 13px;
                 }
@@ -104,7 +104,7 @@ aside {
                         width: 13px;
                         padding: 0 3px;
                     }
-                    .item .btn-wrapper {
+                    .item .btn-wrapper:last-child {
                         visibility: hidden;
                         i {
                             font-size: 13px;
