@@ -33,6 +33,12 @@
                 background-color: #5a5a5a5d;
             }
         }
+        .selectProject,
+        select,
+        option {
+            font-family: "FontAwesome", "Second Font name", sans-serif;
+            font-size: 15px;
+        }
     }
     .btns-main {
         display: grid;

@@ -1,8 +1,8 @@
-class Task {
+class Task extends Using {
     static nameArray = 'tasksArr'
 
     static idsDom = Taker.fromHtml(
-        '#marksInTask',
+        '#selectP',
         '#name-task',
         '.add-link',
         '#add-task-btn',
@@ -19,30 +19,38 @@ class Task {
             <input onclick="Task.toggleTask(${index})" type="checkbox" 
             id="${index}" 
             class="custom-checkbox" ${item.completed ? "checked" : ""}>
-            <label for="${index}"></label>
+            <label style="border: 2px solid ${item.someSelect[0] ? projectsArr[item.someSelect[0]].someSelect[1] : '#fff'}" 
+            for="${index}"></label>
             </div>
             <div class="detailsTask">
             <div class="nameTask"><a>${item.someName}</a></div>
-            <div class="descriptionTask ${item.someDescription ? "" : "hide"
-            }"><p>${item.someDescription}</p></div>
-            </div>
+            <div class="descriptionTask ${item.someDescription ? "" : "hide"}">
+            <p>${item.someDescription}</p></div>
+            <div class="markTask" style="color:${item.someSelect}">
+            <button
+            class="${item.someSelect[0] ? "" : "hide"}"
+            style="color: ${projectsArr[item.someSelect[0]].someSelect[1]}">
+            ${item.someSelect[0] ? projectsArr[item.someSelect[0]].someName : ''}
+            </button >
+            </div >
+            </div >
             <div class="btn-wrapper">
                 <button onclick="Editor.showEditor(
                     ${this.name}.idsDom,
                     ${this.name},
-                    this,
+                    ${this.nameArray},
                     ${index}
                     )" class="btn-edit">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </button>
                 <button onclick="Task.remove(tasksArr, ${index})" class="btn-del">
-                <i class="fa fa-trash"></i>
+                    <i class="fa fa-trash"></i>
                 </button>
                 <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i>
                 </button>
             </div>
-        </div>
-        `
+        </div >
+            `
     }
 
     // static filterTasks = () => {
@@ -75,41 +83,40 @@ class Task {
                 }
             }
         }
+        // console.log(previousTasks)
+        // console.log(tasksArr)
 
-        countPluser()
         updateLocal()
         this.render(tasksArr, this.idsDom.simpleSelector)
     }
 
     static render(inputArray, simpleSelector) {
-        task_Controller.renderEls(
+        Controller.renderEls(
             this,
             inputArray,
             this.idsDom.renderPlace,
             this.idsDom.simpleSelector,
         )
-        todoItemEls = document.querySelectorAll(`.${simpleSelector}`)
-    }
-
-    static add(inputArray) {
-        task_Controller.addEl(this, inputArray)
-        this.render(inputArray, this.idsDom.simpleSelector)
-        countPluser()
-        Editor.resetEditor(this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor)
-    }
-
-    static edit(inputArray, index) {
-        task_Controller.editEl(this, inputArray, index)
-        this.render(inputArray, this.idsDom.simpleSelector)
-        countPluser()
-        Editor.resetEditor(this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor)
-    }
-
-    static remove(inputArray, index) {
-        task_Controller.removeEl(this, inputArray, index)
-        this.render(inputArray, this.idsDom.simpleSelector)
+        todoItemEls = document.querySelectorAll(`.${simpleSelector} `)
         countPluser()
     }
+
+    // static add(inputArray) {
+    //     task_Controller.addEl(this, inputArray)
+    //     this.render(inputArray, this.idsDom.simpleSelector)
+    //     Editor.resetEditor(this.idsDom.wrapperEditor,
+    //         this.idsDom.btnShowEditor)
+    // }
+
+    // static edit(inputArray, index) {
+    //     task_Controller.editEl(this, inputArray, index)
+    //     this.render(inputArray, this.idsDom.simpleSelector)
+    //     Editor.resetEditor(this.idsDom.wrapperEditor,
+    //         this.idsDom.btnShowEditor)
+    // }
+
+    // static remove(inputArray, index) {
+    //     task_Controller.removeEl(inputArray, index)
+    //     this.render(inputArray, this.idsDom.simpleSelector)
+    // }
 }

@@ -32,19 +32,5 @@ class Taker {
             }
         }
     }
-    static fromArrToPlace = (arrayDOM, idDOM) => {
-        document.querySelector(idDOM).innerHTML = ''
-        arrayDOM.forEach((item, index) => {
-            console.log()
-            document.querySelector(idDOM).innerHTML +=
-                `
-            <option style="color:${item.childNodes[1].childNodes[1].style.color}">
-            <a id="${index}">
-            <i>&#xf097;</i>
-            <p style"color:#fff">${item.childNodes[3].text}</p>
-            </a>
-            </option>
-            `
-        })
-    }
+
 }

@@ -18,11 +18,11 @@ class Mark extends Using {
         <button onclick="Editor.showEditor(
             ${this.name}.idsDom,
             ${this.name},
-            this,
+            ${this.nameArray},
             ${index},)">
-        <i id="${item.someColor[0]}" 
+        <i id="${item.someSelect[0]}" 
         class="fa fa-bookmark-o" 
-        style="color:${item.someColor[1]}"></i>
+        style="color:${item.someSelect[1]}"></i>
         </button>
         </div>
         <a id="name${index}" href="#">${item.someName}</a>

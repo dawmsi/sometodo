@@ -13,7 +13,7 @@ class Editor {
     static showEditor = (
         inputHTMLObj,
         newParent,
-        item,
+        inputArray,
         index
     ) => {
         this.resetEditor(
@@ -21,16 +21,22 @@ class Editor {
             inputHTMLObj.btnShowEditor
         )
         if (index || index === 0) {
-            inputHTMLObj.inputName.value = item.parentNode.parentNode.getElementsByTagName('a')[0].text
+            inputHTMLObj.inputName.value = inputArray[index].someName
             if (inputHTMLObj.inputColor) {
-                inputHTMLObj.inputColor.options.selectedIndex = item.getElementsByTagName('i')[0].id
-                inputHTMLObj.inputColor.style.color = item.getElementsByTagName('i')[0].style.color
+                if (newParent.name === 'Task') {
+                    console.log(projectsArr[inputArray[index].someSelect[0]])
+                    inputHTMLObj.inputColor.selectedIndex = projectsArr[inputArray[index].someSelect[0]].someSelect[0]
+                    inputHTMLObj.inputColor.style.color = projectsArr[inputArray[index].someSelect[0]].someSelect[1]
+                } else {
+                    inputHTMLObj.inputColor.selectedIndex = inputArray[index].someSelect[0]
+                    inputHTMLObj.inputColor.style.color = inputArray[index].someSelect[1]
+                }
                 inputHTMLObj.inputColor.addEventListener("change", () => {
                     inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
                 })
             }
             if (inputHTMLObj.description) {
-                inputHTMLObj.description.value = item.parentElement.parentElement.childNodes[3].childNodes[3].childNodes[0].textContent
+                inputHTMLObj.description.value = inputArray[index].someDescription
             }
             if (newParent.name === 'Task') {
                 inputHTMLObj.btnSubmit.innerHTML = `
@@ -45,18 +51,18 @@ class Editor {
             }
         }
         else {
+            if (inputHTMLObj.inputColor) {
+                inputHTMLObj.inputColor.selectedIndex = 0
+                inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
+                inputHTMLObj.inputColor.addEventListener("change", () => {
+                    inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
+                })
+            }
             if (newParent.name === 'Task') {
                 inputHTMLObj.btnSubmit.innerHTML = `
                 <button onclick="${newParent.name}.add(${newParent.nameArray})">Add</button>
                 `
             } else {
-                if (inputHTMLObj.inputColor) {
-                    inputHTMLObj.inputColor.options.selectedIndex = 0
-                    inputHTMLObj.inputColor.style.color = '#fff'
-                    inputHTMLObj.inputColor.addEventListener("change", () => {
-                        inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
-                    })
-                }
                 inputHTMLObj.btnSubmit.innerHTML = `
                 <button onclick="${newParent.name}.add(${newParent.nameArray})">
                     <i class="fa fa-check"></i>

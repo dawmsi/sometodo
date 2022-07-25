@@ -12,17 +12,29 @@ class Project extends Using {
     )
 
     static create = (item, simpleSelector, index) => {
-        return `
+        if (index === 0) {
+            return `
+        <li class="item ${simpleSelector}">
+        <button>
+        <i id="${item.someSelect[0]}" 
+        class="fa fa-circle-thin" 
+        style="color:${item.someSelect[1]}"></i>
+        </button>
+        <a id="name${index}" href="#">${item.someName}</a>
+        </li>
+        `
+        } else
+            return `
         <li class="item ${simpleSelector}">
         <div class="btn-wrapper">
         <button onclick="Editor.showEditor(
             ${this.name}.idsDom,
             ${this.name},
-            this,
+            ${this.nameArray},
             ${index},)">
-        <i id="${item.someColor[0]}" 
+        <i id="${item.someSelect[0]}" 
         class="fa fa-circle-thin" 
-        style="color:${item.someColor[1]}"></i>
+        style="color:${item.someSelect[1]}"></i>
         </button>
         </div>
         <a id="name${index}" href="#">${item.someName}</a>
@@ -41,5 +53,17 @@ class Project extends Using {
             this.idsDom.simpleSelector,
         )
         projectsDOMEls = document.querySelectorAll(`.${simpleSelector}`)
+        SelectP.render(projectsArr, SelectP.idsDom.simpleSelector)
+        Task.render(tasksArr, Task.idsDom.simpleSelector)
+    }
+
+    static defaultNoProject() {
+        if (projectsArr) {
+            if (projectsArr[0]?.someName !== 'Not In')
+                projectsArr.unshift(new Controller(
+                    [0, '#fff'],
+                    'Not In'
+                ))
+        }
     }
 }

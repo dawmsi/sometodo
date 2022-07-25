@@ -105,9 +105,8 @@
                     </ul>
                     <div id="editorProject" class="defaultEditor">
                         <form class="formEdit" action="" onsubmit="return false;">
-                            <select id="colorP">
-                                <option value="#fff" style="color:#fff" selected>&#xf1db;</option>
-                                <option value="#ff4929" style="color:#ff4929">&#xf1db;</option>
+                            <select class="selectColor" id="colorP">
+                                <option value="#db4234" style="color:#db4234" selected>&#xf1db;</option>
                                 <option value="#ffb52b" style="color:#ffb52b">&#xf1db;</option>
                                 <option value="#fcfa79" style="color:#fcfa79">&#xf1db;</option>
                                 <option value="#29ff89" style="color:#29ff89">&#xf1db;</option>
@@ -164,16 +163,21 @@
                         <div class="btns-line">
                             <div class="plannig">
                                 <button><i class="fa fa-calendar-plus-o"></i>Today</button>
-                                <button><i class="fa fa-inbox"></i>In</button>
+                                <button>
+                                    In ->
+                                    <select class="selectProject"
+                                        name="" id="selectP">
+                                        <option value="#fff" style="color:#fff">Not In</option>
+                                    </select>
+
+                                </button>
                             </div>
                             <div class="additional">
-                                <button class="btnMarkInTask"
-                                    onclick="Taker.fromArrToPlace(marksDOMEls, '#marksInTask')">
+                                <button class="btnMarkInTask">
                                     <i class="fa fa-bookmark"></i>
                                     <select id="marksInTask" class="selectMark">
-                                        <option value="" hidden selected>
+                                        <option value="" hidden selected></option>
 
-                                        </option>
                                     </select>
                                 </button>
                                 <button><i class="fa fa-clock-o"></i></button>
@@ -202,9 +206,9 @@
     <script src="modules/Editor.js"></script>
     <script src="modules/Taker.js"></script>
 
-    <script src="structure/main/task/task_Controller.js"></script>
     <script src="structure/main/task/Task.js"></script>
 
+    <script src="/structure/aside/projects/SelectP.js"></script>
     <script src="structure/aside/projects/Project.js"></script>
     <script src="structure/aside/marks/Mark.js"></script>
 

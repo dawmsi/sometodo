@@ -1,4 +1,4 @@
-class Using{
+class Using {
     static render(inputArray, simpleSelector) {
         Controller.renderEls(
             this,
@@ -24,7 +24,7 @@ class Using{
     }
 
     static remove(inputArray, index) {
-        Controller.removeEl(this, inputArray, index)
+        Controller.removeEl(inputArray, index)
         this.render(inputArray, this.idsDom.simpleSelector)
     }
 }

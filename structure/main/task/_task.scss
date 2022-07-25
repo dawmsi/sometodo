@@ -21,23 +21,33 @@
                 display: inline-flex;
                 align-items: center;
                 user-select: none;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 18px;
+                text-align: center;
+                display: block;
+                width: 20px;
+                height: 20px;
+                border: 2px solid transparent;
+                border-radius: 50%;
+                margin: 6px;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
             }
             .custom-checkbox + label::before {
                 content: "";
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: 18px;
                 text-align: center;
-                line-height: 15.2px;
+                line-height: 15px;
                 text-rendering: auto;
                 display: block;
                 width: 16px;
                 height: 16px;
                 justify-self: center;
-                flex-shrink: 0;
-                flex-grow: 0;
-                border: 2px solid #db4234;
+                border: 2px solid transparent;
                 border-radius: 50%;
-                margin: 5px;
+                margin: -2px;
                 background-repeat: no-repeat;
                 background-position: center center;
                 background-size: 50% 50%;
@@ -49,13 +59,15 @@
             }
             .custom-checkbox:checked + label::before {
                 content: "\f00c";
-                border-color: #252525;
-                background-color: #abe94d;
-                color: #303030;
+                border-color: #fdfdfd;
+                background-color: rgba(255, 255, 255, 0.118);
+                color: #b0e95c;
+                cursor: pointer;
                 top: 0;
             }
             .custom-checkbox:checked + label:hover::before {
                 content: "\f00d";
+                color: #db4234;
             }
             .custom-checkbox:focus:not(:checked) + label::before {
                 border-color: #80bdff;
@@ -67,18 +79,20 @@
         .detailsTask {
             display: grid;
             grid-auto-flow: row;
+            gap: 4px;
             width: inherit;
             overflow: hidden;
+            padding: 6px 0;
             .nameTask {
                 text-align: left;
                 width: 100%;
                 height: 100%;
-                line-height: 30px;
             }
             .descriptionTask {
                 width: inherit;
                 font-size: 14px;
                 color: silver;
+                margin-bottom: 3px;
             }
         }
         .btn-wrapper {
@@ -103,8 +117,18 @@
     position: relative;
 }
 
+.markTask {
+    font-family: "FontAwesome", "Second Font name", sans-serif;
+    border-radius: 3px;
+    background-color: #444444;
+    width: fit-content;
+    button {
+        padding: 3px 4px;
+    }
+}
+
 .selectMark {
-    font-family: "FontAwesome", "Second Font name";
+    font-family: "FontAwesome", "Second Font name", sans-serif;
     appearance: none;
     display: block;
     background-color: transparent;

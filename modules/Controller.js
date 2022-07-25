@@ -1,7 +1,9 @@
 class Controller {
-    constructor(someColor, someName) {
-        this.someColor = someColor
+    constructor(someSelect, someName, someDescription = null) {
+        this.someSelect = someSelect
         this.someName = someName
+        this.someDescription = someDescription
+        this.completed = false
     }
 
     static renderEls = (
@@ -18,33 +20,55 @@ class Controller {
     }
 
     static addEl = (newParent, elementsArray) => {
-        elementsArray.push(new this(
-            [
-                //! [0] = index
-                newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].index,
-                //! [1] = value
-                newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].value
-            ],
-            newParent.idsDom.inputName.value
-        ))
+        if (newParent.idsDom.description) {
+            elementsArray.push(new this(
+                [
+                    //! [0] = index
+                    newParent.idsDom.inputColor.selectedIndex,
+                    //! [1] = value
+                    newParent.idsDom.inputColor.value,
+                ],
+                newParent.idsDom.inputName.value,
+                newParent.idsDom.description.value,
+            ))
+        }
+        else {
+            elementsArray.push(new this(
+                [
+                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].index,
+                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].value,
+                ],
+                newParent.idsDom.inputName.value))
+        }
         updateLocal()
     }
 
     static editEl = (newParent, elementsArray, index) => {
-        elementsArray[index] = new this(
-            [
-                //! [0] = index
-                newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].index,
-                //! [1] = value
-                newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].value
-            ],
-            newParent.idsDom.inputName.value
-        )
+        if (newParent.idsDom.description) {
+            elementsArray[index] = new this(
+                [
+                    //! [0] = index
+                    newParent.idsDom.inputColor.selectedIndex,
+                    //! [1] = value
+                    newParent.idsDom.inputColor.value,
+                ],
+                newParent.idsDom.inputName.value,
+                newParent.idsDom.description.value,
+            )
+        } else {
+            elementsArray[index] = new this(
+                [
+                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].index,
+                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].value,
+                ],
+                newParent.idsDom.inputName.value,
+            )
+        }
         updateLocal()
 
     }
 
-    static removeEl = (newParent, elementsArray, index) => {
+    static removeEl = (elementsArray, index) => {
         elementsArray.splice(index, 1)
         updateLocal()
     }
