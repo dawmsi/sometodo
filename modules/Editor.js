@@ -24,7 +24,6 @@ class Editor {
             inputHTMLObj.inputName.value = inputArray[index].someName
             if (inputHTMLObj.inputColor) {
                 if (newParent.name === 'Task') {
-                    console.log(projectsArr[inputArray[index].someSelect[0]])
                     inputHTMLObj.inputColor.selectedIndex = projectsArr[inputArray[index].someSelect[0]].someSelect[0]
                     inputHTMLObj.inputColor.style.color = projectsArr[inputArray[index].someSelect[0]].someSelect[1]
                 } else {
