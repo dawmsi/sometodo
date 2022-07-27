@@ -1,5 +1,5 @@
 class Take {
-    static fromHtml = (
+    static elDOMfrom = (
         inputSelect,
         inputName,
         btnShowEditor,

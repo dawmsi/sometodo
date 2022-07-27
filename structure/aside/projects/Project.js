@@ -1,7 +1,7 @@
 class Project extends Using {
     static nameArray = 'projectsArr'
 
-    static idsDom = Take.fromHtml(
+    static idsDom = Take.elDOMfrom(
         '#colorP',
         '#inputProj',
         '#btnShowEditProj',

@@ -8,8 +8,8 @@ class SelectP {
 
     static create = (item, simpleSelector, index) => {
         return `
-            <option class="${simpleSelector}" id="${index} value="${item.someSelect[1]}"
-             style="color:${item.someSelect[1]}">
+            <option class="${simpleSelector}"
+             style="color:${index ? colorsProjects[item.someSelect] : '#fff'}">
              ${item.someName}
              </option> `
     }
