@@ -1,6 +1,8 @@
 class Mark extends Using {
     static nameArray = 'marksArr'
 
+    static simpleSelector = 'item-mark'
+
     static idsDom = Take.elDOMfrom(
         '#colorM',
         '#inputMark',
@@ -8,7 +10,6 @@ class Mark extends Using {
         '#btnEditAdd',
         '#markEditor',
         '#placeMarks',
-        'item-mark',
     )
 
     static create = (item, simpleSelector, index) => {
@@ -37,7 +38,7 @@ class Mark extends Using {
             this,
             inputArray,
             this.idsDom.renderPlace,
-            this.idsDom.simpleSelector,
+            this.simpleSelector,
         )
         marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
     }

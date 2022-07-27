@@ -1,8 +1,10 @@
 class SelectP {
+
+    static simpleSelector = 'select-project'
+
     static idsDom = {
         inputColor: document.querySelector('#selectP'),
         renderPlace: document.querySelector('#selectP'),
-        simpleSelector: 'select-project'
     }
 
 
@@ -19,7 +21,7 @@ class SelectP {
             this,
             inputArray,
             this.idsDom.renderPlace,
-            this.idsDom.simpleSelector,
+            this.simpleSelector,
         )
         marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
     }

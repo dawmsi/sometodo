@@ -1,6 +1,8 @@
 class Task extends Using {
     static nameArray = 'tasksArr'
 
+    static simpleSelector = 'todo-item'
+
     static idsDom = Take.elDOMfrom(
         '#selectP',
         '#name-task',
@@ -8,7 +10,6 @@ class Task extends Using {
         '#add-task-btn',
         '#adding',
         '.todos-wrapper',
-        'todo-item',
         '#description-task'
     )
 
@@ -95,7 +96,7 @@ class Task extends Using {
             this,
             inputArray,
             this.idsDom.renderPlace,
-            this.idsDom.simpleSelector,
+            this.simpleSelector,
         )
         todoItemEls = document.querySelectorAll(`.${simpleSelector} `)
         countPluser()

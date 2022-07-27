@@ -6,7 +6,6 @@ class Take {
         btnSubmit,
         wrapperEditor,
         renderPlace,
-        simpleSelector,
         description
     ) => {
         if (description) {
@@ -17,8 +16,7 @@ class Take {
                 btnSubmit: document.querySelector(btnSubmit),
                 wrapperEditor: document.querySelector(wrapperEditor),
                 renderPlace: document.querySelector(renderPlace),
-                simpleSelector: simpleSelector,
-                description: document.querySelector(description)
+                description: document.querySelector(description),
             }
         } else {
             return {
@@ -28,7 +26,6 @@ class Take {
                 btnSubmit: document.querySelector(btnSubmit),
                 wrapperEditor: document.querySelector(wrapperEditor),
                 renderPlace: document.querySelector(renderPlace),
-                simpleSelector: simpleSelector,
             }
         }
     }

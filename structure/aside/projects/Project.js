@@ -1,6 +1,8 @@
 class Project extends Using {
     static nameArray = 'projectsArr'
 
+    static simpleSelector = 'item-proj'
+    
     static idsDom = Take.elDOMfrom(
         '#colorP',
         '#inputProj',
@@ -8,7 +10,6 @@ class Project extends Using {
         '#btnEditAddProj',
         '#editorProject',
         '#placeProjects',
-        'item-proj',
     )
 
     static create = (item, simpleSelector, index) => {
@@ -48,11 +49,11 @@ class Project extends Using {
             this,
             inputArray,
             this.idsDom.renderPlace,
-            this.idsDom.simpleSelector,
+            this.simpleSelector,
         )
         projectsDOMEls = document.querySelectorAll(`.${simpleSelector}`)
-        SelectP.render(projectsArr, SelectP.idsDom.simpleSelector)
-        Task.render(tasksArr, Task.idsDom.simpleSelector)
+        SelectP.render(projectsArr, SelectP.simpleSelector)
+        Task.render(tasksArr, Task.simpleSelector)
     }
 
     static defaultNoProject() {

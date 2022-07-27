@@ -4,7 +4,7 @@ class Using {
             this,
             inputArray,
             this.idsDom.renderPlace,
-            this.idsDom.simpleSelector,
+            this.simpleSelector,
         )
     }
 
