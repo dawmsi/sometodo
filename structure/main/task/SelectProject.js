@@ -2,10 +2,10 @@ class SelectP {
 
     static simpleSelector = 'select-project'
 
-    static idsDom = {
-        inputColor: document.querySelector('#selectP'),
-        renderPlace: document.querySelector('#selectP'),
-    }
+    static idsDom = Take.elDOMfrom({
+        inputColor: '#selectP',
+        renderPlace: '#selectP',
+    })
 
 
     static create = (item, simpleSelector, index) => {

@@ -3,16 +3,14 @@ class Project extends Using {
 
     static simpleSelector = 'item-proj'
 
-    static idsDom = Take.elDOMfrom(
-        {
-            inputSelect: '#colorP',
-            inputName: '#inputProj',
-            btnShowEditor: '#btnShowEditProj',
-            btnSubmit: '#btnEditAddProj',
-            wrapperEditor: '#editorProject',
-            renderPlace: '#placeProjects',
-        }
-    )
+    static idsDom = Take.elDOMfrom({
+        inputSelect: '#colorP',
+        inputName: '#inputProj',
+        btnShowEditor: '#btnShowEditProj',
+        btnSubmit: '#btnEditAddProj',
+        wrapperEditor: '#editorProject',
+        renderPlace: '#placeProjects',
+    })
 
     static create = (item, simpleSelector, index) => {
         if (index === 0) {
