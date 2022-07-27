@@ -33,17 +33,29 @@ class Editor {
                 inputHTMLObj.inputName.value = inputArray[index].someName
                 inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
                 if (newParent.name === 'Task') {
+                    //* check child mutation
+                    const config = {
+                        childList: true,
+                    }
+                    const callback = function (mutationsList) {
+                        for (let mutation of mutationsList) {
+                            if (mutation.type === 'childList') {
+                                inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
+                            }
+                        }
+                    }
+                    const observer = new MutationObserver(callback)
+                    observer.observe(inputHTMLObj.inputSelect, config)
+                    //**********************/
                     inputHTMLObj.inputSelect.style.color = colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
                     inputHTMLObj.btnSubmit.innerHTML = `
-                        <button onclick="${newParent.name}.edit(${newParent.nameArray},${index})">Save</button>
-                        `
+                        <button onclick="${newParent.name}.edit(${newParent.nameArray},${index})">Save</button>`
                 }
                 if (newParent.name === 'Project' || newParent.name === 'Mark') {
                     inputHTMLObj.btnSubmit.innerHTML = `
                     <button onclick="${newParent.name}.edit(${newParent.nameArray},${index})">
                         <i class="fa fa-pencil"></i>
-                        </button>
-                    `
+                        </button>`
                 }
                 if (newParent.name === 'Project') {
                     inputHTMLObj.inputSelect.style.color = colorsProjects[inputArray[index].someSelect]
@@ -60,8 +72,7 @@ class Editor {
         else {
             if (newParent.name === 'Task') {
                 inputHTMLObj.btnSubmit.innerHTML = `
-                <button onclick="${newParent.name}.add(${newParent.nameArray})">Add</button>
-                `
+                <button onclick="${newParent.name}.add(${newParent.nameArray})">Add</button>`
             }
             if (newParent.name === 'Project' || newParent.name === 'Mark') {
                 inputHTMLObj.btnSubmit.innerHTML = `
