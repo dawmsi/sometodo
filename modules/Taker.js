@@ -1,6 +1,6 @@
 class Taker {
     static fromHtml = (
-        inputColor,
+        inputSelect,
         inputName,
         btnShowEditor,
         btnSubmit,
@@ -11,7 +11,7 @@ class Taker {
     ) => {
         if (description) {
             return {
-                inputColor: document.querySelector(inputColor),
+                inputSelect: document.querySelector(inputSelect),
                 inputName: document.querySelector(inputName),
                 btnShowEditor: document.querySelector(btnShowEditor),
                 btnSubmit: document.querySelector(btnSubmit),
@@ -22,7 +22,7 @@ class Taker {
             }
         } else {
             return {
-                inputColor: document.querySelector(inputColor),
+                inputSelect: document.querySelector(inputSelect),
                 inputName: document.querySelector(inputName),
                 btnShowEditor: document.querySelector(btnShowEditor),
                 btnSubmit: document.querySelector(btnSubmit),

@@ -16,9 +16,8 @@ class Project extends Using {
             return `
         <li class="item ${simpleSelector}">
         <button>
-        <i id="${item.someSelect[0]}" 
-        class="fa fa-circle-thin" 
-        style="color:${item.someSelect[1]}"></i>
+        <i class="fa fa-circle-thin" 
+        style="color:#fff"></i>
         </button>
         <a id="name${index}" href="#">${item.someName}</a>
         </li>
@@ -32,9 +31,8 @@ class Project extends Using {
             ${this.name},
             ${this.nameArray},
             ${index},)">
-        <i id="${item.someSelect[0]}" 
-        class="fa fa-circle-thin" 
-        style="color:${item.someSelect[1]}"></i>
+        <i class="fa fa-circle-thin" 
+        style="color:${colorsProjects[item.someSelect]}"></i>
         </button>
         </div>
         <a id="name${index}" href="#">${item.someName}</a>

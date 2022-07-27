@@ -1,3 +1,20 @@
+let colorsProjects = [
+    // '#fff',
+    '#db4234',
+    '#ffb52b',
+    '#fcfa79',
+    '#29ff89',
+    '#2b6eff',
+    '#c879fc',
+]
+
+let colorsMarks = [
+    '#fff',
+    '#db4234',
+    '#ffb52b',
+    '#fcfa79',
+]
+
 let tasksArr
 let marksArr
 let projectsArr

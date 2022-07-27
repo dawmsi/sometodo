@@ -22,16 +22,15 @@ class Editor {
         )
         if (index || index === 0) {
             inputHTMLObj.inputName.value = inputArray[index].someName
-            if (inputHTMLObj.inputColor) {
+            if (inputHTMLObj.inputSelect) {
+                inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
                 if (newParent.name === 'Task') {
-                    inputHTMLObj.inputColor.selectedIndex = projectsArr[inputArray[index].someSelect[0]].someSelect[0]
-                    inputHTMLObj.inputColor.style.color = projectsArr[inputArray[index].someSelect[0]].someSelect[1]
+                    inputHTMLObj.inputSelect.style.color = colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
                 } else {
-                    inputHTMLObj.inputColor.selectedIndex = inputArray[index].someSelect[0]
-                    inputHTMLObj.inputColor.style.color = inputArray[index].someSelect[1]
+                    inputHTMLObj.inputSelect.style.color = inputArray[index].someSelect[1]
                 }
-                inputHTMLObj.inputColor.addEventListener("change", () => {
-                    inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
+                inputHTMLObj.inputSelect.addEventListener("change", () => {
+                    inputHTMLObj.inputSelect.style.color = inputHTMLObj.inputSelect.options[inputHTMLObj.inputSelect.options.selectedIndex].style.color
                 })
             }
             if (inputHTMLObj.description) {
@@ -50,11 +49,10 @@ class Editor {
             }
         }
         else {
-            if (inputHTMLObj.inputColor) {
-                inputHTMLObj.inputColor.selectedIndex = 0
-                inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
-                inputHTMLObj.inputColor.addEventListener("change", () => {
-                    inputHTMLObj.inputColor.style.color = inputHTMLObj.inputColor.options[inputHTMLObj.inputColor.options.selectedIndex].style.color
+            if (inputHTMLObj.inputSelect) {
+                inputHTMLObj.inputSelect.style.color = inputHTMLObj.inputSelect.options[inputHTMLObj.inputSelect.options.selectedIndex].style.color
+                inputHTMLObj.inputSelect.addEventListener("change", () => {
+                    inputHTMLObj.inputSelect.style.color = inputHTMLObj.inputSelect.options[inputHTMLObj.inputSelect.options.selectedIndex].style.color
                 })
             }
             if (newParent.name === 'Task') {

@@ -20,9 +20,8 @@ class Mark extends Using {
             ${this.name},
             ${this.nameArray},
             ${index},)">
-        <i id="${item.someSelect[0]}" 
-        class="fa fa-bookmark-o" 
-        style="color:${item.someSelect[1]}"></i>
+        <i class="fa fa-bookmark-o" 
+        style="color:${colorsMarks[item.someSelect]}"></i>
         </button>
         </div>
         <a id="name${index}" href="#">${item.someName}</a>

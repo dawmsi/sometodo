@@ -22,22 +22,14 @@ class Controller {
     static addEl = (newParent, elementsArray) => {
         if (newParent.idsDom.description) {
             elementsArray.push(new this(
-                [
-                    //! [0] = index
-                    newParent.idsDom.inputColor.selectedIndex,
-                    //! [1] = value
-                    newParent.idsDom.inputColor.value,
-                ],
+                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
                 newParent.idsDom.inputName.value,
                 newParent.idsDom.description.value,
             ))
         }
         else {
             elementsArray.push(new this(
-                [
-                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].index,
-                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].value,
-                ],
+                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
                 newParent.idsDom.inputName.value))
         }
         updateLocal()
@@ -46,21 +38,13 @@ class Controller {
     static editEl = (newParent, elementsArray, index) => {
         if (newParent.idsDom.description) {
             elementsArray[index] = new this(
-                [
-                    //! [0] = index
-                    newParent.idsDom.inputColor.selectedIndex,
-                    //! [1] = value
-                    newParent.idsDom.inputColor.value,
-                ],
+                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
                 newParent.idsDom.inputName.value,
                 newParent.idsDom.description.value,
             )
         } else {
             elementsArray[index] = new this(
-                [
-                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].index,
-                    newParent.idsDom.inputColor.options[newParent.idsDom.inputColor.options.selectedIndex].value,
-                ],
+                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
                 newParent.idsDom.inputName.value,
             )
         }

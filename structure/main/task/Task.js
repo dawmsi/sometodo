@@ -19,7 +19,7 @@ class Task extends Using {
             <input onclick="Task.toggleTask(${index})" type="checkbox" 
             id="${index}" 
             class="custom-checkbox" ${item.completed ? "checked" : ""}>
-            <label style="border: 2px solid ${item.someSelect[0] ? projectsArr[item.someSelect[0]].someSelect[1] : '#fff'}" 
+            <label style="border: 2px solid ${item.someSelect ? colorsProjects[projectsArr[item.someSelect].someSelect] : '#fff'}" 
             for="${index}"></label>
             </div>
             <div class="detailsTask">
@@ -28,9 +28,9 @@ class Task extends Using {
             <p>${item.someDescription}</p></div>
             <div class="markTask" style="color:${item.someSelect}">
             <button
-            class="${item.someSelect[0] ? "" : "hide"}"
-            style="color: ${projectsArr[item.someSelect[0]].someSelect[1]}">
-            ${item.someSelect[0] ? projectsArr[item.someSelect[0]].someName : ''}
+            class="${item.someSelect ? "" : "hide"}"
+            style="color: ${colorsProjects[projectsArr[item.someSelect].someSelect]}">
+            ${item.someSelect ? projectsArr[item.someSelect].someName : ''}
             </button >
             </div >
             </div >
@@ -100,23 +100,4 @@ class Task extends Using {
         todoItemEls = document.querySelectorAll(`.${simpleSelector} `)
         countPluser()
     }
-
-    // static add(inputArray) {
-    //     task_Controller.addEl(this, inputArray)
-    //     this.render(inputArray, this.idsDom.simpleSelector)
-    //     Editor.resetEditor(this.idsDom.wrapperEditor,
-    //         this.idsDom.btnShowEditor)
-    // }
-
-    // static edit(inputArray, index) {
-    //     task_Controller.editEl(this, inputArray, index)
-    //     this.render(inputArray, this.idsDom.simpleSelector)
-    //     Editor.resetEditor(this.idsDom.wrapperEditor,
-    //         this.idsDom.btnShowEditor)
-    // }
-
-    // static remove(inputArray, index) {
-    //     task_Controller.removeEl(inputArray, index)
-    //     this.render(inputArray, this.idsDom.simpleSelector)
-    // }
 }
