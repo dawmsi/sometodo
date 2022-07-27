@@ -40,7 +40,7 @@ class Editor {
                     const callback = function (mutationsList) {
                         for (let mutation of mutationsList) {
                             if (mutation.type === 'childList') {
-                                inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
+                                inputHTMLObj.inputSelect.selectedIndex = inputHTMLObj.inputSelect.options.selectedIndex
                             }
                         }
                     }

@@ -91,15 +91,6 @@ class Task extends Basic {
         this.render(tasksArr, this.simpleSelector)
     }
 
-    static render(inputArray, simpleSelector) {
-        Control.renderEls(
-            this,
-            inputArray,
-            this.idsDom.renderPlace,
-            this.simpleSelector,
-        )
-    }
-
     static additionallyDuringRendering() {
         todoItemEls = document.querySelectorAll(`.${this.simpleSelector} `)
         countPluser()
