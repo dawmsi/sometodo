@@ -1,7 +1,7 @@
 class Mark extends Using {
     static nameArray = 'marksArr'
 
-    static idsDom = Taker.fromHtml(
+    static idsDom = Take.fromHtml(
         '#colorM',
         '#inputMark',
         '#btnShowEditor',

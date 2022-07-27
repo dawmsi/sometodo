@@ -1,19 +1,6 @@
-let colorsProjects = [
-    // '#fff',
-    '#db4234',
-    '#ffb52b',
-    '#fcfa79',
-    '#29ff89',
-    '#2b6eff',
-    '#c879fc',
-]
+let colorsProjects = Take.colorsFrom(Project.idsDom.inputSelect.options)
 
-let colorsMarks = [
-    '#fff',
-    '#db4234',
-    '#ffb52b',
-    '#fcfa79',
-]
+let colorsMarks = Take.colorsFrom(Mark.idsDom.inputSelect.options)
 
 let tasksArr
 let marksArr

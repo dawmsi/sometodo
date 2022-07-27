@@ -1,7 +1,7 @@
 class Project extends Using {
     static nameArray = 'projectsArr'
 
-    static idsDom = Taker.fromHtml(
+    static idsDom = Take.fromHtml(
         '#colorP',
         '#inputProj',
         '#btnShowEditProj',

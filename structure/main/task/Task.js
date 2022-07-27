@@ -1,7 +1,7 @@
 class Task extends Using {
     static nameArray = 'tasksArr'
 
-    static idsDom = Taker.fromHtml(
+    static idsDom = Take.fromHtml(
         '#selectP',
         '#name-task',
         '.add-link',
