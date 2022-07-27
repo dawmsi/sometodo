@@ -4,12 +4,14 @@ class Mark extends Using {
     static simpleSelector = 'item-mark'
 
     static idsDom = Take.elDOMfrom(
-        '#colorM',
-        '#inputMark',
-        '#btnShowEditor',
-        '#btnEditAdd',
-        '#markEditor',
-        '#placeMarks',
+        {
+            inputSelect: '#colorM',
+            inputName: '#inputMark',
+            btnShowEditor: '#btnShowEditor',
+            btnSubmit: '#btnEditAdd',
+            wrapperEditor: '#markEditor',
+            renderPlace: '#placeMarks',
+        }
     )
 
     static create = (item, simpleSelector, index) => {

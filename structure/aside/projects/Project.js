@@ -2,14 +2,16 @@ class Project extends Using {
     static nameArray = 'projectsArr'
 
     static simpleSelector = 'item-proj'
-    
+
     static idsDom = Take.elDOMfrom(
-        '#colorP',
-        '#inputProj',
-        '#btnShowEditProj',
-        '#btnEditAddProj',
-        '#editorProject',
-        '#placeProjects',
+        {
+            inputSelect: '#colorP',
+            inputName: '#inputProj',
+            btnShowEditor: '#btnShowEditProj',
+            btnSubmit: '#btnEditAddProj',
+            wrapperEditor: '#editorProject',
+            renderPlace: '#placeProjects',
+        }
     )
 
     static create = (item, simpleSelector, index) => {

@@ -1,33 +1,8 @@
 class Take {
-    static elDOMfrom = (
-        inputSelect,
-        inputName,
-        btnShowEditor,
-        btnSubmit,
-        wrapperEditor,
-        renderPlace,
-        description
-    ) => {
-        if (description) {
-            return {
-                inputSelect: document.querySelector(inputSelect),
-                inputName: document.querySelector(inputName),
-                btnShowEditor: document.querySelector(btnShowEditor),
-                btnSubmit: document.querySelector(btnSubmit),
-                wrapperEditor: document.querySelector(wrapperEditor),
-                renderPlace: document.querySelector(renderPlace),
-                description: document.querySelector(description),
-            }
-        } else {
-            return {
-                inputSelect: document.querySelector(inputSelect),
-                inputName: document.querySelector(inputName),
-                btnShowEditor: document.querySelector(btnShowEditor),
-                btnSubmit: document.querySelector(btnSubmit),
-                wrapperEditor: document.querySelector(wrapperEditor),
-                renderPlace: document.querySelector(renderPlace),
-            }
-        }
+    static elDOMfrom = (idsObj) => {
+        for (let key in idsObj) 
+             idsObj[key] = document.querySelector(idsObj[key])
+        return idsObj
     }
 
     static colorsFrom = (someID) => {

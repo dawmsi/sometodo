@@ -4,13 +4,15 @@ class Task extends Using {
     static simpleSelector = 'todo-item'
 
     static idsDom = Take.elDOMfrom(
-        '#selectP',
-        '#name-task',
-        '.add-link',
-        '#add-task-btn',
-        '#adding',
-        '.todos-wrapper',
-        '#description-task'
+        {
+            inputSelect: '#selectP',
+            inputName: '#name-task',
+            btnShowEditor: '.add-link',
+            btnSubmit: '#add-task-btn',
+            wrapperEditor: '#adding',
+            renderPlace: '.todos-wrapper',
+            description: '#description-task',
+        }
     )
 
     static create = (item, simpleSelector, index) => {
