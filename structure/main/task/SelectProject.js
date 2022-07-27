@@ -17,7 +17,7 @@ class SelectP {
     }
 
     static render(inputArray, simpleSelector) {
-        Controller.renderEls(
+        Control.renderEls(
             this,
             inputArray,
             this.idsDom.renderPlace,

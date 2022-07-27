@@ -1,4 +1,4 @@
-class Project extends Using {
+class Project extends Basic {
     static nameArray = 'projectsArr'
 
     static simpleSelector = 'item-proj'
@@ -44,25 +44,19 @@ class Project extends Using {
         `
     }
 
-    static render(inputArray, simpleSelector) {
-        Controller.renderEls(
-            this,
-            inputArray,
-            this.idsDom.renderPlace,
-            this.simpleSelector,
-        )
-        projectsDOMEls = document.querySelectorAll(`.${simpleSelector}`)
-        SelectP.render(projectsArr, SelectP.simpleSelector)
-        Task.render(tasksArr, Task.simpleSelector)
-    }
-
     static defaultNoProject() {
         if (projectsArr) {
             if (projectsArr[0]?.someName !== 'Not In')
-                projectsArr.unshift(new Controller(
+                projectsArr.unshift(new Control(
                     [0, '#fff'],
                     'Not In'
                 ))
         }
+    }
+
+    static additionallyDuringRendering() {
+        projectsDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
+        SelectP.render(projectsArr, SelectP.simpleSelector)
+        Task.render(tasksArr, Task.simpleSelector)
     }
 }

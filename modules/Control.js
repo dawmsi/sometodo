@@ -1,4 +1,4 @@
-class Controller {
+class Control {
     constructor(someSelect, someName, someDescription = null) {
         this.someSelect = someSelect
         this.someName = someName

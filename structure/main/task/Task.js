@@ -1,4 +1,4 @@
-class Task extends Using {
+class Task extends Basic {
     static nameArray = 'tasksArr'
 
     static simpleSelector = 'todo-item'
@@ -88,17 +88,20 @@ class Task extends Using {
         // console.log(tasksArr)
 
         updateLocal()
-        this.render(tasksArr, this.idsDom.simpleSelector)
+        this.render(tasksArr, this.simpleSelector)
     }
 
     static render(inputArray, simpleSelector) {
-        Controller.renderEls(
+        Control.renderEls(
             this,
             inputArray,
             this.idsDom.renderPlace,
             this.simpleSelector,
         )
-        todoItemEls = document.querySelectorAll(`.${simpleSelector} `)
+    }
+
+    static additionallyDuringRendering() {
+        todoItemEls = document.querySelectorAll(`.${this.simpleSelector} `)
         countPluser()
     }
 }

@@ -1,22 +1,28 @@
-class Using {
-    static render(inputArray, simpleSelector) {
-        Controller.renderEls(
+class Basic {
+
+    static additionallyDuringRendering() {
+        return false
+    }
+
+    static render(inputArray) {
+        Control.renderEls(
             this,
             inputArray,
             this.idsDom.renderPlace,
             this.simpleSelector,
         )
+        this.additionallyDuringRendering()
     }
 
     static add(inputArray) {
-        Controller.addEl(this, inputArray)
-        this.render(inputArray, this.idsDom.simpleSelector)
+        Control.addEl(this, inputArray)
+        this.render(inputArray)
         Editor.resetEditor(this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor)
     }
 
     static edit(inputArray, index) {
-        Controller.editEl(this, inputArray, index)
+        Control.editEl(this, inputArray, index)
         this.render(inputArray)
         Editor.resetEditor(this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
@@ -24,7 +30,7 @@ class Using {
     }
 
     static remove(inputArray, index) {
-        Controller.removeEl(inputArray, index)
-        this.render(inputArray, this.idsDom.simpleSelector)
+        Control.removeEl(inputArray, index)
+        this.render(inputArray)
     }
 }

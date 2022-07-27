@@ -1,4 +1,4 @@
-class Mark extends Using {
+class Mark extends Basic {
     static nameArray = 'marksArr'
 
     static simpleSelector = 'item-mark'
@@ -33,13 +33,7 @@ class Mark extends Using {
         `
     }
 
-    static render(inputArray, simpleSelector) {
-        Controller.renderEls(
-            this,
-            inputArray,
-            this.idsDom.renderPlace,
-            this.simpleSelector,
-        )
-        marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
+    static additionallyDuringRendering() {
+        marksDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
     }
 }
