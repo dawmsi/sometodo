@@ -15,7 +15,6 @@ let projectsDOMEls = []
 !localStorage.marksKey ? marksArr = [] : marksArr = JSON.parse(localStorage.getItem('marksKey'))
 !localStorage.projectKey ? projectsArr = [] : projectsArr = JSON.parse(localStorage.getItem('projectKey'))
 
-
 function updateLocal() {
     localStorage.setItem('tasksKey', JSON.stringify(tasksArr))
     localStorage.setItem('tasksPrev', JSON.stringify(previousTasks))
@@ -28,15 +27,17 @@ function clearLocal() {
     location.reload()
 }
 
+function testClickBeforeClick() {
+    alert("removed")
+}
+
 
 Mark.render(marksArr, Mark.simpleSelector)
 
 Project.defaultNoProject()
 Project.render(projectsArr, Project.simpleSelector)
-SelectP.render(projectsArr, SelectP.simpleSelector)
 
-
-Task.render(tasksArr, Task.simpleSelector)
+// Task.render(tasksArr, Task.simpleSelector)
 countPluser()
 Task.toggleTask()
 

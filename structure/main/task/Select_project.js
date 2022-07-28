@@ -25,5 +25,4 @@ class SelectP {
         )
         marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
     }
-
 }

@@ -54,13 +54,13 @@ class Task extends Basic {
             `
     }
 
-    // static filterTasks = () => {
-    //     let activeTasks =
-    //         tasksArr.length && tasksArr.filter((item) => !item.completed)
-    //     let completedTasks =
-    //         tasksArr.length && tasksArr.filter((item) => item.completed)
-    //     tasksArr = [...activeTasks, ...completedTasks]
-    // }
+    static filterTasks = () => {
+        if (tasksArr.length) {
+            let activeTasks = tasksArr.length && tasksArr.filter((item) => !item.completed)
+            let completedTasks = tasksArr.length && tasksArr.filter((item) => item.completed)
+            tasksArr = [...activeTasks, ...completedTasks]
+        }
+    }
 
     static toggleTask = (index) => {
         if (index) {
@@ -84,14 +84,29 @@ class Task extends Basic {
                 }
             }
         }
-        // console.log(previousTasks)
-        // console.log(tasksArr)
 
-        updateLocal()
+        this.filterTasks()
         this.render(tasksArr, this.simpleSelector)
+        updateLocal()
+
     }
 
-    static additionallyDuringRendering() {
+    static AntiDeleteUsed() {
+        projectsArr.forEach((project, index) => {
+            project.used = false
+            tasksArr.forEach(task => {
+                if (task.someSelect === index) project.used = true
+            })
+        })
+        updateLocal()
+    }
+
+    static beforeRun() {
+        this.AntiDeleteUsed()
+        Project.render(projectsArr, Project.simpleSelector)
+    }
+
+    static afterRun() {
         todoItemEls = document.querySelectorAll(`.${this.simpleSelector} `)
         countPluser()
     }

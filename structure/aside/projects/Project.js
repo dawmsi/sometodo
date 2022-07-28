@@ -23,6 +23,25 @@ class Project extends Basic {
         <a id="name${index}" href="#">${item.someName}</a>
         </li>
         `
+        } else if (item.used) {
+            return `
+        <li class="item ${simpleSelector}">
+        <div class="btn-wrapper">
+        <button onclick="Editor.showEditor(
+            ${this.name}.idsDom,
+            ${this.name},
+            ${this.nameArray},
+            ${index},)">
+        <i class="fa fa-circle-thin" 
+        style="color:${colorsProjects[item.someSelect]}"></i>
+        </button>
+        </div>
+        <a id="name${index}" href="#">${item.someName}</a>
+        <div class="btn-wrapper">
+            <button onclick="Pop.renderNewPop(Pop.popAccepter, ${testClickBeforeClick.name})"><i class="fa fa-ellipsis-h"></i></button>
+        </div>
+        </li>
+        `
         } else
             return `
         <li class="item ${simpleSelector}">
@@ -38,7 +57,7 @@ class Project extends Basic {
         </div>
         <a id="name${index}" href="#">${item.someName}</a>
         <div class="btn-wrapper">
-            <button onclick="${this.name}.remove(projectsArr, ${index})"><i class="fa fa-ellipsis-h"></i></button>
+            <button onclick="${this.name}.remove(projectsArr, ${index})"><i class="fa fa-trash"></i></button>
         </div>
         </li>
         `
@@ -47,16 +66,14 @@ class Project extends Basic {
     static defaultNoProject() {
         if (projectsArr) {
             if (projectsArr[0]?.someName !== 'Not In')
-                projectsArr.unshift(new Control(
-                    [0, '#fff'],
-                    'Not In'
-                ))
+                projectsArr.unshift(new Control(0, 'Not In'))
+            else if (projectsArr[1]?.someName == 'Not In')
+                projectsArr.splice(1, 1)
         }
     }
 
-    static additionallyDuringRendering() {
+    static afterRun() {
         projectsDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
         SelectP.render(projectsArr, SelectP.simpleSelector)
-        Task.render(tasksArr, Task.simpleSelector)
     }
 }

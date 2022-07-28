@@ -1,9 +1,10 @@
 class Control {
-    constructor(someSelect, someName, someDescription = null) {
+    constructor(someSelect, someName, someDescription = null,) {
         this.someSelect = someSelect
         this.someName = someName
         this.someDescription = someDescription
         this.completed = false
+        this.used = false
     }
 
     static renderEls = (
