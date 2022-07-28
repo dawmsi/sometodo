@@ -29,6 +29,7 @@ class Task extends Basic {
             <p>${item.someDescription}</p></div>
             <div class="markTask" style="color:${item.someSelect}">
             <button
+            id="projectTag"
             class="${item.someSelect ? "" : "hide"}"
             style="color: ${colorsProjects[projectsArr[item.someSelect].someSelect]}">
             ${item.someSelect ? projectsArr[item.someSelect].someName : ''}
@@ -103,7 +104,6 @@ class Task extends Basic {
 
     static beforeRun() {
         this.AntiDeleteUsed()
-        Project.render(projectsArr, Project.simpleSelector)
     }
 
     static afterRun() {
