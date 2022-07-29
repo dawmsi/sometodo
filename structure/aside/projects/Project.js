@@ -79,6 +79,6 @@ class Project extends Basic {
     static afterRun() {
         projectsDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
         SelectP.render(projectsArr, SelectP.simpleSelector)
-        Task.render(tasksArr, Task.simpleSelector)
+        
     }
 }
