@@ -109,5 +109,6 @@ class Task extends Basic {
     static afterRun() {
         todoItemEls = document.querySelectorAll(`.${this.simpleSelector} `)
         countPluser()
+
     }
 }
