@@ -27,7 +27,7 @@ class Task extends Basic {
             <div class="nameTask"><a>${item.someName}</a></div>
             <div class="descriptionTask ${item.someDescription ? "" : "hide"}">
             <p>${item.someDescription}</p></div>
-            <div class="markTask" style="color:${item.someSelect}">
+            <div class="projectTask" style="color:${item.someSelect}">
             <button
             id="projectTag"
             class="${item.someSelect ? "" : "hide"}"

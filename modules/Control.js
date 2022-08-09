@@ -57,4 +57,14 @@ class Control {
         elementsArray.splice(index, 1)
         updateLocal()
     }
+
+
+    static defaultNoSelected(array, string) {
+        if (array) {
+            if (array[0]?.someName !== string)
+                array.unshift(new Control(0, string))
+            else if (array[1]?.someName == string)
+                array.splice(1, 1)
+        }
+    }
 }

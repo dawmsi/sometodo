@@ -33,7 +33,14 @@ class Mark extends Basic {
         `
     }
 
+    static beforeRun() {
+        Control.defaultNoSelected(marksArr, 'None')
+    }
+
     static additionallyDuringRendering() {
         marksDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
+    }
+    static afterRun() {
+        SelectM.render(marksArr, SelectM.simpleSelector)
     }
 }

@@ -63,17 +63,9 @@ class Project extends Basic {
         `
     }
 
-    static defaultNoProject() {
-        if (projectsArr) {
-            if (projectsArr[0]?.someName !== 'Not In')
-                projectsArr.unshift(new Control(0, 'Not In'))
-            else if (projectsArr[1]?.someName == 'Not In')
-                projectsArr.splice(1, 1)
-        }
-    }
 
     static beforeRun() {
-        this.defaultNoProject()
+        Control.defaultNoSelected(projectsArr, 'Not In')
     }
 
     static afterRun() {

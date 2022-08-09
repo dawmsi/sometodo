@@ -103,6 +103,7 @@
                     <ul class="list" id="placeProjects">
 
                     </ul>
+
                     <div id="editorProject" class="defaultEditor">
                         <form class="formEdit" action="" onsubmit="return false;">
                             <select class="selectColor" id="colorP">
@@ -162,23 +163,23 @@
                         </div>
                         <div class="btns-line">
                             <div class="plannig">
-                                <button><i class="fa fa-calendar-plus-o"></i>Today</button>
                                 <button>
-                                    In ->
+                                    <i class="fa fa-calendar-plus-o"></i>Today
+                                </button>
+                                <button>
+                                    <i id="project" class="fa fa-braille"></i>
                                     <select class="selectProject" name="" id="selectP">
                                         <option style="color:#fff">Not In</option>
                                     </select>
-
+                                </button>
+                                <button>
+                                    <i class="fa fa-bookmark"></i>
+                                    <select class="selectMark" id="selectM">
+                                        <option value="" selected></option>
+                                    </select>
                                 </button>
                             </div>
                             <div class="additional">
-                                <button class="btnMarkInTask">
-                                    <i class="fa fa-bookmark"></i>
-                                    <select id="marksInTask" class="selectMark">
-                                        <option value="" hidden selected></option>
-
-                                    </select>
-                                </button>
                                 <button><i class="fa fa-clock-o"></i></button>
                             </div>
                         </div>
@@ -207,6 +208,7 @@
 
     <script src="structure/main/task/Task.js"></script>
 
+    <script src="structure/main/task/Select_mark.js"></script>
     <script src="structure/main/task/Select_project.js"></script>
 
     <script src="structure/aside/projects/Project.js"></script>

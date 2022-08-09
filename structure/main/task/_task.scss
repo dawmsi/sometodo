@@ -117,36 +117,12 @@
     position: relative;
 }
 
-.markTask {
+.projectTask {
     font-family: "FontAwesome", "Second Font name", sans-serif;
     border-radius: 3px;
     background-color: #444444;
     width: fit-content;
     button {
         padding: 3px 4px;
-    }
-}
-
-.selectMark {
-    font-family: "FontAwesome", "Second Font name", sans-serif;
-    appearance: none;
-    display: block;
-    background-color: transparent;
-    padding: 1px 3px;
-    margin: 0 2.8px;
-    line-height: 12px;
-    position: absolute;
-    outline: none;
-    border: none;
-    top: 2px;
-    right: 0;
-    height: fit-content;
-    color: inherit;
-    option {
-        background-color: #252525;
-        color: #fff;
-    }
-    p {
-        color: #fff;
     }
 }
