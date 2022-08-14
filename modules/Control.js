@@ -1,8 +1,9 @@
 class Control {
-    constructor(someSelect, someName, someDescription = null,) {
+    constructor(someSelect, someName, someDescription, someMark = 0) {
         this.someSelect = someSelect
         this.someName = someName
-        this.someDescription = someDescription
+        if (someDescription) this.someDescription = someDescription
+        if (someMark || someMark === 0) this.someMark = someMark
         this.completed = false
         this.used = false
     }
@@ -21,34 +22,23 @@ class Control {
     }
 
     static addEl = (newParent, elementsArray) => {
-        if (newParent.idsDom.description) {
-            elementsArray.push(new this(
+        elementsArray.push(
+            new this(
                 newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
                 newParent.idsDom.inputName.value,
-                newParent.idsDom.description.value,
+                newParent.idsDom?.description?.value,
+                newParent.idsDom?.inputMark?.selectedIndex
             ))
-        }
-        else {
-            elementsArray.push(new this(
-                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
-                newParent.idsDom.inputName.value))
-        }
         updateLocal()
     }
 
     static editEl = (newParent, elementsArray, index) => {
-        if (newParent.idsDom.description) {
-            elementsArray[index] = new this(
-                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
-                newParent.idsDom.inputName.value,
-                newParent.idsDom.description.value,
-            )
-        } else {
-            elementsArray[index] = new this(
-                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
-                newParent.idsDom.inputName.value,
-            )
-        }
+        elementsArray[index] = new this(
+            newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
+            newParent.idsDom.inputName.value,
+            newParent.idsDom?.description?.value,
+            newParent.idsDom?.inputMark?.selectedIndex
+        )
         updateLocal()
 
     }

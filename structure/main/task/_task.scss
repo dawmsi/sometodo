@@ -117,7 +117,13 @@
     position: relative;
 }
 
-.projectTask {
+.rowBtns{
+    display: inline-flex;
+    gap: 5px;
+}
+
+.projectTags,
+.markTags {
     font-family: "FontAwesome", "Second Font name", sans-serif;
     border-radius: 3px;
     background-color: #444444;

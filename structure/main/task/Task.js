@@ -1,16 +1,17 @@
 class Task extends Basic {
-    static nameArray = 'tasksArr'
+    static nameArray = "tasksArr"
 
-    static simpleSelector = 'todo-item'
+    static simpleSelector = "todo-item"
 
     static idsDom = Take.elDOMfrom({
-        inputSelect: '#selectP',
-        inputName: '#name-task',
-        btnShowEditor: '.add-link',
-        btnSubmit: '#add-task-btn',
-        wrapperEditor: '#adding',
-        renderPlace: '.todos-wrapper',
-        description: '#description-task',
+        inputSelect: "#selectP",
+        inputName: "#name-task",
+        btnShowEditor: ".add-link",
+        btnSubmit: "#add-task-btn",
+        wrapperEditor: "#adding",
+        renderPlace: ".todos-wrapper",
+        description: "#description-task",
+        inputMark: "#selectM"
     })
 
     static create = (item, simpleSelector, index) => {
@@ -20,21 +21,35 @@ class Task extends Basic {
             <input onclick="Task.toggleTask(${index})" type="checkbox" 
             id="${index}" 
             class="custom-checkbox" ${item.completed ? "checked" : ""}>
-            <label style="border: 2px solid ${item.someSelect ? colorsProjects[projectsArr[item.someSelect].someSelect] : '#fff'}" 
+            <label style="border: 2px solid ${item.someSelect
+                ? colorsProjects[projectsArr[item.someSelect].someSelect]
+                : "#fff"
+            }" 
             for="${index}"></label>
             </div>
             <div class="detailsTask">
+                <div class="rowBtns">
+                    <div class="markTags">
+                        <button
+                        id="markTag"
+                        class="${item.someMark ? "" : "hide"}"
+                        style="color: ${colorsMarks[marksArr[item.someMark].someSelect]}">
+                        <i class="fa fa-tag" aria-hidden="true"></i>
+                        ${item.someMark ? marksArr[item.someMark].someName : ""}
+                        </button >
+                    </div>
+                    <div class="projectTags" style="color:${item.someSelect}">
+                        <button
+                        id="projectTag"
+                        class="${item.someSelect ? "" : "hide"}"
+                        style="color: ${colorsProjects[projectsArr[item.someSelect].someSelect]}">
+                        ${item.someSelect ? projectsArr[item.someSelect].someName : ""}
+                        </button >
+                    </div >
+                </div>
             <div class="nameTask"><a>${item.someName}</a></div>
             <div class="descriptionTask ${item.someDescription ? "" : "hide"}">
             <p>${item.someDescription}</p></div>
-            <div class="projectTask" style="color:${item.someSelect}">
-            <button
-            id="projectTag"
-            class="${item.someSelect ? "" : "hide"}"
-            style="color: ${colorsProjects[projectsArr[item.someSelect].someSelect]}">
-            ${item.someSelect ? projectsArr[item.someSelect].someName : ''}
-            </button >
-            </div >
             </div >
             <div class="btn-wrapper">
                 <button onclick="Editor.showEditor(
@@ -57,8 +72,10 @@ class Task extends Basic {
 
     static filterTasks = () => {
         if (tasksArr.length) {
-            let activeTasks = tasksArr.length && tasksArr.filter((item) => !item.completed)
-            let completedTasks = tasksArr.length && tasksArr.filter((item) => item.completed)
+            let activeTasks =
+                tasksArr.length && tasksArr.filter((item) => !item.completed)
+            let completedTasks =
+                tasksArr.length && tasksArr.filter((item) => item.completed)
             tasksArr = [...activeTasks, ...completedTasks]
         }
     }
@@ -81,7 +98,10 @@ class Task extends Basic {
                     previousTasks.unshift(tasksArr[index])
                 } else {
                     todoItemEls[index].classList.remove("checked")
-                    previousTasks.splice(previousTasks.indexOf(tasksArr[index]), 1)
+                    previousTasks.splice(
+                        previousTasks.indexOf(tasksArr[index]),
+                        1
+                    )
                 }
             }
         }
@@ -89,13 +109,12 @@ class Task extends Basic {
         this.filterTasks()
         this.render(tasksArr, this.simpleSelector)
         updateLocal()
-
     }
 
     static AntiDeleteUsed() {
         projectsArr.forEach((project, index) => {
             project.used = false
-            tasksArr.forEach(task => {
+            tasksArr.forEach((task) => {
                 if (task.someSelect === index) project.used = true
             })
         })
@@ -109,6 +128,5 @@ class Task extends Basic {
     static afterRun() {
         todoItemEls = document.querySelectorAll(`.${this.simpleSelector} `)
         countPluser()
-
     }
 }

@@ -511,7 +511,13 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   position: relative;
 }
 
-.projectTask {
+.rowBtns {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.projectTags,
+.markTags {
   font-family: "FontAwesome", "Second Font name", sans-serif;
   border-radius: 3px;
   background-color: #444444;
@@ -519,7 +525,8 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   width: -moz-fit-content;
   width: fit-content;
 }
-.projectTask button {
+.projectTags button,
+.markTags button {
   padding: 3px 4px;
 }
 
