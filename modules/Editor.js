@@ -27,6 +27,11 @@ class Editor {
                 inputHTMLObj.inputSelect.style.color = inputHTMLObj.inputSelect.options[inputHTMLObj.inputSelect.options.selectedIndex].style.color
             })
         }
+        if (inputHTMLObj.inputMark) {
+            inputHTMLObj.inputMark.addEventListener("change", () => {
+                inputHTMLObj.inputMark.style.color = inputHTMLObj.inputMark.options[inputHTMLObj.inputMark.options.selectedIndex].style.color
+            })
+        }
         //* for edit
         if (index || index === 0) {
             if (inputHTMLObj.inputSelect && inputHTMLObj.inputName && inputHTMLObj.btnSubmit) {
