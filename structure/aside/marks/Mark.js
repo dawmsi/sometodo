@@ -42,5 +42,6 @@ class Mark extends Basic {
     }
     static afterRun() {
         SelectM.render(marksArr, SelectM.simpleSelector)
+        Task.render(tasksArr, Task.simpleSelector)
     }
 }

@@ -47,6 +47,9 @@ class Editor {
                     // const observer = new MutationObserver(callback)
                     // observer.observe(inputHTMLObj.inputSelect, config)
                     // //**********************/
+                    inputHTMLObj.inputMark.selectedIndex = inputArray[index].someMark
+                    inputHTMLObj.inputMark.style.color = colorsMarks[marksArr[inputArray[index].someMark].someSelect]
+
                     inputHTMLObj.inputSelect.style.color = inputArray[index].someSelect
                         ? colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
                         : "#fff"
