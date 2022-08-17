@@ -1,7 +1,7 @@
 const main = document.querySelector('#main')
 const route = main.querySelector('#route')
 
-let currentArray
+let currentArray = todayArr
 
 const locationResolver = location => {
     let routeName = location.slice(2, 3).toUpperCase() + location.slice(3)
