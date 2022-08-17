@@ -1,5 +1,5 @@
 class Task extends Basic {
-    static nameArray = "tasksArr"
+    static nameArray = "todayArr"
 
     static simpleSelector = "todo-item"
 
@@ -72,8 +72,8 @@ class Task extends Basic {
     }
 
     static filterTasks = (filterCondition) => {
-        if (tasksArr.length) {
-            return tasksArr.filter((item) => item[filterCondition])
+        if (todayArr.length) {
+            return todayArr.filter((item) => item[filterCondition])
         }
         else return []
     }
@@ -102,7 +102,7 @@ class Task extends Basic {
     static AntiDeleteUsed(inputArray, checking) {
         inputArray.forEach((item, index) => {
             item.used = false
-            tasksArr.forEach((task) => {
+            todayArr.forEach((task) => {
                 if (task[checking] === index) item.used = true
             })
         })

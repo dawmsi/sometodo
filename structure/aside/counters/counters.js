@@ -13,8 +13,8 @@ function countPluser() {
         ? previousCount.innerText = previousArr.length
         : previousCount.innerText = ''
 
-    tasksArr.length
-        ? todayCount.innerText = tasksArr.length
+    todayArr.length
+        ? todayCount.innerText = todayArr.length
         : todayCount.innerText = ''
 
 }

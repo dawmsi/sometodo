@@ -38,7 +38,7 @@ class Editor {
                 inputHTMLObj.inputName.value = inputArray[index].someName
                 inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
                 if (newParent.name === 'Task') {
-                    currentArray = tasksArr
+                    currentArray = todayArr
                     // //* check child mutation
                     // const config = {
                     //     childList: true,
@@ -85,7 +85,7 @@ class Editor {
         //* for add
         else {
             if (newParent.name === 'Task') {
-                currentArray = tasksArr
+                currentArray = todayArr
                 inputHTMLObj.btnSubmit.innerHTML = `
                 <button onclick="${newParent.name}.add(currentArray)">Add</button>`
             }
