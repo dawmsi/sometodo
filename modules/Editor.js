@@ -78,8 +78,8 @@ class Editor {
                 }
 
             }
-            if (inputHTMLObj.description) {
-                inputHTMLObj.description.value = inputArray[index].someDescription
+            if (inputHTMLObj.description?.value) {
+                inputHTMLObj.description.value = inputArray[index]?.someDescription
             }
         }
         //* for add
