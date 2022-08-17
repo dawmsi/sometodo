@@ -23,6 +23,5 @@ class SelectP {
             this.idsDom.renderPlace,
             this.simpleSelector,
         )
-        marksDOMEls = document.querySelectorAll(`.${simpleSelector}`)
     }
 }

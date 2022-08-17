@@ -43,6 +43,7 @@ class Task extends Basic {
                         id="projectTag"
                         class="${item.someSelect ? "" : "hide"}"
                         style="color: ${colorsProjects[projectsArr[item.someSelect].someSelect]}">
+                        <i id="project" class="fa fa-braille" aria-hidden="true"></i>
                         ${item.someSelect ? projectsArr[item.someSelect].someName : ""}
                         </button >
                     </div >
@@ -70,14 +71,11 @@ class Task extends Basic {
             `
     }
 
-    static filterTasks = () => {
+    static filterTasks = (filterCondition) => {
         if (tasksArr.length) {
-            let activeTasks =
-                tasksArr.length && tasksArr.filter((item) => !item.completed)
-            let completedTasks =
-                tasksArr.length && tasksArr.filter((item) => item.completed)
-            tasksArr = [...activeTasks, ...completedTasks]
+            return tasksArr.filter((item) => item[filterCondition])
         }
+        else return []
     }
 
     static toggleTask = (inputArray, index) => {
@@ -97,7 +95,7 @@ class Task extends Basic {
             }
         }
         // this.filterTasks()
-        this.render(inputArray, this.simpleSelector)
+        this.render(inputArray)
         updateLocal()
     }
 

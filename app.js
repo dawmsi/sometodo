@@ -32,8 +32,8 @@ function testClickBeforeClick() {
 }
 
 
-Mark.render(marksArr, Mark.simpleSelector)
-Project.render(projectsArr, Project.simpleSelector)
+Mark.render(marksArr)
+Project.render(projectsArr)
 
 countPluser()
 Task.toggleTask(tasksArr)

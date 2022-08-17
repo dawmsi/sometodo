@@ -13,27 +13,28 @@ const locationResolver = location => {
         case '#/previous':
             nameArray = 'previous'
             currentArray = previousArr
-            Task.render(currentArray, Task.simpleSelector)
             break
         case '#/today':
             nameArray = 'tasks'
             currentArray = tasksArr
-            Task.render(currentArray, Task.simpleSelector)
             break
         case '#/upcoming':
-
+            currentArray = []
             break
         case '#/marks':
-
+            currentArray = Task.filterTasks('someMark')
             break
         case '#/projects':
-
+            currentArray = Task.filterTasks('someSelect')
             break
         default:
             route.innerHTML = `
             <h2>Not found</h2>
             `
+            currentArray = []
+            break
     }
+    Task.render(currentArray)
 }
 
 window.addEventListener('load', () => {
