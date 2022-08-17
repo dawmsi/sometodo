@@ -1,4 +1,4 @@
-let previousTasks = []
+
 
 const previousCount = document.querySelector('#previousCount')
 
@@ -9,12 +9,12 @@ const comingCount = document.querySelector('#comingCount')
 const today = new Date()
 
 function countPluser() {
-    previousTasks.length
-        ? previousCount.innerText = previousTasks.length
+    previousArr.length
+        ? previousCount.innerText = previousArr.length
         : previousCount.innerText = ''
 
     tasksArr.length
-        ? todayCount.innerText = (Number(tasksArr.length) - Number(previousTasks.length))
+        ? todayCount.innerText = tasksArr.length
         : todayCount.innerText = ''
 
 }

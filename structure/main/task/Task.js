@@ -18,7 +18,7 @@ class Task extends Basic {
         return `
         <div class="${simpleSelector} ${item.completed ? "checked" : ""}">
             <div class="checkbox-wrapper">
-            <input onclick="Task.toggleTask(${index})" type="checkbox" 
+            <input onclick="Task.toggleTask(currentArray,${index})" type="checkbox" 
             id="${index}" 
             class="custom-checkbox" ${item.completed ? "checked" : ""}>
             <label style="border: 2px solid ${item.someSelect
@@ -55,12 +55,12 @@ class Task extends Basic {
                 <button onclick="Editor.showEditor(
                     ${this.name}.idsDom,
                     ${this.name},
-                    ${this.nameArray},
+                    currentArray,
                     ${index}
                     )" class="btn-edit">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </button>
-                <button onclick="Task.remove(tasksArr, ${index})" class="btn-del">
+                <button onclick="Task.remove(currentArray, ${index})" class="btn-del">
                     <i class="fa fa-trash"></i>
                 </button>
                 <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i>
@@ -80,52 +80,43 @@ class Task extends Basic {
         }
     }
 
-    static toggleTask = (index) => {
-        if (index) {
-            tasksArr[index].completed = !tasksArr[index].completed
-            if (tasksArr[index].completed) {
+    static toggleTask = (inputArray, index) => {
+        if (index || index == 0) {
+            inputArray[index].completed = !inputArray[index].completed
+            if (inputArray[index].completed) {
                 todoItemEls[index].classList.add("checked")
-                previousTasks.unshift(tasksArr[index])
+                inputArray[index].lastArray = nameArray + 'Arr'
+                if (inputArray !== previousArr) {
+                    previousArr.unshift(inputArray[index])
+                    inputArray.splice(inputArray.indexOf(inputArray[index]), 1)
+                }
             } else {
                 todoItemEls[index].classList.remove("checked")
-                previousTasks.splice(previousTasks.indexOf(tasksArr[index]), 1)
-            }
-        } else {
-            if (index == 0) {
-                tasksArr[index].completed = !tasksArr[index].completed
-                if (tasksArr[index].completed) {
-                    todoItemEls[index].classList.add("checked")
-                    previousTasks.unshift(tasksArr[index])
-                } else {
-                    todoItemEls[index].classList.remove("checked")
-                    previousTasks.splice(
-                        previousTasks.indexOf(tasksArr[index]),
-                        1
-                    )
-                }
+                // linkToArray.link.unshift(previousArr[index])
+                // previousArr.splice(previousArr.indexOf(previousArr[index]), 1)
             }
         }
-
-        this.filterTasks()
-        this.render(tasksArr, this.simpleSelector)
+        // this.filterTasks()
+        this.render(inputArray, this.simpleSelector)
         updateLocal()
     }
 
-    static AntiDeleteUsed() {
-        projectsArr.forEach((project, index) => {
-            project.used = false
+    static AntiDeleteUsed(inputArray, checking) {
+        inputArray.forEach((item, index) => {
+            item.used = false
             tasksArr.forEach((task) => {
-                if (task.someSelect === index) project.used = true
+                if (task[checking] === index) item.used = true
             })
         })
         updateLocal()
     }
 
-    static beforeRun() {
-        this.AntiDeleteUsed()
+    static beforeRender() {
+        this.AntiDeleteUsed(marksArr, 'someMark')
+        this.AntiDeleteUsed(projectsArr, 'someSelect')
     }
 
-    static afterRun() {
+    static afterRender() {
         todoItemEls = document.querySelectorAll(`.${this.simpleSelector} `)
         countPluser()
     }

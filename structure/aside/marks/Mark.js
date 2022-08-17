@@ -13,35 +13,70 @@ class Mark extends Basic {
     })
 
     static create = (item, simpleSelector, index) => {
-        return `
-        <li class="item ${simpleSelector}">
-        <div class="btn-wrapper">
-        <button onclick="Editor.showEditor(
-            ${this.name}.idsDom,
-            ${this.name},
-            ${this.nameArray},
-            ${index},)">
-        <i class="fa fa-bookmark-o" 
-        style="color:${colorsMarks[item.someSelect]}"></i>
-        </button>
-        </div>
-        <a id="name${index}" href="#">${item.someName}</a>
-        <div class="btn-wrapper">
-            <button onclick="${this.name}.remove(marksArr, ${index})"><i class="fa fa-trash"></i></button>
-        </div>
-        </li>
-        `
+        if (index == 0) {
+            return `
+            <li class="item ${simpleSelector}">
+            <div class="btn-wrapper">
+            <button>
+            <i class="fa fa-bookmark-o" 
+            style="color:${colorsMarks[item.someSelect]}"></i>
+            </button>
+            </div>
+            <a id="name${index}" href="#">${item.someName}</a>
+            </li>
+            `
+        }
+        else if (item.used) {
+            return `
+            <li class="item ${simpleSelector}">
+            <div class="btn-wrapper">
+            <button onclick="Editor.showEditor(
+                ${this.name}.idsDom,
+                ${this.name},
+                ${this.nameArray},
+                ${index},)">
+            <i class="fa fa-bookmark-o" 
+            style="color:${colorsMarks[item.someSelect]}"></i>
+            </button>
+            </div>
+            <a id="name${index}" href="#">${item.someName}</a>
+            <div class="btn-wrapper">
+                <button onclick="Pop.renderNewPop(Pop.popAccepter, ${testClickBeforeClick.name})"><i class="fa fa-ellipsis-h"></i></button>
+            </div>
+            </li>
+            `
+        }
+        else {
+            return `
+            <li class="item ${simpleSelector}">
+            <div class="btn-wrapper">
+            <button onclick="Editor.showEditor(
+                ${this.name}.idsDom,
+                ${this.name},
+                ${this.nameArray},
+                ${index},)">
+            <i class="fa fa-bookmark-o" 
+            style="color:${colorsMarks[item.someSelect]}"></i>
+            </button>
+            </div>
+            <a id="name${index}" href="#">${item.someName}</a>
+            <div class="btn-wrapper">
+                <button onclick="${this.name}.remove(marksArr, ${index})"><i class="fa fa-trash"></i></button>
+            </div>
+            </li>
+            `
+        }
     }
 
-    static beforeRun() {
+    static beforeRender() {
         Control.defaultNoSelected(marksArr, 'None')
     }
 
     static additionallyDuringRendering() {
         marksDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
     }
-    static afterRun() {
+    static afterRender() {
+        marksDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
         SelectM.render(marksArr, SelectM.simpleSelector)
-        Task.render(tasksArr, Task.simpleSelector)
     }
 }

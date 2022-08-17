@@ -11,13 +11,13 @@ let marksDOMEls = []
 let projectsDOMEls = []
 
 !localStorage.tasksKey ? tasksArr = [] : tasksArr = JSON.parse(localStorage.getItem('tasksKey'))
-!localStorage.tasksPrev ? previousTasks = [] : previousTasks = JSON.parse(localStorage.getItem('tasksPrev'))
+!localStorage.tasksPrev ? previousArr = [] : previousArr = JSON.parse(localStorage.getItem('tasksPrev'))
 !localStorage.marksKey ? marksArr = [] : marksArr = JSON.parse(localStorage.getItem('marksKey'))
 !localStorage.projectKey ? projectsArr = [] : projectsArr = JSON.parse(localStorage.getItem('projectKey'))
 
 function updateLocal() {
     localStorage.setItem('tasksKey', JSON.stringify(tasksArr))
-    localStorage.setItem('tasksPrev', JSON.stringify(previousTasks))
+    localStorage.setItem('tasksPrev', JSON.stringify(previousArr))
     localStorage.setItem('marksKey', JSON.stringify(marksArr))
     localStorage.setItem('projectKey', JSON.stringify(projectsArr))
 }
@@ -35,6 +35,5 @@ function testClickBeforeClick() {
 Mark.render(marksArr, Mark.simpleSelector)
 Project.render(projectsArr, Project.simpleSelector)
 
-// Task.render(tasksArr, Task.simpleSelector)
 countPluser()
-Task.toggleTask()
+Task.toggleTask(tasksArr)

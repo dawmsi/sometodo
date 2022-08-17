@@ -1,21 +1,21 @@
 class Basic {
-    static beforeRun() {
+    static beforeRender() {
         return false
     }
 
-    static afterRun() {
+    static afterRender() {
         return false
     }
 
     static render(inputArray) {
-        this.beforeRun()
+        this.beforeRender()
         Control.renderEls(
             this,
             inputArray,
             this.idsDom.renderPlace,
             this.simpleSelector,
         )
-        this.afterRun()
+        this.afterRender()
     }
 
     static add(inputArray) {

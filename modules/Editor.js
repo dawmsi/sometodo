@@ -59,11 +59,11 @@ class Editor {
                         ? colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
                         : "#fff"
                     inputHTMLObj.btnSubmit.innerHTML = `
-                        <button onclick="${newParent.name}.edit(${newParent.nameArray},${index})">Save</button>`
+                        <button onclick="${newParent.name}.edit(currentArray,${index})">Save</button>`
                 }
                 if (newParent.name === 'Project' || newParent.name === 'Mark') {
                     inputHTMLObj.btnSubmit.innerHTML = `
-                    <button onclick="${newParent.name}.edit(${newParent.nameArray},${index})">
+                    <button onclick="${newParent.name}.edit(currentArray,${index})">
                         <i class="fa fa-pencil"></i>
                         </button>`
                 }
@@ -82,11 +82,11 @@ class Editor {
         else {
             if (newParent.name === 'Task') {
                 inputHTMLObj.btnSubmit.innerHTML = `
-                <button onclick="${newParent.name}.add(${newParent.nameArray})">Add</button>`
+                <button onclick="${newParent.name}.add(currentArray)">Add</button>`
             }
             if (newParent.name === 'Project' || newParent.name === 'Mark') {
                 inputHTMLObj.btnSubmit.innerHTML = `
-                <button onclick="${newParent.name}.add(${newParent.nameArray})">
+                <button onclick="${newParent.name}.add(currentArray)">
                 <i class="fa fa-check"></i>
                 </button>`
             }

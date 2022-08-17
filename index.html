@@ -44,17 +44,19 @@
                 <ul class="list">
                     <li class="item">
                         <i id="previous" class="fa fa-inbox"></i>
-                        <a href="#">Previous</a>
+                        <a href="#/previous" data-href="#/previous"
+                            onclick="locationResolver(this.dataset.href)">Previous</a>
                         <span id="previousCount" class="amount"></span>
                     </li>
                     <li class="item">
                         <i id="today" class="fa fa-calendar-o"></i>
-                        <a href="#">Today</a>
+                        <a href="#/today" data-href="#/today" onclick="locationResolver(this.dataset.href)">Today</a>
                         <span id="todayCount" class="amount"></span>
                     </li>
                     <li class="item">
                         <i id="coming" class="fa fa-calendar"></i>
-                        <a href="#">Coming</a>
+                        <a href="#/upcoming" data-href="#/upcoming"
+                            onclick="locationResolver(this.dataset.href)">Upcoming</a>
                         <span id="comingCount" class="amount"></span>
                     </li>
             </section>
@@ -62,7 +64,7 @@
                 <ul class="include-list">
                     <li class="item">
                         <i id="marks" class="fa fa-bookmark" aria-hidden="true"></i>
-                        <a id="filter-task" href="#">Marks</a>
+                        <a href="#/marks" data-href="#/marks" onclick="locationResolver(this.dataset.href)">Marks</a>
                         <button class="defaultBtn" id="btnShowEditor" onclick="Editor.showEditor(
                             Mark.idsDom,
                             Mark,
@@ -92,7 +94,8 @@
                 <ul class="include-list">
                     <li class="item">
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
-                        <a href="#" class="toggle-show">Projects</a>
+                        <a href="#/projects" data-href="#/projects" onclick="locationResolver(this.dataset.href)"
+                            class="toggle-show">Projects</a>
                         <button class="defaultBtn" id="btnShowEditProj" onclick="Editor.showEditor(
                             Project.idsDom,
                             Project,
@@ -137,7 +140,7 @@
 
     <main id="main">
         <div id="content-wrapper">
-            <div class="partName">
+            <div id="route" class="partName">
                 <h2>ToDoList</h2>
             </div>
 
@@ -200,7 +203,6 @@
     </div>
 
 
-
     <script src="modules/Editor.js"></script>
     <script src="modules/Take.js"></script>
     <script src="modules/Control.js"></script>
@@ -219,7 +221,11 @@
 
     <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
     <script src="structure/pop/Pop.js"></script>
+
+
+
     <script src="app.js"></script>
+    <script src="modules/Router.js"></script>
 
 </body>
 
