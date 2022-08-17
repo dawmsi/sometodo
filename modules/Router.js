@@ -1,8 +1,7 @@
 const main = document.querySelector('#main')
 const route = main.querySelector('#route')
 
-let nameArray
-let currentArray = todayArr
+let currentArray
 
 const locationResolver = location => {
     let routeName = location.slice(2, 3).toUpperCase() + location.slice(3)
@@ -11,11 +10,9 @@ const locationResolver = location => {
     `
     switch (location) {
         case '#/previous':
-            nameArray = 'previous'
             currentArray = previousArr
             break
         case '#/today':
-            nameArray = 'tasks'
             currentArray = todayArr
             break
         case '#/upcoming':

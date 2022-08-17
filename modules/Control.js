@@ -1,5 +1,6 @@
 class Control {
     constructor(someSelect, someName, someDescription, someMark = 0) {
+        this.id = new Date().valueOf()
         this.someSelect = someSelect
         this.someName = someName
         if (someDescription) this.someDescription = someDescription
@@ -27,7 +28,7 @@ class Control {
                 newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
                 newParent.idsDom.inputName.value,
                 newParent.idsDom?.description?.value,
-                newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index
+                newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index,
             ))
         updateLocal()
     }
@@ -37,7 +38,7 @@ class Control {
             newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
             newParent.idsDom.inputName.value,
             newParent.idsDom?.description?.value,
-            newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index
+            newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index,
         )
         updateLocal()
 

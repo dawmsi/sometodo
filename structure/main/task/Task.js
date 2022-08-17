@@ -16,13 +16,13 @@ class Task extends Basic {
 
     static create = (item, simpleSelector, index) => {
         return `
-        <div class="${simpleSelector} ${item.completed ? "checked" : ""}">
+        <div id="${item.id}" class="${simpleSelector} ${item.completed ? "checked" : ""}">
             <div class="checkbox-wrapper">
             <input onclick="Task.toggleTask(currentArray,${index})" type="checkbox" 
-            id="${index}" 
+            
             class="custom-checkbox" ${item.completed ? "checked" : ""}>
             <label style="border: 2px solid ${item.someSelect
-                ? colorsProjects[projectsArr[item.someSelect].someSelect]
+                ? colorsProjects[projectsArr[item.someSelect]?.someSelect]
                 : "#fff"
             }" 
             for="${index}"></label>
@@ -33,18 +33,18 @@ class Task extends Basic {
                         <button
                         id="markTag"
                         class="${item.someMark ? "" : "hide"}"
-                        style="color: ${colorsMarks[marksArr[item.someMark].someSelect]}">
+                        style="color: ${colorsMarks[marksArr[item.someMark]?.someSelect]}">
                         <i class="fa fa-tag" aria-hidden="true"></i>
-                        ${item.someMark ? marksArr[item.someMark].someName : ""}
+                        ${item.someMark ? marksArr[item.someMark]?.someName : ""}
                         </button >
                     </div>
                     <div class="projectTags" style="color:${item.someSelect}">
                         <button
                         id="projectTag"
                         class="${item.someSelect ? "" : "hide"}"
-                        style="color: ${colorsProjects[projectsArr[item.someSelect].someSelect]}">
+                        style="color: ${colorsProjects[projectsArr[item.someSelect]?.someSelect]}">
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
-                        ${item.someSelect ? projectsArr[item.someSelect].someName : ""}
+                        ${item.someSelect ? projectsArr[item.someSelect]?.someName : ""}
                         </button >
                     </div >
                 </div>
