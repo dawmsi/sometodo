@@ -33,15 +33,18 @@ class Control {
         updateLocal()
     }
 
-    static editEl = (newParent, elementsArray, index) => {
-        elementsArray[index] = new this(
-            newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
-            newParent.idsDom.inputName.value,
-            newParent.idsDom?.description?.value,
-            newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index,
-        )
+    static editEl = (newParent, elementsArray, itemID) => {
+        elementsArray.forEach((item, index) => {
+            if (item.id === itemID) {
+                elementsArray[index] = new this(
+                    newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
+                    newParent.idsDom.inputName.value,
+                    newParent.idsDom?.description?.value,
+                    newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index,
+                )
+            }
+        })
         updateLocal()
-
     }
 
     static removeEl = (elementsArray, index) => {

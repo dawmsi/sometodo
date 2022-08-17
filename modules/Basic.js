@@ -26,8 +26,11 @@ class Basic {
     }
 
     static edit(inputArray, index) {
+        debugger
         Control.editEl(this, inputArray, index)
-        this.render(inputArray)
+        updateLocal()
+        locationResolver(window.location.hash)
+        this.render(currentArray)
         Editor.resetEditor(this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
         )
