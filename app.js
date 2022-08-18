@@ -1,3 +1,10 @@
+const main = document.querySelector('#main')
+const route = main.querySelector('#route')
+
+window.addEventListener('load', () => {
+        Router.locationResolver()
+})
+
 let colorsProjects = Take.colorsFrom(Project.idsDom.inputSelect.options)
 
 let colorsMarks = Take.colorsFrom(Mark.idsDom.inputSelect.options)
@@ -5,6 +12,8 @@ let colorsMarks = Take.colorsFrom(Mark.idsDom.inputSelect.options)
 let todayArr
 let marksArr
 let projectsArr
+
+let currentArray
 
 let todoItemEls = []
 let marksDOMEls = []
@@ -36,4 +45,3 @@ Mark.render(marksArr)
 Project.render(projectsArr)
 
 countPluser()
-Task.toggleTask(todayArr)

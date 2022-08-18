@@ -1,5 +1,5 @@
 class Control {
-    constructor(someSelect, someName, someDescription, someMark = 0) {
+    constructor(someSelect, someName, someDescription, someMark) {
         this.id = new Date().valueOf()
         this.someSelect = someSelect
         this.someName = someName

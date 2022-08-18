@@ -20,20 +20,22 @@ class Basic {
 
     static add(inputArray) {
         Control.addEl(this, inputArray)
-        this.render(inputArray)
-        Editor.resetEditor(this.idsDom.wrapperEditor,
-            this.idsDom.btnShowEditor)
-    }
-
-    static edit(inputArray, index) {
-        debugger
-        Control.editEl(this, inputArray, index)
-        updateLocal()
-        locationResolver(window.location.hash)
-        this.render(currentArray)
-        Editor.resetEditor(this.idsDom.wrapperEditor,
+        Editor.resetEditor(
+            this.idsDom.wrapperEditor,
             this.idsDom.btnShowEditor,
         )
+        this.render(inputArray)
+    }
+
+    static edit(inputArray, id) {
+        Control.editEl(this, inputArray, id)
+        Editor.resetEditor(
+            this.idsDom.wrapperEditor,
+            this.idsDom.btnShowEditor,
+        )
+        inputArray === currentArray
+            ? this.render(inputArray)
+            : Router.locationResolver()
     }
 
     static remove(inputArray, index) {

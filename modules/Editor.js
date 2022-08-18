@@ -53,7 +53,7 @@ class Editor {
                     // observer.observe(inputHTMLObj.inputSelect, config)
                     // //**********************/
                     inputHTMLObj.inputMark.selectedIndex = inputArray[index].someMark
-                    inputHTMLObj.inputMark.style.color = colorsMarks[marksArr[inputArray[index].someMark].someSelect]
+                    inputHTMLObj.inputMark.style.color = colorsMarks[marksArr[inputArray[index].someMark]?.someSelect]
 
                     inputHTMLObj.inputSelect.style.color = inputArray[index].someSelect
                         ? colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
@@ -63,13 +63,15 @@ class Editor {
                 }
                 if (newParent.name === 'Project' || newParent.name === 'Mark') {
                     if (newParent.name === 'Project') {
+                        currentArray = projectsArr
                         inputHTMLObj.inputSelect.style.color = colorsProjects[inputArray[index].someSelect]
                     }
                     if (newParent.name === 'Mark') {
+                        currentArray = marksArr
                         inputHTMLObj.inputSelect.style.color = colorsMarks[inputArray[index].someSelect]
                     }
                     inputHTMLObj.btnSubmit.innerHTML = `
-                    <button onclick="${newParent.name}.edit(${newParent.nameArray},${index})">
+                    <button onclick="${newParent.name}.edit(${newParent.nameArray},${inputArray[index].id})">
                         <i class="fa fa-pencil"></i>
                         </button>`
                 }
@@ -86,6 +88,12 @@ class Editor {
                 <button onclick="${newParent.name}.add(${newParent.nameArray})">Add</button>`
             }
             if (newParent.name === 'Project' || newParent.name === 'Mark') {
+                if (newParent.name === 'Project') {
+                    currentArray = projectsArr
+                }
+                if (newParent.name === 'Mark') {
+                    currentArray = marksArr
+                }
                 inputHTMLObj.btnSubmit.innerHTML = `
                 <button onclick="${newParent.name}.add(${newParent.nameArray})">
                 <i class="fa fa-check"></i>

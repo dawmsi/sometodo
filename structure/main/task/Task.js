@@ -94,12 +94,11 @@ class Task extends Basic {
                 // previousArr.splice(previousArr.indexOf(previousArr[index]), 1)
             }
         }
-        // this.filterTasks()
         this.render(inputArray)
         updateLocal()
     }
 
-    static AntiDeleteUsed(inputArray, checking) {
+    static switchUsed(inputArray, checking) {
         inputArray.forEach((item, index) => {
             item.used = false
             todayArr.forEach((task) => {
@@ -110,8 +109,9 @@ class Task extends Basic {
     }
 
     static beforeRender() {
-        this.AntiDeleteUsed(marksArr, 'someMark')
-        this.AntiDeleteUsed(projectsArr, 'someSelect')
+        this.switchUsed(marksArr, 'someMark')
+        this.switchUsed(projectsArr, 'someSelect')
+        // Router.locationResolver()
     }
 
     static afterRender() {

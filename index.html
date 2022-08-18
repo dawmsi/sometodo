@@ -17,7 +17,9 @@
         <div id="top-left">
             <div class="bar-btn"> <a id="hide" onclick="Aside.hideshow()">
                     <i id="eye" class="fa fa-eye-slash"></i></a></div>
-            <div class="bar-btn"> <a id="home">
+            <div class="bar-btn"> <a
+                href="/" data-href="/"
+                onclick="Router.locationResolver(this.dataset.href)" id="home">
                     <i class="fa fa-home"></i></a></div>
             <div class="search-area">
                 <i class="fa fa-search"></i>
@@ -45,18 +47,19 @@
                     <li class="item">
                         <i id="previous" class="fa fa-inbox"></i>
                         <a href="#/previous" data-href="#/previous"
-                            onclick="locationResolver(this.dataset.href)">Previous</a>
+                            onclick="Router.locationResolver(this.dataset.href)">Previous</a>
                         <span id="previousCount" class="amount"></span>
                     </li>
                     <li class="item">
                         <i id="today" class="fa fa-calendar-o"></i>
-                        <a href="#/today" data-href="#/today" onclick="locationResolver(this.dataset.href)">Today</a>
+                        <a href="#/today" data-href="#/today"
+                            onclick="Router.locationResolver(this.dataset.href)">Today</a>
                         <span id="todayCount" class="amount"></span>
                     </li>
                     <li class="item">
                         <i id="coming" class="fa fa-calendar"></i>
                         <a href="#/upcoming" data-href="#/upcoming"
-                            onclick="locationResolver(this.dataset.href)">Upcoming</a>
+                            onclick="Router.locationResolver(this.dataset.href)">Upcoming</a>
                         <span id="comingCount" class="amount"></span>
                     </li>
             </section>
@@ -64,7 +67,8 @@
                 <ul class="include-list">
                     <li class="item">
                         <i id="marks" class="fa fa-bookmark" aria-hidden="true"></i>
-                        <a href="#/marks" data-href="#/marks" onclick="locationResolver(this.dataset.href)">Marks</a>
+                        <a href="#/marks" data-href="#/marks"
+                            onclick="Router.locationResolver(this.dataset.href)">Marks</a>
                         <button class="defaultBtn" id="btnShowEditor" onclick="Editor.showEditor(
                             Mark.idsDom,
                             Mark,
@@ -94,7 +98,7 @@
                 <ul class="include-list">
                     <li class="item">
                         <i id="project" class="fa fa-braille" aria-hidden="true"></i>
-                        <a href="#/projects" data-href="#/projects" onclick="locationResolver(this.dataset.href)"
+                        <a href="#/projects" data-href="#/projects" onclick="Router.locationResolver(this.dataset.href)"
                             class="toggle-show">Projects</a>
                         <button class="defaultBtn" id="btnShowEditProj" onclick="Editor.showEditor(
                             Project.idsDom,
@@ -222,11 +226,9 @@
     <script src="structure/pop/elements/edit_menu/edit-menu.js"></script>
     <script src="structure/pop/Pop.js"></script>
 
-
-
-    <script src="app.js"></script>
     <script src="modules/Router.js"></script>
 
+    <script src="app.js"></script>
 </body>
 
 </html>
