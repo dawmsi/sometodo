@@ -19,7 +19,6 @@ class Task extends Basic {
         <div id="${item.id}" class="${simpleSelector} ${item.completed ? "checked" : ""}">
             <div class="checkbox-wrapper">
             <input onclick="Task.toggleTask(currentArray,${index})" type="checkbox" 
-            
             class="custom-checkbox" ${item.completed ? "checked" : ""}>
             <label style="border: 2px solid ${item.someSelect
                 ? colorsProjects[projectsArr[item.someSelect]?.someSelect]
@@ -111,7 +110,6 @@ class Task extends Basic {
     static beforeRender() {
         this.switchUsed(marksArr, 'someMark')
         this.switchUsed(projectsArr, 'someSelect')
-        // Router.locationResolver()
     }
 
     static afterRender() {

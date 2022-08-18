@@ -52,7 +52,6 @@ class Control {
         updateLocal()
     }
 
-
     static defaultNoSelected(array, string) {
         if (array) {
             if (array[0]?.someName !== string)

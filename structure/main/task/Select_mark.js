@@ -7,7 +7,6 @@ class SelectM {
         renderPlace: '#selectM',
     })
 
-
     static create = (item, simpleSelector, index) => {
         return `
             <option class="${simpleSelector}"

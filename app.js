@@ -40,7 +40,6 @@ function testClickBeforeClick() {
     alert("removed")
 }
 
-
 Mark.render(marksArr)
 Project.render(projectsArr)
 

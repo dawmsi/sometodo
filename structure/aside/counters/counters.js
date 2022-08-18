@@ -1,5 +1,3 @@
-
-
 const previousCount = document.querySelector('#previousCount')
 
 const todayCount = document.querySelector('#todayCount')

@@ -9,7 +9,6 @@ class Editor {
 
         } else btnShowEditor.classList.toggle('cencelBtn')
     }
-
     static showEditor = (
         inputHTMLObj,
         newParent,
@@ -38,23 +37,8 @@ class Editor {
                 inputHTMLObj.inputName.value = inputArray[index].someName
                 inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
                 if (newParent.name === 'Task') {
-                    // //* check child mutation
-                    // const config = {
-                    //     childList: true,
-                    // }
-                    // const callback = function (mutationsList) {
-                    //     for (let mutation of mutationsList) {
-                    //         if (mutation.type === 'childList') {
-                    //             inputHTMLObj.inputSelect.selectedIndex = inputHTMLObj.inputSelect.options.selectedIndex
-                    //         }
-                    //     }
-                    // }
-                    // const observer = new MutationObserver(callback)
-                    // observer.observe(inputHTMLObj.inputSelect, config)
-                    // //**********************/
                     inputHTMLObj.inputMark.selectedIndex = inputArray[index].someMark
                     inputHTMLObj.inputMark.style.color = colorsMarks[marksArr[inputArray[index].someMark]?.someSelect]
-
                     inputHTMLObj.inputSelect.style.color = inputArray[index].someSelect
                         ? colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
                         : "#fff"

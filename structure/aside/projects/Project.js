@@ -67,7 +67,6 @@ class Project extends Basic {
         `}
     }
 
-
     static beforeRender() {
         Control.defaultNoSelected(projectsArr, 'Not In')
     }
