@@ -5,8 +5,15 @@ window.addEventListener('load', () => {
         Router.locationResolver()
 })
 
-let colorsProjects = Take.colorsFrom(Project.idsDom.inputSelect.options)
+let colorsArr = [
+    '#ffb52b',
+    '#fcfa79',
+    '#29ff89',
+    '#2b6eff',
+    '#c879fc',
+]
 
+let colorsProjects = Take.colorsFrom(Project.idsDom.inputSelect.options)
 let colorsMarks = Take.colorsFrom(Mark.idsDom.inputSelect.options)
 
 let todayArr
