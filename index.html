@@ -17,9 +17,8 @@
         <div id="top-left">
             <div class="bar-btn"> <a id="hide" onclick="Aside.hideshow()">
                     <i id="eye" class="fa fa-eye-slash"></i></a></div>
-            <div class="bar-btn"> <a
-                href="/" data-href="/"
-                onclick="Router.locationResolver(this.dataset.href)" id="home">
+            <div class="bar-btn"> <a href="/" data-href="/" onclick="Router.locationResolver(this.dataset.href)"
+                    id="home">
                     <i class="fa fa-home"></i></a></div>
             <div class="search-area">
                 <i class="fa fa-search"></i>
@@ -81,10 +80,9 @@
                     <div id="markEditor" class="defaultEditor">
                         <form class="formEdit" action="" onsubmit="return false;">
                             <select id="colorM">
-                                <option style="color:#fff" selected>&#xf097;</option>
-                                <option style="color:#ff4929">&#xf097;</option>
-                                <option style="color:#ffb52b">&#xf097;</option>
-                                <option style="color:#fcfa79">&#xf097;</option>
+                                <option id="1" style="color:#ff4929">&#xf097;</option>
+                                <option id="2" style="color:#ffb52b">&#xf097;</option>
+                                <option id="3" style="color:#fcfa79">&#xf097;</option>
                             </select>
                             <input id="inputMark" placeholder="Write name of mark" type="text">
                             <div class="btn-wrapper">
@@ -114,12 +112,12 @@
                     <div id="editorProject" class="defaultEditor">
                         <form class="formEdit" action="" onsubmit="return false;">
                             <select class="selectColor" id="colorP">
-                                <option style="color:#db4234" selected>&#xf1db;</option>
-                                <option style="color:#ffb52b">&#xf1db;</option>
-                                <option style="color:#fcfa79">&#xf1db;</option>
-                                <option style="color:#29ff89">&#xf1db;</option>
-                                <option style="color:#2b6eff">&#xf1db;</option>
-                                <option style="color:#c879fc">&#xf1db;</option>
+                                <option id="0" style="color:#db4234" selected>&#xf1db;</option>
+                                <option id="1" style="color:#ffb52b">&#xf1db;</option>
+                                <option id="2" style="color:#fcfa79">&#xf1db;</option>
+                                <option id="3" style="color:#29ff89">&#xf1db;</option>
+                                <option id="4" style="color:#2b6eff">&#xf1db;</option>
+                                <option id="5" style="color:#c879fc">&#xf1db;</option>
                             </select>
                             <input id="inputProj" placeholder="Write name of project" type="text">
                             <div class="btn-wrapper">
@@ -162,7 +160,7 @@
             </div>
 
             <div id="adding" class="defaultEditor">
-                <form id="formAdd" action="addBtn" onsubmit="return false;">
+                <form id="formForReset" action="addBtn" onsubmit="return false;">
                     <div class="container">
                         <div class="name-of-task"><input placeholder="Name of task" type="text" id="name-task"></div>
                         <div class="description-of-task">
@@ -214,8 +212,8 @@
 
     <script src="structure/main/task/Task.js"></script>
 
-    <script src="structure/main/task/Select_mark.js"></script>
-    <script src="structure/main/task/Select_project.js"></script>
+    <script src="structure/main/task/MarkInTask.js"></script>
+    <script src="structure/main/task/ProjectInTask.js"></script>
 
     <script src="structure/aside/projects/Project.js"></script>
     <script src="structure/aside/marks/Mark.js"></script>

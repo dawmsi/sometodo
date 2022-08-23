@@ -4,10 +4,10 @@ class Editor {
         btnShowEditor,
     ) {
         wrapperEditor.classList.toggle('showEditor')
-        wrapperEditor.getElementsByTagName('form')[0].reset()
-        if (btnShowEditor && btnShowEditor.classList.contains('add-link')) {
-
-        } else btnShowEditor.classList.toggle('cencelBtn')
+        wrapperEditor.querySelector('form').reset()
+        if (btnShowEditor && !btnShowEditor.classList.contains('add-link')) {
+            btnShowEditor.classList.toggle('cencelBtn')
+        }
     }
     static showEditor = (
         inputHTMLObj,
@@ -31,17 +31,18 @@ class Editor {
                 inputHTMLObj.inputMark.style.color = inputHTMLObj.inputMark.options[inputHTMLObj.inputMark.options.selectedIndex].style.color
             })
         }
-        //* for edit
+        //* edit
         if (index || index === 0) {
             if (inputHTMLObj.inputSelect && inputHTMLObj.inputName && inputHTMLObj.btnSubmit) {
                 inputHTMLObj.inputName.value = inputArray[index].someName
                 inputHTMLObj.inputSelect.selectedIndex = inputArray[index].someSelect
                 if (newParent.name === 'Task') {
-                    inputHTMLObj.inputMark.selectedIndex = inputArray[index].someMark
-                    inputHTMLObj.inputMark.style.color = colorsMarks[marksArr[inputArray[index].someMark]?.someSelect]
-                    inputHTMLObj.inputSelect.style.color = inputArray[index].someSelect
-                        ? colorsProjects[projectsArr[inputArray[index].someSelect].someSelect]
-                        : "#fff"
+                    const markIndexById = Take.indexByID(marksArr, inputArray[index].someMark)
+                    const projectIndexById = Take.indexByID(projectsArr, inputArray[index].someSelect)
+                    inputHTMLObj.inputMark.selectedIndex = markIndexById
+                    inputHTMLObj.inputSelect.selectedIndex = projectIndexById
+                    inputHTMLObj.inputMark.style.color = inputHTMLObj.inputMark.options[markIndexById].style.color 
+                    inputHTMLObj.inputSelect.style.color = inputHTMLObj.inputSelect.options[projectIndexById].style.color
                     inputHTMLObj.btnSubmit.innerHTML = `
                         <button onclick="${newParent.name}.edit(${newParent.nameArray},${inputArray[index].id})">Save</button>`
                 }
@@ -65,9 +66,10 @@ class Editor {
                 inputHTMLObj.description.value = inputArray[index].someDescription
             }
         }
-        //* for add
+        //* add
         else {
             if (newParent.name === 'Task') {
+                inputHTMLObj.inputMark.style.color = inputHTMLObj.inputSelect.options[inputHTMLObj.inputMark.selectedIndex].style.color
                 inputHTMLObj.btnSubmit.innerHTML = `
                 <button onclick="${newParent.name}.add(${newParent.nameArray})">Add</button>`
             }

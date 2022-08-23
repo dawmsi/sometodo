@@ -19,7 +19,7 @@ class Mark extends Basic {
             <div class="btn-wrapper">
             <button>
             <i class="fa fa-bookmark-o" 
-            style="color:${colorsMarks[item.someSelect]}"></i>
+            style="color:#fff"></i>
             </button>
             </div>
             <a id="name${index}" href="#">${item.someName}</a>
@@ -72,11 +72,8 @@ class Mark extends Basic {
         Control.defaultNoSelected(marksArr, 'None')
     }
 
-    static additionallyDuringRendering() {
-        marksDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
-    }
     static afterRender() {
         marksDOMEls = document.querySelectorAll(`.${this.simpleSelector}`)
-        SelectM.render(marksArr, SelectM.simpleSelector)
+        MarkInTask.render(marksArr)
     }
 }

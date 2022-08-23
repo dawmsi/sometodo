@@ -13,4 +13,8 @@ class Take {
         return colors
     }
 
+    static indexByID = (inputArray, arg) => {
+        return inputArray.findIndex(mark => mark.id === arg)
+    }
+
 }

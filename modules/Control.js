@@ -1,12 +1,13 @@
 class Control {
-    constructor(someSelect, someName, someDescription, someMark) {
-        this.id = new Date().valueOf()
+    constructor(someSelect, someName, someDescription, someMark, id, used) {
         this.someSelect = someSelect
         this.someName = someName
         if (someDescription) this.someDescription = someDescription
         if (someMark || someMark === 0) this.someMark = someMark
+
+        id ? this.id = id : this.id = new Date().valueOf()
+        used ? this.used = used : this.used = false
         this.completed = false
-        this.used = false
     }
 
     static renderEls = (
@@ -25,10 +26,10 @@ class Control {
     static addEl = (newParent, elementsArray) => {
         elementsArray.push(
             new this(
-                newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
+                Number(newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].id),
                 newParent.idsDom.inputName.value,
                 newParent.idsDom?.description?.value,
-                newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index,
+                Number(newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].id),
             ))
         updateLocal()
     }
@@ -37,10 +38,12 @@ class Control {
         elementsArray.forEach((item, index) => {
             if (item.id === itemID) {
                 elementsArray[index] = new this(
-                    newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].index,
+                    Number(newParent.idsDom.inputSelect.options[newParent.idsDom.inputSelect.options.selectedIndex].id),
                     newParent.idsDom.inputName.value,
                     newParent.idsDom?.description?.value,
-                    newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].index,
+                    Number(newParent.idsDom?.inputMark?.options[newParent.idsDom.inputMark.options.selectedIndex].id),
+                    item.id,
+                    item?.used,
                 )
             }
         })
@@ -53,9 +56,13 @@ class Control {
     }
 
     static defaultNoSelected(array, string) {
+        const firstItem = new Control(0, string)
         if (array) {
-            if (array[0]?.someName !== string)
-                array.unshift(new Control(0, string))
+            if (array[0]?.someName !== string) {
+                array.unshift(
+                    { someSelect: 0, someName: string, id: 0, completed: false, used: false }
+                )
+            }
             else if (array[1]?.someName == string)
                 array.splice(1, 1)
         }
