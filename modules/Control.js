@@ -50,13 +50,20 @@ class Control {
         updateLocal()
     }
 
-    static removeEl = (elementsArray, index) => {
-        elementsArray.splice(index, 1)
+    static removeEl = (elementsArray, index, mainArray) => {
+        let indexById
+        if (mainArray) {
+            indexById = Take.indexByID(mainArray, elementsArray[index].id)
+            mainArray.splice(indexById, 1)
+        }
+        else {
+            indexById = Take.indexByID(elementsArray, elementsArray[index].id)
+            elementsArray.splice(indexById, 1)
+        }
         updateLocal()
     }
 
     static defaultNoSelected(array, string) {
-        const firstItem = new Control(0, string)
         if (array) {
             if (array[0]?.someName !== string) {
                 array.unshift(

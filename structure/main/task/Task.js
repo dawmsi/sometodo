@@ -62,7 +62,7 @@ class Task extends Basic {
                     )" class="btn-edit">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </button>
-                <button onclick="Task.remove(currentArray, ${index})" class="btn-del">
+                <button onclick="Task.remove(currentArray, ${index}, todayArr)" class="btn-del">
                     <i class="fa fa-trash"></i>
                 </button>
                 <button onclick="Pop.renderNewPop(popEditor)" class="btn-edit-menu"><i class="fa fa-ellipsis-h"></i>

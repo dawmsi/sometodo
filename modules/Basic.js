@@ -38,8 +38,8 @@ class Basic {
             : Router.locationResolver()
     }
 
-    static remove(inputArray, index) {
-        Control.removeEl(inputArray, index)
-        this.render(inputArray)
+    static remove(inputArray, index, mainArr) {
+        Control.removeEl(inputArray, index, mainArr)
+        mainArr ? Router.locationResolver() : this.render(inputArray)
     }
 }
