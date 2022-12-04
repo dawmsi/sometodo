@@ -10,19 +10,20 @@ class Router {
         routeName = location.slice(2, 3).toUpperCase() + location.slice(3)
 
         if (location || location === '') {
+            Aside.hideshow()
             switch (location) {
                 case '':
-                    routeName = 'Home'
-                    currentArray = []
+                    routeName = 'Upcoming'
+                    currentArray = upcomingArray
                     break
                 case '#/previous':
                     currentArray = previousArr
                     break
                 case '#/today':
-                    currentArray = todayArr
+                    currentArray = upcomingArray
                     break
                 case '#/upcoming':
-                    currentArray = []
+                    currentArray = upcomingArray
                     break
                 case '#/marks':
                     currentArray = Task.filterTasks('someMark')
@@ -44,4 +45,3 @@ class Router {
         Task.render(currentArray)
     }
 }
-

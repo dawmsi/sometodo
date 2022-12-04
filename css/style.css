@@ -340,7 +340,7 @@ aside .aside-containder .aside-part .item #project:hover {
   text-shadow: 0 0 3px #db4c3f;
 }
 aside .aside-containder .aside-part .item .plus {
-  visibility: hidden;
+  /* visibility: hidden; */
   font-size: 18px;
   line-height: 10px;
   background-color: rgba(90, 90, 90, 0.3647058824);

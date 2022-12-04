@@ -1,6 +1,6 @@
 const previousCount = document.querySelector('#previousCount')
 
-const todayCount = document.querySelector('#todayCount')
+/* const todayCount = document.querySelector('#todayCount') */
 
 const comingCount = document.querySelector('#comingCount')
 
@@ -11,8 +11,8 @@ function countPluser() {
         ? previousCount.innerText = previousArr.length
         : previousCount.innerText = ''
 
-    todayArr.length
-        ? todayCount.innerText = todayArr.length
-        : todayCount.innerText = ''
+        upcomingArray.length
+        ? comingCount.innerText = upcomingArray.length
+        : comingCount.innerText = ''
 
 }
