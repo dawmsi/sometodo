@@ -17,25 +17,28 @@
         <div id="top-left">
             <div class="bar-btn"> <a id="hide" onclick="Aside.hideshow()">
                     <i id="eye" class="fa fa-eye-slash"></i></a></div>
-            <div class="bar-btn"> <a href="/" data-href="/" onclick="Router.locationResolver(this.dataset.href)"
+            <!-- <div class="bar-btn"> <a href="/" data-href="/" onclick="Router.locationResolver(this.dataset.href)"
                     id="home">
-                    <i class="fa fa-home"></i></a></div>
-            <div class="search-area">
+                    <i class="fa fa-home"></i></a></div> -->
+            <!--             <div class="search-area">
                 <i class="fa fa-search"></i>
-            </div>
+            </div> -->
         </div>
         <div id="top-right">
             <div class="bar-btn"> <a id="add" onclick="">
-                    <i class="fa" style="font-family: Arial, Helvetica, sans-serif;">+</i></a>
+                    <i onclick="Editor.showEditor(
+                        Task.idsDom,
+                        Task,
+                    )" class="fa" style="font-family: Arial, Helvetica, sans-serif;">+</i></a>
             </div>
             <div class="bar-btn"> <a id="help">
                     <i class="fa fa-question-circle-o"></i></a></div>
             <div class="bar-btn"> <a id="notify">
                     <i class="fa fa-bell-o bell"></i></a></div>
-            <div class="bar-btn"> <a id="producity">
+            <!--             <div class="bar-btn"> <a id="producity">
                     <i class="fa fa-pie-chart"></i></a></div>
             <div class="bar-btn"> <a id="profile">
-                    <i class="fa fa-user-circle-o"></i></a></div>
+                    <i class="fa fa-user-circle-o"></i></a></div> -->
         </div>
     </header>
 
@@ -143,7 +146,7 @@
         </div>
     </aside>
 
-    <main id="main">
+    <main id="main" class="hideWhenMobile">
         <div id="content-wrapper">
             <div id="route" class="partName">
                 <h2>ToDoList</h2>
@@ -171,9 +174,9 @@
                         </div>
                         <div class="btns-line">
                             <div class="plannig">
-                                <button>
+                                <!--                                 <button>
                                     <i class="fa fa-calendar-plus-o"></i>Today
-                                </button>
+                                </button> -->
                                 <button>
                                     <i id="project" class="fa fa-braille"></i>
                                     <select class="selectProject" name="" id="selectP">
@@ -187,9 +190,9 @@
                                     </select>
                                 </button>
                             </div>
-                            <div class="additional">
+                            <!--                             <div class="additional">
                                 <button><i class="fa fa-clock-o"></i></button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="btns-main">

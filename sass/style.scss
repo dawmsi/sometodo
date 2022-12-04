@@ -9,6 +9,7 @@
 @import '../structure/main/task/task';
 @import '../structure/main/line/line';
 
+@import '../structure/main/main';
 @import '../structure/main/main_editor';
 
 @import '../structure/pop/pop';
@@ -19,7 +20,6 @@
     margin: 0;
     padding: 0;
 }
-
 
 html {
     height: 100%;

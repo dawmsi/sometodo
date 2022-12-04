@@ -12,6 +12,7 @@
         .checkbox-wrapper {
             justify-items: center;
             align-content: center;
+            padding: 0 8px;
             .custom-checkbox {
                 position: absolute;
                 z-index: -1;
@@ -35,7 +36,7 @@
                 background-size: 50% 50%;
             }
             .custom-checkbox + label::before {
-                content: "";
+                content: '';
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: 18px;
                 text-align: center;
@@ -54,11 +55,11 @@
             }
             .custom-checkbox:not(:disabled):not(:checked)
                 + label:hover::before {
-                content: "\f00c";
+                content: '\f00c';
                 cursor: pointer;
             }
             .custom-checkbox:checked + label::before {
-                content: "\f00c";
+                content: '\f00c';
                 border-color: #fdfdfd;
                 background-color: rgba(255, 255, 255, 0.118);
                 color: #b0e95c;
@@ -66,7 +67,7 @@
                 top: 0;
             }
             .custom-checkbox:checked + label:hover::before {
-                content: "\f00d";
+                content: '\f00d';
                 color: #db4234;
             }
             .custom-checkbox:focus:not(:checked) + label::before {
@@ -96,6 +97,7 @@
             }
         }
         .btn-wrapper {
+            padding: 0 8px;
             .btn-edit-menu {
                 position: relative;
             }
@@ -117,18 +119,18 @@
     position: relative;
 }
 
-.rowBtns{
+.rowBtns {
     display: inline-flex;
     gap: 5px;
 }
 
 .projectTags,
 .markTags {
-    font-family: "FontAwesome", "Second Font name", sans-serif;
+    font-family: 'FontAwesome', 'Second Font name', sans-serif;
     border-radius: 3px;
     background-color: #444444;
     width: fit-content;
-    a {
+    button {
         padding: 3px 4px;
     }
 }

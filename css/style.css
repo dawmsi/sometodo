@@ -7,14 +7,14 @@ header #top-right {
   align-items: center;
 }
 header #top-left {
-  grid-template-columns: repeat(3, auto);
+  grid-auto-flow: column;
   justify-content: start;
   padding-left: 28px;
 }
 header #top-right {
-  grid-template-columns: repeat(5, auto);
+  grid-auto-flow: column;
   justify-content: end;
-  padding-right: 28px;
+  margin-right: 28px;
 }
 header .bar-btn {
   height: 16px;
@@ -282,6 +282,7 @@ header .bar-btn #home i {
 .hiden {
   width: 0;
   left: -288px;
+  padding: 0;
 }
 
 aside .aside-containder {
@@ -408,6 +409,7 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
 .todos-wrapper .todo-item .checkbox-wrapper {
   justify-items: center;
   align-content: center;
+  padding: 0 8px;
 }
 .todos-wrapper .todo-item .checkbox-wrapper .custom-checkbox {
   position: absolute;
@@ -493,6 +495,9 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   color: silver;
   margin-bottom: 3px;
 }
+.todos-wrapper .todo-item .btn-wrapper {
+  padding: 0 8px;
+}
 .todos-wrapper .todo-item .btn-wrapper .btn-edit-menu {
   position: relative;
 }
@@ -525,8 +530,8 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   width: -moz-fit-content;
   width: fit-content;
 }
-.projectTags a,
-.markTags a {
+.projectTags button,
+.markTags button {
   padding: 3px 4px;
 }
 
@@ -560,9 +565,14 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   text-shadow: 0 0 2px #db4c3f;
 }
 
+@media (max-width: 474px) {
+  .hideWhenMobile {
+    display: none;
+  }
+}
 #adding {
   width: 100%;
-  padding: 0;
+  padding: 6px;
   margin: 0;
   background-color: transparent;
 }
