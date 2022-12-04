@@ -525,8 +525,8 @@ aside .aside-containder .aside-part .include-list .list .item:hover .btn-wrapper
   width: -moz-fit-content;
   width: fit-content;
 }
-.projectTags button,
-.markTags button {
+.projectTags a,
+.markTags a {
   padding: 3px 4px;
 }
 

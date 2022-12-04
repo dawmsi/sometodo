@@ -13,59 +13,49 @@ class Mark extends Basic {
     })
 
     static create = (item, simpleSelector, index) => {
-        if (index == 0) {
+            let bntWrapperStart
+            let bntWrapperEnd
+
+            if (index === 0) {
+                bntWrapperStart = `<button>
+                <i class="fa fa-bookmark-o" 
+                style="color:#fff"></i>
+                </button>`
+                bntWrapperEnd = ``
+            } else {
+                bntWrapperStart = `
+                <div class="btn-wrapper">
+                <button onclick="Editor.showEditor(
+                    ${this.name}.idsDom,
+                    ${this.name},
+                    ${this.nameArray},
+                    ${index},)">
+                <i class="fa fa-bookmark-o" 
+                style="color:${colorsMarks[item.someSelect]}"></i>
+                </button>
+                </div>
+                `
+                if (item.used) {
+                    bntWrapperEnd = `<div class="btn-wrapper">
+                    <button onclick="Pop.renderNewPop(Pop.popAccepter, ${testClickBeforeClick.name})">
+                    <i class="fa fa-ellipsis-h"></i></button>
+                    </div>`
+                } else {
+                    bntWrapperEnd = `<div class="btn-wrapper">
+                    <button onclick="${this.name}.remove(marksArr, ${index})">
+                    <i class="fa fa-trash"></i></button>
+                </div>`
+                }
+            }
+
             return `
             <li class="item ${simpleSelector}">
-            <div class="btn-wrapper">
-            <button>
-            <i class="fa fa-bookmark-o" 
-            style="color:#fff"></i>
-            </button>
-            </div>
-            <a id="name${index}" href="#">${item.someName}</a>
+            ${bntWrapperStart}
+            <a id="name${index}" href="#/marks/${item.id}" data-href="#/marks/${item.id}"
+            onclick="Router.locationResolver(this.dataset.href)">${item.someName}</a>
+            ${bntWrapperEnd}
             </li>
             `
-        }
-        else if (item.used) {
-            return `
-            <li class="item ${simpleSelector}">
-            <div class="btn-wrapper">
-            <button onclick="Editor.showEditor(
-                ${this.name}.idsDom,
-                ${this.name},
-                ${this.nameArray},
-                ${index},)">
-            <i class="fa fa-bookmark-o" 
-            style="color:${colorsMarks[item.someSelect]}"></i>
-            </button>
-            </div>
-            <a id="name${index}" href="#">${item.someName}</a>
-            <div class="btn-wrapper">
-                <button onclick="Pop.renderNewPop(Pop.popAccepter, ${testClickBeforeClick.name})"><i class="fa fa-ellipsis-h"></i></button>
-            </div>
-            </li>
-            `
-        }
-        else {
-            return `
-            <li class="item ${simpleSelector}">
-            <div class="btn-wrapper">
-            <button onclick="Editor.showEditor(
-                ${this.name}.idsDom,
-                ${this.name},
-                ${this.nameArray},
-                ${index},)">
-            <i class="fa fa-bookmark-o" 
-            style="color:${colorsMarks[item.someSelect]}"></i>
-            </button>
-            </div>
-            <a id="name${index}" href="#">${item.someName}</a>
-            <div class="btn-wrapper">
-                <button onclick="${this.name}.remove(marksArr, ${index})"><i class="fa fa-trash"></i></button>
-            </div>
-            </li>
-            `
-        }
     }
 
     static beforeRender() {
